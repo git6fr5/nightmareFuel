@@ -10,8 +10,8 @@ public class HUD : MonoBehaviour
     private bool DEBUG_init = true;
 
     /*--- Components ---*/
-    public Minimap minimap;
-    public CharacterPanel characterPanel;
+    public HUDMinimap hudMinimap;
+    public HUDPanel hudPanel;
 
     /*--- Unity Methods ---*/
     void Start()

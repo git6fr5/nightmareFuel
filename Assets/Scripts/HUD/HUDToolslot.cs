@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ToolSlot : MonoBehaviour
+public class HUDToolslot : MonoBehaviour
 {
     /* --- Debug --- */
     private string DebugTag = "[Entaku Island] {Tool Slot}: ";

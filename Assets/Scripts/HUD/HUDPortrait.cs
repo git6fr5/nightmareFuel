@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CharacterPortrait : MonoBehaviour
+public class HUDPortrait : MonoBehaviour
 {
     /* --- Debug --- */
     private string DebugTag = "[Entaku Island] {Character Portrait}: ";

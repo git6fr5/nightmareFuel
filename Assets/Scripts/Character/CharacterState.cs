@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharacterState : MonoBehaviour
 {
     /* --- Debug --- */
-    private string DebugTag = "[Entaku Island] {Status}: ";
+    private string DebugTag = "[Entaku Island] {CharacterState}: ";
     private bool DEBUG_init = true;
 
     /*--- Components ---*/

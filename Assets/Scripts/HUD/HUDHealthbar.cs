@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthBar : MonoBehaviour
+public class HUDHealthbar : MonoBehaviour
 {
     /* --- Debug --- */
     private string DebugTag = "[Entaku Island] {Health Bar}: ";
