@@ -7,7 +7,7 @@ public class HUDHealthbar : MonoBehaviour
 {
     /* --- Debug --- */
     private string DebugTag = "[Entaku Island] {Health Bar}: ";
-    private bool DEBUG_init = true;
+    private bool DEBUG_init = false;
 
     /* --- Components --- */
     public Slider healthSlider;

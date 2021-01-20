@@ -7,7 +7,7 @@ public class HUDPortrait : MonoBehaviour
 {
     /* --- Debug --- */
     private string DebugTag = "[Entaku Island] {Character Portrait}: ";
-    private bool DEBUG_init = true;
+    private bool DEBUG_init = false;
 
     /* --- Components --- */
     public Image portraitImage;

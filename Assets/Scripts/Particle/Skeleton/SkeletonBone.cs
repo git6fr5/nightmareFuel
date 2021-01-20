@@ -2,16 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HUDPanel : MonoBehaviour
+public class SkeletonBone : MonoBehaviour
 {
     /* --- Debug --- */
-    private string DebugTag = "[Entaku Island] {Status}: ";
+    private string DebugTag = "[Entaku Island] {SkeletonBone}: ";
     private bool DEBUG_init = false;
-
-    /*--- Components ---*/
-    public HUDHealthbar hudHealtbar;
-    public HUDPortrait hudPortrait;
-    public HUDToolslot hudToolslot;
 
     /*--- Unity Methods ---*/
     void Start()

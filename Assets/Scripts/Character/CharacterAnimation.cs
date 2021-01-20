@@ -6,7 +6,7 @@ public class CharacterAnimation : MonoBehaviour
 {
     /* --- Debug --- */
     private string DebugTag = "[Entaku Island] {CharacterMovement}: ";
-    private bool DEBUG_init = true;
+    private bool DEBUG_init = false;
     //private bool DEBUG_clips = false;
     //private bool DEBUG_sound = false;
 
@@ -14,9 +14,7 @@ public class CharacterAnimation : MonoBehaviour
 
     // Animation
     public AnimationClip idleAnim;
-    public AnimationClip walkUpAnim;
-    public AnimationClip walkDownAnim;
-    public AnimationClip walkSideAnim;
+    public AnimationClip runningAnim;
     public AnimationClip hurtAnim;
     public AnimationClip deathAnim;
 
@@ -31,9 +29,12 @@ public class CharacterAnimation : MonoBehaviour
 
     public AudioSource audioSource;
 
+    // Model
+    public Skeleton skeleton;
+    public Particle[] particles;
+
     /* --- Internal Variables --- */
-    [HideInInspector] public float ySpeed = 0f;
-    [HideInInspector] public float xSpeed = 0f;
+    [HideInInspector] public float speed = 0f;
     [HideInInspector] public bool hurt = false;
     [HideInInspector] public bool death = false;
 
@@ -92,19 +93,9 @@ public class CharacterAnimation : MonoBehaviour
         if (animated) { return; }
 
         /* --- Mid Priority --- */
-        if (ySpeed > 0 && walkUpAnim)
+        if (speed != 0 && runningAnim)
         {
-            animator.Play(walkUpAnim.name);
-            animated = true;
-        }
-        if (ySpeed < 0 && walkDownAnim)
-        {
-            animator.Play(walkDownAnim.name);
-            animated = true;
-        }
-        else if (xSpeed != 0 && walkSideAnim)
-        {
-            animator.Play(walkSideAnim.name);
+            animator.Play(runningAnim.name);
             animated = true;
         }
         if (animated) { return; }

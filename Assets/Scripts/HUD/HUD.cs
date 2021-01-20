@@ -7,7 +7,7 @@ public class HUD : MonoBehaviour
 
     /* --- Debug --- */
     private string DebugTag = "[Entaku Island] {Status}: ";
-    private bool DEBUG_init = true;
+    private bool DEBUG_init = false;
 
     /*--- Components ---*/
     public HUDMinimap hudMinimap;

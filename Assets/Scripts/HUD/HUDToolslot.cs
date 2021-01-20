@@ -7,7 +7,7 @@ public class HUDToolslot : MonoBehaviour
 {
     /* --- Debug --- */
     private string DebugTag = "[Entaku Island] {Tool Slot}: ";
-    private bool DEBUG_init = true;
+    private bool DEBUG_init = false;
 
     /* --- Components --- */
     public Image toolIcon;
