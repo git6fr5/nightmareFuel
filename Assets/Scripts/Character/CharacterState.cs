@@ -26,7 +26,7 @@ public class CharacterState : MonoBehaviour
     {
         if (DEBUG_init) { print(DebugTag + "Activated for " + gameObject.name); }
         //if (isClient) { hud.gameObject.SetActive(true); hud.Inspect(this); }
-        if (isClient) { vision.gameObject.SetActive(true); }
+        //if (isClient) { vision.gameObject.SetActive(true); }
     }
 
     void OnMouseDown()

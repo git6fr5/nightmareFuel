@@ -32,9 +32,8 @@ public class CharacterMovement : MonoBehaviour
 
         if (Input.GetKeyDown("p"))
         {
-            print(characterAnimation.particles[0].skeleton.root);
-            Skeleton.Attach(characterAnimation.skeleton.head, characterAnimation.particles[0].skeleton.root);
-            characterAnimation.particles[0].Create();
+            print(characterAnimation.particles[0].skeleton);
+            characterAnimation.skeleton.root.Attach(characterAnimation.particles[0].skeleton.root);
         }
     }
 
