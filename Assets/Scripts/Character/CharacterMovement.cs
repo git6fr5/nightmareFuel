@@ -34,6 +34,8 @@ public class CharacterMovement : MonoBehaviour
         {
             print(characterAnimation.particles[0].skeleton);
             characterAnimation.skeleton.root.Attach(characterAnimation.particles[0].skeleton.root);
+            characterAnimation.particles[0].gameObject.SetActive(true);
+
         }
     }
 
