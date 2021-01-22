@@ -6,6 +6,7 @@ TagManager:
   tags:
   - HUD
   - World
+  - Character
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - 
   - 
   - Ground
-  - 
+  - Character
   - 
   - 
   - 
@@ -42,4 +43,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: World
+    uniqueID: 3495103087
+    locked: 0
+  - name: Characters
+    uniqueID: 1329455229
     locked: 0

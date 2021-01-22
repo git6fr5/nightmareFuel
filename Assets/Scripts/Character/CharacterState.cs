@@ -12,6 +12,9 @@ public class CharacterState : MonoBehaviour
     /*--- Components ---*/
     public HUD hud;
     public Light2D vision;
+    public Collider2D hitbox;
+    public Collider2D hull;
+    public SpriteRenderer spriteRenderer;
 
     /* --- Info --- */
     public bool isClient;
@@ -20,6 +23,7 @@ public class CharacterState : MonoBehaviour
     /* --- Stats --- */
     public int maxHealth = 1;
     public int currHealth = 1;
+    public float depth = 0;
 
     /*--- Unity Methods ---*/
     void Start()
@@ -27,6 +31,11 @@ public class CharacterState : MonoBehaviour
         if (DEBUG_init) { print(DebugTag + "Activated for " + gameObject.name); }
         //if (isClient) { hud.gameObject.SetActive(true); hud.Inspect(this); }
         //if (isClient) { vision.gameObject.SetActive(true); }
+    }
+
+    void Update()
+    {
+        depth = -(transform.position.y + hull.offset.y);
     }
 
     void OnMouseDown()
