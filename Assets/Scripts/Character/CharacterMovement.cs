@@ -15,7 +15,9 @@ public class CharacterMovement : MonoBehaviour
     public CharacterState characterState;
 
     /* --- Internal Variables ---*/
-    private float speed = 5f;
+    [HideInInspector] public float speed = 5f;
+    [HideInInspector] public float horizontalMove = 0f;
+    [HideInInspector] public float verticalMove = 0f;
     private Vector3 velocity = Vector3.zero;
     private float movementSmoothing = 0.05f;
     private bool facingRight = true;
@@ -28,25 +30,35 @@ public class CharacterMovement : MonoBehaviour
 
     void Update()
     {
-        if (characterState.isClient) { Move(); }
+        if (characterState.isClient) { MoveFlag(); }
 
-        if (Input.GetKeyDown("p"))
+        /*if (Input.GetKeyDown("p"))
         {
             print(characterAnimation.particles[0].skeleton);
             characterAnimation.skeleton.root.Attach(characterAnimation.particles[0].skeleton.root);
             characterAnimation.particles[0].gameObject.SetActive(true);
 
-        }
+        }*/
+    }
+
+    void FixedUpdate()
+    {
+        Move();
     }
 
     /* --- Methods --- */
-    void Move()
+    void MoveFlag() // this should go in a player script
     {
         // Get the input from the player
-        float horizontalMove = Input.GetAxisRaw("Horizontal");
+        horizontalMove = Input.GetAxisRaw("Horizontal");
+        verticalMove = Input.GetAxisRaw("Vertical");
+    }
+
+    void Move()
+    {
+        print("hello");
         if (horizontalMove < 0 && facingRight) { Flip(); }
         else if (horizontalMove > 0 && !facingRight) { Flip(); }
-        float verticalMove = Input.GetAxisRaw("Vertical");
 
         // Apply the movement
         Vector3 targetVelocity = new Vector2(horizontalMove, verticalMove).normalized * speed;
