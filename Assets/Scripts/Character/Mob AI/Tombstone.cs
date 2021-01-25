@@ -12,12 +12,12 @@ public class Tombstone : MonoBehaviour
     public GameObject zombiePrefab;
 
     /* --- Internal Variables --- */
-    private float spawnInterval = 2f;
+    private float spawnInterval = 0.01f;
     private float spawnRadius = 4f;
     private float bufferRadius = 2f;
 
     private List<Zombie> zombies = new List<Zombie>();
-    private int maxZombies = 10;
+    private int maxZombies = 50;
 
     /* --- Unity Methods --- */
     void Start()
@@ -32,7 +32,7 @@ public class Tombstone : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
 
-        if (zombies.Count <= maxZombies)
+        if (zombies.Count < maxZombies)
         {
             Vector3 spawnLocation = RandomSpawnLocation();
             Zombie zombie = Instantiate(zombiePrefab, spawnLocation, Quaternion.identity, transform).GetComponent<Zombie>(); ;

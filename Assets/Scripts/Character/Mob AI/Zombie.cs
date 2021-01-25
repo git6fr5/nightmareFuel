@@ -34,8 +34,8 @@ public class Zombie : MonoBehaviour
         yield return new WaitForSeconds(delay);
 
         // Get a new direction for the zombie to move in
-        characterMovement.horizontalMove = Random.Range(-3, 3);
-        characterMovement.verticalMove = Random.Range(-3, 3);
+        characterMovement.horizontalMove = Random.Range(-3, 4);
+        characterMovement.verticalMove = Random.Range(-3, 4);
         StartCoroutine(IEZombieMove(Random.Range(minMoveDuration, maxMoveDuration)));
 
         yield return null;

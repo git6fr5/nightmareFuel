@@ -31,11 +31,13 @@ public class CharacterState : MonoBehaviour
         if (DEBUG_init) { print(DebugTag + "Activated for " + gameObject.name); }
         //if (isClient) { hud.gameObject.SetActive(true); hud.Inspect(this); }
         //if (isClient) { vision.gameObject.SetActive(true); }
+        depth = transform.position.y + hull.offset.y;
     }
 
     void Update()
     {
-        depth = -(transform.position.y + hull.offset.y);
+        depth = transform.position.y + hull.offset.y;
+        //print(name + ": " + depth.ToString());
     }
 
     void OnMouseDown()

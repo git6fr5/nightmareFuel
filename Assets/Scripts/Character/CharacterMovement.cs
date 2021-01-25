@@ -56,7 +56,6 @@ public class CharacterMovement : MonoBehaviour
 
     void Move()
     {
-        print("hello");
         if (horizontalMove < 0 && facingRight) { Flip(); }
         else if (horizontalMove > 0 && !facingRight) { Flip(); }
 
