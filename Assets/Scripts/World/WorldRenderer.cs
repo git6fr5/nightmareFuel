@@ -104,7 +104,7 @@ public class WorldRenderer : MonoBehaviour
 
         for (int i = 0; i < characterStates.Count; i++)
         {
-            print(characterStates[i].name + ", " + i.ToString());
+            //print(characterStates[i].name + ", " + i.ToString());
             characterStates[i].spriteRenderer.sortingOrder = i;
         }
     }

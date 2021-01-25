@@ -11,6 +11,9 @@ public class CharacterMovement : MonoBehaviour
 
     /* --- Components --- */
     public Rigidbody2D body;
+    public Hand forehand;
+    public Hand offhand;
+
     public CharacterAnimation characterAnimation;
     public CharacterState characterState;
 
@@ -39,6 +42,12 @@ public class CharacterMovement : MonoBehaviour
             characterAnimation.particles[0].gameObject.SetActive(true);
 
         }*/
+
+
+        if (Input.GetMouseButtonDown(0) && characterState.isClient)
+        {
+            //forehand.BeginAttack();
+        }
     }
 
     void FixedUpdate()
@@ -73,5 +82,8 @@ public class CharacterMovement : MonoBehaviour
 
         // Flip the player transform
         transform.Rotate(0f, 180f, 0f);
+
+        if (forehand) { forehand.Flip(); }
+        if (offhand) { offhand.Flip(); }
     }
 }

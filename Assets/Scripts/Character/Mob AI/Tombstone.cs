@@ -9,6 +9,10 @@ public class Tombstone : MonoBehaviour
     private bool DEBUG_init = false;
 
     /* --- Components --- */
+    public CharacterState characterState;
+    public CharacterAnimation characterAnimation;
+    public CharacterMovement characterMovement;
+
     public GameObject zombiePrefab;
 
     /* --- Internal Variables --- */
@@ -25,6 +29,7 @@ public class Tombstone : MonoBehaviour
         if (DEBUG_init) { print(DebugTag + "Activated for " + gameObject.name); }
         // Start the Zombie Spawner
         StartCoroutine(IEZombieSpawner(spawnInterval));
+        characterAnimation.skeleton.root.Attach(characterAnimation.particles[0].skeleton.root);
     }
 
     /* --- Methods --- */
@@ -35,7 +40,8 @@ public class Tombstone : MonoBehaviour
         if (zombies.Count < maxZombies)
         {
             Vector3 spawnLocation = RandomSpawnLocation();
-            Zombie zombie = Instantiate(zombiePrefab, spawnLocation, Quaternion.identity, transform).GetComponent<Zombie>(); ;
+            Zombie zombie = Instantiate(zombiePrefab, spawnLocation, Quaternion.identity, transform).GetComponent<Zombie>();
+            zombie.gameObject.SetActive(true);
             zombies.Add(zombie);
         }
         StartCoroutine(IEZombieSpawner(spawnInterval));

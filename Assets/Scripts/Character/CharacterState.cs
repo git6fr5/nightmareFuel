@@ -23,6 +23,9 @@ public class CharacterState : MonoBehaviour
     /* --- Stats --- */
     public int maxHealth = 1;
     public int currHealth = 1;
+    public float attackTime = 0.5f;
+    public bool isAttacking = false;
+
     public float depth = 0;
 
     /*--- Unity Methods ---*/
