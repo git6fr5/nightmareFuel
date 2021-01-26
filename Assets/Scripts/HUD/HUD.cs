@@ -12,6 +12,7 @@ public class HUD : MonoBehaviour
     /*--- Components ---*/
     public HUDMinimap hudMinimap;
     public HUDPanel hudPanel;
+    public HUDHealthbar hudHealthbar;
 
     /*--- Unity Methods ---*/
     void Start()

@@ -21,10 +21,12 @@ public class CharacterState : MonoBehaviour
     public Sprite portrait;
 
     /* --- Stats --- */
-    public int maxHealth = 1;
-    public int currHealth = 1;
-    public float attackTime = 0.5f;
-    public bool isAttacking = false;
+    [HideInInspector] public float maxHealth = 1f;
+    [HideInInspector] public float currHealth = 1f;
+
+    [HideInInspector] public float attackDamage = 0.5f;
+    [HideInInspector] public float attackTime = 0.5f;
+    [HideInInspector] public bool isAttacking = false;
 
     public float depth = 0;
 
@@ -45,5 +47,15 @@ public class CharacterState : MonoBehaviour
 
     void OnMouseDown()
     {
+    }
+
+    /*--- Methods ---*/
+    public void Damage(float damage)
+    {
+        currHealth = currHealth - damage;
+        if (currHealth < 0)
+        {
+            currHealth = 0;
+        }
     }
 }
