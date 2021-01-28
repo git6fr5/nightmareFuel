@@ -16,11 +16,10 @@ public class CharacterState : MonoBehaviour
     public Collider2D hull;
     public SpriteRenderer spriteRenderer;
 
-    /* --- Info --- */
+    /* --- Internal Variables --- */
     public bool isClient;
     public Sprite portrait;
 
-    /* --- Stats --- */
     [HideInInspector] public float maxHealth = 1f;
     [HideInInspector] public float currHealth = 1f;
 
@@ -55,7 +54,7 @@ public class CharacterState : MonoBehaviour
         currHealth = currHealth - damage;
         if (currHealth < 0)
         {
-            currHealth = 0;
+            Destroy(gameObject);
         }
     }
 }

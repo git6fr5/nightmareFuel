@@ -7,7 +7,7 @@ public class HealthBar : MonoBehaviour
 {
     /* --- Debug --- */
     private string DebugTag = "[Entaku Island] {HealthBar}: ";
-    private bool DEBUG_init = true;
+    private bool DEBUG_init = false;
 
     /*--- Components ---*/
     public Slider slider;
@@ -22,6 +22,7 @@ public class HealthBar : MonoBehaviour
 
     void Update()
     {
+        transform.right = Vector3.right;
         slider.value = characterState.currHealth;
     }
 

@@ -28,7 +28,7 @@ public class Zombie : MonoBehaviour
     private float baseSpeed = 1f;
     private float aggroSpeed = 3f;
 
-    private float baseDamage = 0.01f;
+    private float baseDamage = 0.1f;
 
     /* --- Unity Methods --- */
     void Start()
@@ -67,7 +67,7 @@ public class Zombie : MonoBehaviour
         yield return new WaitForSeconds(delay);
 
         // Get a new direction for the zombie to move in
-        if (isAggroing)
+        if (isAggroing && aggroTarget != null)
         {
             characterMovement.horizontalMove = Random.Range(0, 4);
             characterMovement.verticalMove = Random.Range(0, 4);
@@ -81,7 +81,7 @@ public class Zombie : MonoBehaviour
             }
             StartCoroutine(IEZombieMove(Random.Range(aggroMoveDuration, minMoveDuration)));
         }
-        else if (!isAggroing)
+        else if (!isAggroing || aggroTarget == null)
         {
             characterMovement.horizontalMove = Random.Range(-3, 4);
             characterMovement.verticalMove = Random.Range(-3, 4);
@@ -93,7 +93,7 @@ public class Zombie : MonoBehaviour
 
     void CheckAggro()
     {
-        if (isAggroing)
+        if (isAggroing && aggroTarget != null)
         {
             if (Vector2.Distance(transform.position, aggroTarget.position) > deAggroRadius)
             {
@@ -102,7 +102,7 @@ public class Zombie : MonoBehaviour
                 aggroTarget = null;
             }
         }
-        else if (!isAggroing)
+        else if (!isAggroing || aggroTarget == null)
         {
             Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, aggroRadius, playerLayer);
             if (colliders.Length > 0)

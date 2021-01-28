@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class GameRules : MonoBehaviour
 {
-    // Start is called before the first frame update
+    /* --- Debug --- */
+    private string DebugTag = "[Entaku Island] {CharacterState}: ";
+    private bool DEBUG_init = false;
+
+    /*--- Components ---*/
+
+    /* --- Internal Variables --- */
+    [HideInInspector] public static float gameDuration = 60f; // in seconds
+
+    /*--- Unity Methods ---*/
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (DEBUG_init) { print(DebugTag + "Activated"); }
     }
 }

@@ -7,6 +7,7 @@ TagManager:
   - HUD
   - World
   - Character
+  - Poison Cloud
   layers:
   - Default
   - TransparentFX
@@ -49,4 +50,7 @@ TagManager:
     locked: 0
   - name: Characters
     uniqueID: 1329455229
+    locked: 0
+  - name: UI
+    uniqueID: 3733713475
     locked: 0

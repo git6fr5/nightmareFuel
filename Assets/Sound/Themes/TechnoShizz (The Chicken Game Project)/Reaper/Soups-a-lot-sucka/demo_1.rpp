@@ -1,0 +1,2004 @@
+<REAPER_PROJECT 0.1 "6.11/x64" 1607521354
+  RIPPLE 0
+  GROUPOVERRIDE 0 0 0
+  AUTOXFADE 1
+  ENVATTACH 1
+  POOLEDENVATTACH 0
+  MIXERUIFLAGS 11 48
+  PEAKGAIN 1
+  FEEDBACK 0
+  PANLAW 1
+  PROJOFFS 0 0 0
+  MAXPROJLEN 0 600
+  GRID 3199 8 1 8 1 0 0 0
+  TIMEMODE 1 5 -1 30 0 0 -1
+  VIDEO_CONFIG 0 0 256
+  PANMODE 3
+  CURSOR 15
+  ZOOM 35.8596041380907 0 0
+  VZOOMEX 6 0
+  USE_REC_CFG 0
+  RECMODE 1
+  SMPTESYNC 0 30 100 40 1000 300 0 0 1 0 0
+  LOOP 1
+  LOOPGRAN 0 4
+  RECORD_PATH "" ""
+  <RECORD_CFG
+  >
+  <APPLYFX_CFG
+  >
+  RENDER_FILE ""
+  RENDER_PATTERN ""
+  RENDER_FMT 0 2 0
+  RENDER_1X 0
+  RENDER_RANGE 1 0 0 18 1000
+  RENDER_RESAMPLE 3 0 1
+  RENDER_ADDTOPROJ 0
+  RENDER_STEMS 0
+  RENDER_DITHER 0
+  TIMELOCKMODE 1
+  TEMPOENVLOCKMODE 1
+  ITEMMIX 0
+  DEFPITCHMODE 589824 0
+  TAKELANE 1
+  SAMPLERATE 44100 0 0
+  <RENDER_CFG
+  >
+  LOCK 1
+  <METRONOME 6 2
+    VOL 0.25 0.125
+    FREQ 800 1600 1
+    BEATLEN 4
+    SAMPLES "" ""
+    PATTERN 2863311530 2863311529
+  >
+  GLOBAL_AUTO -1
+  TEMPO 80 4 4
+  PLAYRATE 1 0 0.25 4
+  SELECTION 24 30
+  SELECTION2 24 30
+  MASTERAUTOMODE 0
+  MASTERTRACKHEIGHT 0 0
+  MASTERPEAKCOL 16576
+  MASTERMUTESOLO 0
+  MASTERTRACKVIEW 0 0.6667 0.5 0.5 0 0 0 0 0 0
+  MASTERHWOUT 0 0 1 0 0 0 0 -1
+  MASTER_NCH 2 2
+  MASTER_VOLUME 1 0 -1 -1 1
+  MASTER_FX 1
+  MASTER_SEL 0
+  <MASTERPLAYSPEEDENV
+    EGUID {78854627-18D9-48C0-B0FF-F29C0EAF1150}
+    ACT 0 -1
+    VIS 0 1 1
+    LANEHEIGHT 0 0
+    ARM 0
+    DEFSHAPE 0 -1 -1
+  >
+  <TEMPOENVEX
+    EGUID {FE19FB3B-6124-436B-8662-9B306190D7E3}
+    ACT 0 -1
+    VIS 1 0 1
+    LANEHEIGHT 0 0
+    ARM 0
+    DEFSHAPE 1 -1 -1
+  >
+  <PROJBAY
+  >
+  <TRACK {BBD2F4C6-8EEE-454D-88F3-D3C83C422BD1}
+    NAME Soups-a-alot-sucka
+    PEAKCOL 16576
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 1 0 -1 -1 1
+    MUTESOLO 0 0 0
+    IPHASE 0
+    PLAYOFFS 0 1
+    ISBUS 0 0
+    BUSCOMP 0 0 0 0 0
+    SHOWINMIX 1 0.6667 0.5 1 0.5 0 0 0
+    FREEMODE 0
+    SEL 0
+    REC 0 0 1 0 0 0 0
+    VU 2
+    TRACKHEIGHT 0 0 0
+    INQ 0 0 0 0.5 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {BBD2F4C6-8EEE-454D-88F3-D3C83C422BD1}
+    PERF 0
+    MIDIOUT -1
+    MAINSEND 1 0
+    <FXCHAIN
+      WNDRECT 6 540 1723 1080
+      SHOW 0
+      LASTSEL 4
+      DOCKED 0
+      BYPASS 0 0 0
+      <VST "VST3i: Dexed (Digital Suburban)" Dexed.vst3 0 "" 475117838{ABCDEF019182FAEB4447534244657864} ""
+        DrlRHO5e7f4AAAAAAgAAAAEAAAAAAAAAAgAAAAAAAAANGAAAAQAAAP//EAA=
+        /RcAAAEAAABWQzIhuBcAADw/eG1sIHZlcnNpb249IjEuMCIgZW5jb2Rpbmc9IlVURi04Ij8+IDxkZXhlZFN0YXRlIGN1dG9mZj0iMS4wIiByZXNvPSIwLjAiIGdhaW49
+        IjEuMCIgY3VycmVudFByb2dyYW09IjMiIG1vbm9Nb2RlPSIwIiBlbmdpbmVUeXBlPSIxIiBtYXN0ZXJUdW5lPSIwIiBvcFN3aXRjaD0iMTExMTExIiB0cmFuc3Bvc2Ux
+        MkFzU2NhbGU9IjEiIG1wZUVuYWJsZWQ9IjAiIG1wZVBpdGNoQmVuZFJhbmdlPSIyNCIgd2hlZWxNb2Q9IjAgMCAwIDAiIGZvb3RNb2Q9IjAgMCAwIDAiIGJyZWF0aE1v
+        ZD0iMCAwIDAgMCIgYWZ0ZXJ0b3VjaE1vZD0iMCAwIDAgMCI+PGRleGVkQmxvYiBiYXNlNjQ6c3lzZXg9IjQxMDQudk9ELkkuQi5HLlRLaTB4WC4uLi4uLi4uMy52WC4u
+        ZkIuRXlYdExGLi4uLi4uLi5OLkxGQS56LlB3TGxLaUEuLi4uLi4uZkMuaUEuLk8uVExpd3hYLi4uLi4uLi4zLnZYRC5QRi5FeVh4TEYuLi4uLi4uLk4uTEYuLlhESndM
+        MVhiQS4uLi4uLi5mQy5pSS4uaU0xWGlJaUx4SHlHT0xCLi4uUExYTFVYNEFSUG1FVlp0NEJSTG8uSGlVRVQuREMuLi4uTkhQRUUudlRSSnZ3WGJvRS54Li4uLmZBQVpR
+        Li53bmpCZkhsWGhBUEo4LmpCSGd2UUQudk1PbnZLaXdFVy5meVYuTC5iRExGQS5iQ0hmelFXZG9FLkRBdlhCLi5BWFFQLjJmaUJ1TGxYLkF2SWlBdkNYZ2ZYRERmWGhJ
+        bFgwRGlMeDN2Q2dMQkQuLkFDTEVUVVJrVFFmLkJIZkxsSzFUMFhmTUYuNC4uLi5uQ0FpVXZSaTRoSGFNMVdpQS4uLi4uLnlBZlNHRENWSVVTV2kwRC4uLi4uLi5mYmJy
+        RURDZkVON3owWE1BLi4uLi4uLkxFRU9JLkdYZ0NPY01WUy4uLi4uLi4uaWZ3VEJIbFNmdkJPaVVFLi4uLi4uLmZKLkxGLkdYVVdpTUYuei5QV1E3dkguLi4udy5mUGtF
+        RmNzVUZaeFFsYmlZUkZvTEZSSEF2SS5EdkN2UWZURC52WG1qUUhpY0RQLmJCLi43LmIuUENBLkxGU2k4eFhYQUYubS4uLk8uRy5iSS4uaWNSRmdMMVEuQXZJLkR2QzNQ
+        dlhELnZYbGpBSWlnRFIuYkIuLjcuTi4zREIuTEZTaTh4WFhBRi5tLi4uT2ZDLi5ILi5UODBXN0hpTHhIeUdOVEIuLi4uUFguRVJBSTBTSEFCSGYueFh2RC5GZDhELi52
+        aU0uRHZRTExsRy43MEhIdndYRkEuLnoudkhDdkVET1kuLmVBUkZnTGxRLi4uLi4uLi5hYndYQi5QVXhIZkJpWUQuLm5DLmsudkIuN2pELnJqS1B2dlhGQS4uemYuLkNy
+        QkNPUS4uSjR3RmVMbFEuLi5PLi4uLmljd1hCLmZXQzhFT3hIaUx4SGZDaERCLi5qQUNDZ2xidTBWWGZUQ0hiVWtPWHp4WGlBLi5mLi4uQ1B3LkxvUFRUb2lEakxWVy4u
+        LkguSEEuNnZRVkQudlVzclFLaU1GLi4ueFguTGYuUExsLi5Ua09YM3hYaUEuLmYuLi5Ddi4uR29QLlZvaURqTFZXLi4uSC5IQS5DUFFWREQuVnNyUUtpTUYuLi54WC5M
+        Zi5QTGwuQS4uLi4uZkx4SGlMQ2ZQRi5uLi5Idi5TZ1lXWnpFbGJmLkJXLi4uRGVMMVhpQS4uLlAuLlBNLlRCLmZRLi5RRWFNMVguLi4uLi4uVC4zai4uM0IuT1hCV2lN
+        Ri4uLi4uLi5FLmlJLi4uLi4uZkwxWGlBLi4uLi4ubkguVC5MbEwuamZEZk0xWC5mQS5FLi5OLkhFLmk0Qi5iWFJXaU1GLi4uLi4uLi4uaUVQQWlNMVhpSWlMeEh5Lkti
+        QS5PLlBETExFYXVNMGNyQXhLdXZrU2VZekJpQTFSLmJDLmEuUGIuN0NBLmZoR1lQeFhab0UueS4uLi5Edy5pSS4uOTdrUUxMRlhPQS5MLjNBLlkuLlFELi5KZGpBSWlv
+        a1YuTEMuLi5QWFdMbC5BanlXRnN2WGZzRS5oLmZILmpGLkhJLi5uM1FGakxsVlpBdkwuLi4uSUx3WEIuUE5TQUVVcUxpTHhUUEFiLmlIaWdCRk9JREhHVWxhMWtsY2JN
+        MUVLM3ZYWXdFLk8uLi5EWEUuMFBTLkI0dkJiM1VWWkF2Qy4uLkFWUS5SRi4uVk5MaklpazBRLjcuLi5QZksuZmtLLmZrQ0djeFhZZ0UuTy4uLkQzQy5nSS4uaEExRnBM
+        RkdSQXZDLjMuQXZBLlhENzJYSmIuS2lBVlYuNy4uTlAuYi5MRi4uTDFYaU0xSXhUaUtON1BBLkxGLnpBdlRBY0VIRTBESFVBRUh5bnhIUUwxWGlBZkcuWC4uZk0uS0Iu
+        dkxRSGhFaU0xWC4zQS5RLi5YQkxsLi5uaElUM3dYaU1GLmYuLi4uLkZCaUkuLjBuUklZTDFYaU1sRy5MLi4uTWZPLkxWTVFIeEVpTTFYLjNBLk0uLlBCSEYuaW9oSVQ3
+        d1hpTUYuZi4uLi4uREJpQXZYaU0xVGk4eE14SHkuTUQuLi5URUJMdmpRT0lVWTVBeEpxdjBYWExGSi4udlguLi4uLi5QTi4uZi4uTEZIaWdCLi5MRi4uLi4uLmpDLmlB
+        dkxpTXhYbi4uLmhBLi4uLi4uNC52WC4udlhtTEZKLi52WC4uLi4uLlBOLkxsLi5MVktpZ0IuLkxGLi4uLi4uakMuaUlmRmlNeFhuTDFRLi4uLi4uLi40LnZYQnp2WGlN
+        Rkp4SGlMeDdBQlQ3akdCYkFGRTR6UE9Va1NUVWpUU3N2Q1dmaVNLTUYuLi4uLi4uRy5pVVBJaU0xWDJMMVhpQS4uLi4uLnZBZlcuLnZCT2JRTk5zelguLi4uLi4uRi5M
+        VkFsTDFYaWd5WGlNRi4uLi4uLi4uLmRBLi5LN3ZFMTN6UmlBLi4uLi4udkF2WEVYeFhpTVZNaU0xWC4uLi4uLi5OLjNFLi5MRkdpTWxMeEhpTEQ3ZksuM1BLMGZBVW5V
+        bWFqVWxiZi54TC5UVUNxSHlYLi5mQy4uLi5OQXZUSC4uQ1dVeEowTEYuLjMuLi4uLkQuTEZBLmp3VWhyaE5pQS4uTi4uLi4uRi5pUS4uLmIwSnE3eFguLmZDLi4uLjMu
+        dldELi4uWXd5SkFNRi4uMy4uLi4uWC5IRUMuN1RFN3J4WFBBLi5OLi4uLmZDLmlRLi4uLi4uLkhpTHhIU0VPbkFFaS5QRExUelhuOFZRaWcxYWZMU01HSEJLaVFrRy5E
+        aS4uTC5URFRDRC5Id0JvWHhYNnZBLnguLklDLkRCYkkuLlZmUElxTDFVcy5QTVEudi5JZy5RSi4uSFFyd0ppb0RQLm5CLi4uLkpFLmwuLkhnRFp2d1hHUUMudFB2SENI
+        Z0FSSS4uN1hQRWtMbFcwLmZYLi52Q1hrdlhCLnZYaU0xWHhIaUx4ZnZBcC4uLi5EQ0NzRGpTQXd6U0dBUkxzUFJGdzd3WERBLi4uLi4uLmZDQjkueFJrWGdFeExsRU8u
+        Li4uLi4ubjh2WEouLklqWEFLaW9SSS4uLi4uLi5WQXZCTi5uQkRnanhYZi4uLi4uUEEuLnkuaW8uLllmZ0VhTGxQLi4uLi4uLi5YQS5JZC52SFJYd0hpQTBKLi4uLi4u
+        Li5DTGxCLkwxWGlNbEx4SGlMRHZ2SS5YLi5YTEFUdGp6UEVBaEwwM1JMaXdDSndMMVcuLi4uLi4uLjMuZlNHM3hYN0xSTGk4RS4uLi4uLi4uSi5iMEF0TEZPZkR5WGVB
+        Li4uLi4uLmZDLlNjLkRaY3YuR0xsVy4uLi4uLi4uNi4uTkZEeVh3WEJHaTRFLi4uLi4uLnZOLi5rLitNMUYwcnhYYUEuLi4uLi4uZkMuaUkuLmlvU0tYSENMYklpLkhM
+        Qi4uLlBMWFhEU0VnVVJmLkJIZlB5WFVNbEtNd2tYLmJSTVQudk8uMy5BLkxsVlZiQ1RjVUUudkxGREI3Qy5KSS4uaW9oRUZNVlg3LnZJYnNUQisuZlJCLnZYU1l3UGl3
+        RVQuSFJCLi52Ty5qay4uTEZRbUwxWGlNVlguLlBQLjdDLlJJLi5TY2hIOC4xWGNBLi4uLi4uKy52WEIuZldDOEVPeEhpTHhEd0F5YkIuLmpDRkFJRVRmSGlNdi5DSGZM
+        bEsudndYY2NFLjEuLi4uREMuR1EuLmk0Qi5iTFZXV0FmTS4uLi40LlBTQi52WHQuLkdpMDBVLlhDLi4uUEpEUGsuLjNSSFRMeFhiUUUuLi4uLi5ILkNpRS4uaU0xWFlM
+        MVhpQS5KVGIuLnZBUFcuLmZMaU1sR2lNMVguLi4uLi4uYi5MRkEuTDFYaU1sTHhIaUxBWGZJZy4uLjRmUVB4QTJKQlVtZDVJMGJOOGtRY0xGWEtBdk0uckQuNEh2WEQu
+        UEZZdlBPaU0xWC5MQy4uLlBOLlRrLi5EeFdGMHdYaU1GLnYuZkcuREcuWlEuLnhqQUNGTWxWZ0F2TC4uLi40UHdYQkQuR2VZVEdpQTFTLi5DLkNBUC5EbkVBLkhSRkxE
+        eFhpa0MueS4uLi5qQ0JpSS4uSlRmQUZIaUx4SGlFc1RoSmxQQkZYUGtUV0FCSGYuQkhmLnhUTW5TRGlva1YuLlIuLi5QSC5Ea0guSEVDZS53WFhnRS5rRC4uLkRCLjYz
+        Li5ZTUZOakwxWGlBLi4uSC4uby52VC4uUERlWFFIaU0xWC4uLi5HLlBKLkxsLi4zakNLandYUmMwS0wuLi4uREUuQUlCLlEuaEhkTDFYaUEuLi4uLi5RQXZYQi52WGlN
+        bFB5SGlMeGJQQ2lNZkcuSEFGTWtqVElRelNSQVJMZjNFS28zeFgrWEMuaUhUQU5qaS5PQUEuZUVSTGlMMUwxLlBKLlAuQzZIZ1RGLmZXVy5UTWlNaU0uYkRMR1BmTlJi
+        REEuSGpFcGJ4WHlUQy5tYnhBTFRmQ2lJUC5pVXdYYkxGLi4udktkbi5CRklBU0JEdlhVTEZHaUEuLi5uZkdKZmZhVkxsLkF6elYzdnlMeEhpTEd6LlAuLnZYeWZBUUVZ
+        VVJMQUJVQU16UktuUUFiTDFXLi4uLi4uLi42LnZSRUxoQlkuZkppNEUuLi4uLi4uLk4uWERBaWtQRi5ueFhkQS4uLi4uLi5mQy5PTWZTTC5RREdMbFcuLi4uLi4uLjY3
+        bVUuLlRELmYuR2lFbFUuLi4uLi52Ti4uMC4wbndCWmJ3WC4uLi4uLi4uLmZDLmlBUFFSQS4uTkhDTXZIQ0RGTEIuLi52Ti5IVVVNSURTRUFCSGZEeVhQMy5EeEh4WC5i
+        Qi4uLi5ILlBESC5idkNRUHhYVW9DLm0uLi4uLkIuaUFBLkZ6dkJYWFNVaUF2SS4uLi4zLnZWRC4uRk9Ed0lpVUVILmJCLi4uLk4uTEZBLmYuQ09UQU1VTUYubS4uLi5m
+        RC5Wdy4uZ1BnRm1MVlUwLnZJLi4uLkhBdlhGLnZYaU0xWHhIaUx4VC5DTHZQQS5mQkNDRXpUQ0VEUUVBaEx3TDFYaU0xWGlNRi5DTUYuLi4yLmljLkRpTTFYaU0xWGlB
+        dlBpTUYuLkxQVy4ueFhpTUZRaU0xWC5yeFhpQS5CQ0wxQUxMMVhpTTFYaU1GLnFMMVguZncuaVEuSGlNMVhpTTFYaUEuRS5MRi5QTHZYR2Z2VGlNMVhpTTFYLlBBLmlB
+        Li5DbkVDTU0xWGlNbEx4SGlMZWouLi4uLi55ZndQclBES0VJRktGQUJIWGZrS2t2eVguLi4uLi4uLjNMdlhSYi5HWEFTSTdMRi4uLi4uLi4uTkNMbENJLkJWdFRCT2lB
+        Li4uLi4uLmZ5LmlvdkNqamtLa3Z5WC4uLi4uLi4uM0x2WEouUEtYNFJJN0xGLi4uLi4uLi5OQ0xGQUtMRlZ1WHhYaUEuLi4uLi4uZnkuaVEuLmlNMVhpSWlMeEh5R0hM
+        Ri4uLnZNTFBVY3RRMVR6RUZjaTRrSGRIUUlpY0RGLlhCLkF3dkRQamlGSGJnR1ozeFhRVUMueFhELk9IVkJyUC4uZFh4THNMRlJiLnZKOFB3LlpEUU5CLlBLV1B4Smlz
+        VE0uLi4uLi52TEZMbC4uTDFGN25RUmlBLi4uN1FCQ2ZRQ2lJLi5pVVFJcEwxWGFBLi4uLi4uamt2WEIudlhpTTFYeEhpTHhYdkNYalNCWURDQ3NiMFNCSURTRUFSTHNq
+        Q0hNNHdYaW9DLkouLi5EZkNCaUEuLkszUUZiTDFYLi5mQi4uLkEzZi5XSi5mRkdRd0lpTUYuLi4uLi5QLk5IekVBLm52WFRqeFhpQS4uLi4uLi5mQ0FjQVAuUkxGRWlN
+        MVguLi4uLi4uLjNmZlZELi5HaVF3SGlNVkQuLi4uLi4uTkRMRi4uTGxYS3dpTHhIaUxQTHZIWUEuLkhmZ1FJd0RVRUlVS1NjRVRUbi5HWDMwVC5BZkoxLlAuM3YuUEYu
+        dkdIYkFHaWNrUC52UkFOTC5OSHZrLi5uRExMUFJUaVFELnVmUEMuZkNFaUkuLlhuUkNKTEZXQkFQS0l2Li4zLlBPRC5mR3RmLkNpTTFQLnpCQkxELk4uUGsuLnZqRER2
+        QlVpWUQucm5QQy4uR0VpSS4uZE16VzdIaUx4SGkuTmZDUS43eUVYTFVQSEVqVEFBQkhmLnhYaVFRTmlNbEIuLi4uLi4uTi5yaUhpY3ZYaWt3WGlNRi4uLi4uLmZDLnNY
+        UU1pTDFYY0wxWGlBLi4uLi4uMy52WEpueEVpTVZGaU0xWC4uLi4uLi5OLkxsQ0dzZ0Vpb1JVaU1GLi4uLi4uZkMuUklCLm5MMVhqTDFYaUEuLi4uLi5QQXZYVFhQUGlN
+        MVh4SGlMeDNmQWkuLi4uREMuRXdUUUNRa1RPNERId0xGLi4udlhpTUYuTy4uLkRiLi5MSS4uS294UWhMMVhpQXZDLi4uQXlBdlhCLnZYSDhRRC5YRC4uNy4uLlB2Ty5M
+        RkQuTDFYakx4WGlBLi5PLi4uRHJDLmlJLi5pQS4uLkwxWGlBdkMuLi5BbUFQVS4uLk1wYmpIaU0xWC43Li4uUHZYLkxsLi5MMVhpTWxMeEhpTFc3dkZuLkEuZmZnUEE0
+        elJTd0JIVDRCSFhMMVhZendGZUxGLi4uLi52QS5WLi52WGlNbEZGVUNNaUEuLi4uLkIuWFQuLnp2WGljUVNNOEQuLi4uLi5mQy5Ndy4uNUwxWGtMMVhpQS4uLi4uLjMu
+        dlhCLnZYaU0xRU0welNpQS4uLi4uTi5URENYandYaVV4WGlNRi4uLi4uLmZBLlZRLkZpTTFYaUlpTHhIQ0JOanYuRy4uRExMRWF1YzJMREFCVGdRVk5mempHaU1sTi5u
+        Li4uUC5MRExWLllyZkdZdndYaUEuLkouLi5EZkNBYmcuLlpiREVtTDFYLi4uLi4uLkFIUVBXeVQuQkpQUUppTUYuLi4uLi4uLk5FemtDLkh3WFRQeFhpQS4uLi4uLi4u
+        VEFaUS4uYkxGRWlMMVhRLi4uLi4uLjNUdlhMLmZYaHNET3hIaUx4LncuaUxsQkguQ0NMWXpTZkwwVUVVRFRmZjA4IiBiYXNlNjQ6cHJvZ3JhbT0iMTYxLmlZUkZvTEZS
+        SEF2SS5Edi5DLi4uQUhFLkIuZkNpY1JGZ0wxUS5BdkkuLnYuQy4uLi5QQy5CLmZDaXd6WHVMRlZmQXZJLi52LkMuLi4udkUuQS5mQ2ljUkZnTDFRLkF2SS5Edi5DLi4u
+        QUxGLkIudkFpWVJGakxGUkhBdkkuLnYuQy4uLi4zRC5ELnZBaXd6WHVMRlZmQXZJLi52LkMuLi4uLi4uQS52QVQ4MFc3SGlMeEh5R0ZEUEkuLi4uLi4uQVguRVJBSTBT
+        SEFCSGYueE8uLi4uLkROIi8+PG1pZGlDQy8+PC9kZXhlZFN0YXRlPgAAAAAAAAAAAEpVQ0VQcml2YXRlRGF0YQABAUJ5cGFzcwABAQMAHQAAAAAAAABKVUNFUHJpdmF0
+        ZURhdGEAAAAAAAAAAA==
+        AEZhY3RvcnkgUHJlc2V0czogUEhBUk9IICAgIAAQAAAA
+      >
+      PRESETNAME "Factory Presets: PHAROH    "
+      FLOATPOS 0 0 0 0
+      FXID {0FD915CA-34D5-4AA4-A755-EE32D8ABB40F}
+      WAK 0 0
+      BYPASS 0 0 0
+      <VST "VST: FV-70 Guitar Preamp v.1 (x86) (ronaldpassion@yahoo.com) (mono)" "FV-70 Guitar Preamp v.1.dll" 0 "" 1180055344<5653544656373066762D373020677569> ""
+        MDdWRu5e7f4BAAAAAQAAAAAAAAABAAAAAwAAAAAAAAA4AAAAAQAAAAAAEAA=
+        MzMzPwAAAACamVk/MzOzPpqZ2T4Urgc/TEVUJ1MgUk9DSyEhIQAgQWxsIFByb2dyYW1zANgRkQU=
+        AExFVCdTIFJPQ0shISEAEAAAAA==
+      >
+      PRESETNAME "LET'S ROCK!!!"
+      FLOATPOS 0 0 0 0
+      FXID {C86BE8F6-6C70-4EF4-85C7-4EF6974A9137}
+      WAK 0 0
+      BYPASS 0 0 0
+      <JS guitar/distortion ""
+        1.000000 2.000000 -25.000000 2.000000 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+      >
+      FLOATPOS 0 0 0 0
+      FXID {60FCFF52-2E95-4097-BC22-5A3E7CB263F2}
+      WAK 0 0
+      BYPASS 0 0 0
+      <VST "VST: ReaEQ (Cockos)" reaeq.dll 0 "" 1919247729<56535472656571726561657100000000> ""
+        cWVlcu5e7f4CAAAAAQAAAAAAAAACAAAAAAAAAAIAAAABAAAAAAAAAAIAAAAAAAAA6gAAAAEAAAAAABAA
+        IQAAAAYAAAAAAAAAAQAAAKrRlM/WT0NAgO21oPfGsD4AAAAAAAAAQAEIAAAAAQAAAH9MikzMRFFAgZa/2YSy7T8AAAAAAAAAQAEIAAAAAQAAAH5NEFLaZYxAf2i88nj0
+        9j8AAAAAAAAAQAEBAAAAAQAAAAAgthNLF7RAAaWNe9284j8AAAAAAAAAQAEIAAAAAQAAAH9eqwC0KnFAs6ONe9284j+AmZmZmZkMQAEIAAAAAQAAAEszvK82UMJAf7NE
+        gg4N4j8AAAAAAAAAQAEBAAAAAQAAAAAAAAAAAPA/AAAAAMUDAACLAgAA
+        AAAQAAAA
+      >
+      FLOATPOS 0 0 0 0
+      FXID {F8F4C241-07EF-4EAF-A1FC-86F2939FCA9C}
+      WAK 0 0
+      BYPASS 0 0 0
+      <VST "VST: ReaXcomp (Cockos)" reaxcomp.dll 0 "" 1919252579<5653547265786372656178636F6D7000> ""
+        Y3hlcu5e7f4CAAAAAQAAAAAAAAACAAAAAAAAAAIAAAABAAAAAAAAAAIAAAAAAAAACAEAAAEAAAAAABAA
+        OAAAAAQAAAAAAAAAAABpQAAAAAAAAPA/2+OAWtWsez8AAAAAAAAAQAAAAAAAAAAADwAAAJYAAAAFAAAAEQAAAAAAAAAAQI9AAAAAAAAA8D9iv67myGSMPwAAAAAAAABA
+        AAAAAAAAAAAPAAAAlgAAAAUAAAARAAAAwDY+8L3zxECTbenMlgnHP2BZVeNbvH8/AAAAAAAAAEAAAAAAAAAAAA8AAACWAAAABQAAABEAAAAAAAAAAHDXQEnNXjKY0MM/
+        m/JqS/aFZz8AAAAAAAAAQAAAAAAAAAAADwAAAJYAAAAFAAAAEQAAAAEAAAABAAAAAAAAAAAA8D8AAAAAAAAAAAAAAAAAAAAA
+        AAAQAAAA
+      >
+      FLOATPOS 0 0 0 0
+      FXID {F10106DB-8D35-4014-BAD6-538788401914}
+      WAK 0 0
+    >
+    <ITEM
+      POSITION 24
+      SNAPOFFS 0
+      LENGTH 6
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0
+      FADEOUT 1 0 0 1 0 0
+      MUTE 0
+      SEL 0
+      IGUID {FD635A5A-DCFB-42F8-B4F0-58348275CA88}
+      IID 2
+      NAME Soups-a-alot-sucka.mid
+      VOLPAN 1 0 1 -1
+      SOFFS 0 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {B09A33A4-6C20-4092-AE0F-BAF05D257C0D}
+      <SOURCE MIDI
+        HASDATA 1 480 QN
+        CCINTERP 32
+        POOLEDEVTS {650F472B-09F6-4FC8-98DE-9BBAB257B933}
+        <X 0 0
+          /1kCAAA=
+        >
+        E 0 c1 21 00
+        E 0 c2 24 00
+        E 0 c3 25 00
+        E 0 b2 07 64
+        E 0 b2 0a 40
+        E 0 b2 5b 00
+        E 0 b2 5d 00
+        E 0 b3 07 64
+        E 0 b3 0a 40
+        E 0 b3 5b 00
+        E 0 b3 5d 00
+        e 0 b1 07 64
+        e 0 b1 0a 40
+        e 0 b1 5b 00
+        e 0 b1 5d 00
+        e 0 91 23 50
+        E 0 b1 79 00
+        E 0 b2 79 00
+        E 0 b3 79 00
+        e 119 91 23 00
+        e 1 91 2f 50
+        e 119 91 2f 00
+        e 1 91 23 50
+        e 359 91 23 00
+        e 1 91 21 50
+        e 359 91 21 00
+        e 1 91 21 50
+        e 119 91 21 00
+        e 121 91 23 50
+        e 119 91 23 00
+        e 1 91 24 50
+        e 119 91 24 00
+        e 121 91 26 50
+        e 119 91 26 00
+        e 241 91 23 50
+        e 119 91 23 00
+        e 1 91 2f 50
+        e 119 91 2f 00
+        e 1 91 23 50
+        e 359 91 23 00
+        e 1 91 21 50
+        e 359 91 21 00
+        e 1 91 21 50
+        e 119 91 21 00
+        e 241 91 24 50
+        e 239 91 24 00
+        e 1 91 23 50
+        e 359 91 23 00
+        e 1 91 23 50
+        e 119 91 23 00
+        e 1 91 2f 50
+        e 119 91 2f 00
+        e 1 91 23 50
+        e 359 91 23 00
+        e 1 91 21 50
+        e 359 91 21 00
+        e 1 91 1f 50
+        e 359 91 1f 00
+        e 1 91 1d 50
+        e 119 91 1d 00
+        E 481 b0 7b 00
+        CCINTERP 32
+        CHASE_CC_TAKEOFFS 1
+        GUID {275CCDB4-B571-4899-9E84-5EC766873480}
+        IGNTEMPO 0 120 4 4
+        SRCCOLOR 3
+        VELLANE -1 100 0
+        CFGEDITVIEW 1960.489796 0.684834 62 12 0 -1 0 0 0 0.5
+        KEYSNAP 0
+        TRACKSEL 0
+        EVTFILTER 0 -1 -1 -1 -1 0 0 0 0 -1 -1 -1 -1 0 -1 0 -1 -1
+        CFGEDIT 1 1 0 1 0 0 1 1 1 1 1 0.25 16 90 1670 1000 0 0 0 0 0 0 0 0 0 0.5 0 0 1 64
+      >
+    >
+  >
+  <TRACK {ECD29738-C272-47D2-8F6A-1ECF79BA26AF}
+    NAME Soups-a-alot-sucka
+    PEAKCOL 16576
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 1 0 -1 -1 1
+    MUTESOLO 0 0 0
+    IPHASE 0
+    PLAYOFFS 0 1
+    ISBUS 0 0
+    BUSCOMP 0 0 0 0 0
+    SHOWINMIX 1 0.6667 0.5 1 0.5 0 0 0
+    FREEMODE 0
+    SEL 0
+    REC 0 0 1 0 0 0 0
+    VU 2
+    TRACKHEIGHT 0 0 0
+    INQ 0 0 0 0.5 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {ECD29738-C272-47D2-8F6A-1ECF79BA26AF}
+    PERF 0
+    MIDIOUT -1
+    MAINSEND 1 0
+    <FXCHAIN
+      WNDRECT 106 0 719 459
+      SHOW 0
+      LASTSEL 0
+      DOCKED 0
+      BYPASS 0 0 0
+      <VST "VSTi: Big Blue Organ (x86) (Daniel SMith music)" "big blue organ.dll" 0 "" 1145521457<5653544447453162696720626C756520> ""
+        MUVHRO5e7f4CAAAAAQAAAAAAAAACAAAAAAAAAAIAAAABAAAAAAAAAAIAAAAAAAAA7gQAAAEAAAAAABAA
+        CgAAAEEgbGl0dGxlIGNodXJjaHkAbAAAAAAAgD8AAAAAAAAgQQAASEIAAEA/AABIQgAAAACPwnU9mpkZPo/CdT2amRk+exQuPilcDz6PwvU8CtcjPAAAgD8AgARGZ2YK
+        QZmZCT8AAIA/AACAP83MTD8AAIA/zcxMP83MTD/NzMw9AAAAAE1lbGxvdyBEb3VidABsAAAAAAAAAAAAAD8AAKBAAABIQmZmZj8AAEhCzcxMP5qZmT4AAIA/AAAAP83M
+        zD2amZk+AAAAAAAAAAAAAAAAAACAPgAA+kXNzIw/MzNzPwAAgD8AAIA/zcxMPwAAgEAzM3NAzcxMP83MTD7NzMw9Um9jayBPcmdhbgBsAAAAAACAPzMzMz8AAKBAAABI
+        QmZmZj8AAEhCZmZmP2ZmZj8AAIA/AAAAAAAAAAAAAAAAzczMPs3MzD4AAIA+AAAAPwCgDEYAAKA/MzNzPwAAgD8AAMA/MzOzPwAAgEAzM3NAzcxMP83MzD6amZk+T3Jn
+        YW4gcGFkAGwAAAAAAABAAAAAAAAA+kMAAHpDMzMzPwAAekTNzEw/zczMPgAAgD8zMzM/zczMPQAAAD/NzMw9zcxMPgAAAAAAAIA+AAD6Rc3MjD8zM3M/AACAPwAAAD+a
+        mZk+AACAPwAAgD/NzEw/zczMPgAAAABGdXp6eSB0cmlhbmdsZQBsAAAAAABAQAAAAD8AAKBAAABIQgAAgD8AAEhCZmYmPwAAAAAAAIA/KVyPPgAAAAA9Clc+AAAAAAAA
+        AAAAAAAAAAAAAACAu0UzM7M/MzNzPwAAgD8AAIA/zcxMPwAAgEAzM3NAzcxMP83MTD7NzEw+U21vb3RoIHBlcmN1c3Npb24AbAAAAAAAAAAAAAA/AACgQAAASEJmZmY/
+        AAB6Q9ejMD+amRk+AACAPwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM3MTD0AoIxFAACAPwAAgD8AAIA/AACAP83MTD8AAIBAMzNzQM3MTD/NzEw+zczMPURpc3RvcnRv
+        LW1hdGljAGwAAAAAAABAmpmZPgAAoEAAAEhCZmZmPwAAFkPXozA/mpkZPgAAgD/NzMw+AAAAAHsULj4AAAAAKVwPPgAAAAAAAIA+AIC7RWZmrkBmZuY+AACAPwAAgD/N
+        zEw/AACAQDMzc0DNzEw/zcxMPpqZmT5BYmFuZG9uZWQgdGhlYXRyZQBsAAAAAACAQJqZmT4AAAxCAACMQs3MTD8AAK9D16MwP5qZGT4AAIA/CtcjPwrXozt7FC4+AAAA
+        AClcDz4AAAAAAACAPwEA+kSambk/9igcPwAAgD8AAIA/zcxMPwAAgEAzM3NAzcxMP83MzD7NzMw+Q2hlZXNlIE9yZ2FuAGwAAAAAAIA/AAAAPwAAoEAAAEhCZmZmPwAA
+        SEIAAIA/zcxMPwAAAAApXA8/AAAAAClcjz4AAAAAAAAAAHsULj4AAIA+AKAMRjMzkz9mZmY/AACAPwAAwD+amZk/zcxMQDMzc0DNzEw/zcxMPs3MTD5CcmVhdGh5AGwA
+        AAAAAIA/AAAAAAAAcEEAAEhCZmZmPwAAyEIfhes+AACAPwAAAACamZk+7FE4PgAAAAApXI8+ZmbmPgAAAAAAAIA+AOCrRZqZ2T9mZmY/AACAPwAAgD/NzEw/AACAQDMz
+        c0DNzEw/zcxMPgAAAAA=
+        AEEgbGl0dGxlIGNodXJjaHkAEAAAAA==
+      >
+      PRESETNAME "A little churchy"
+      FLOATPOS 20 48 536 374
+      FXID {18CECED3-08AA-4FAF-B766-61F8692D57D3}
+      WAK 0 0
+    >
+    <ITEM
+      POSITION 0
+      SNAPOFFS 0
+      LENGTH 12
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0
+      FADEOUT 1 0 0 1 0 0
+      MUTE 0
+      SEL 0
+      IGUID {75FCE8D8-2B7B-40B2-A389-6177A998D734}
+      IID 37
+      NAME Soups-a-alot-sucka-glued
+      VOLPAN 1 0 1 -1
+      SOFFS 0 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {CA72C260-DA39-4D50-9422-9979F9E12150}
+      <SOURCE MIDI
+        HASDATA 1 960 QN
+        CCINTERP 32
+        POOLEDEVTS {3E0B716B-B976-49AD-877F-4BEB7FE95819}
+        <X 0 0
+          /1kCAAA=
+        >
+        E 0 c1 21 00
+        E 0 c2 24 00
+        E 0 c3 25 00
+        E 0 b2 07 64
+        E 0 b2 0a 40
+        E 0 b2 5b 00
+        E 0 b2 5d 00
+        E 0 b3 07 64
+        E 0 b3 0a 40
+        E 0 b3 5b 00
+        E 0 b3 5d 00
+        E 0 90 39 60
+        e 0 90 3e 50
+        e 0 90 43 50
+        e 0 90 47 50
+        E 0 91 3b 50
+        E 0 b1 79 00
+        E 0 b2 79 00
+        E 0 b3 79 00
+        E 18 b1 07 64
+        E 0 b1 0a 40
+        E 0 b1 5b 00
+        E 0 b1 5d 00
+        E 7662 c1 21 00
+        E 0 c2 24 00
+        E 0 c3 25 00
+        E 0 b1 07 64
+        E 0 b1 0a 40
+        E 0 b1 5b 00
+        E 0 b1 5d 00
+        E 0 b2 07 64
+        E 0 b2 0a 40
+        E 0 b2 5b 00
+        E 0 b2 5d 00
+        E 0 b3 07 64
+        E 0 b3 0a 40
+        E 0 b3 5b 00
+        E 0 b3 5d 00
+        E 0 80 39 00
+        E 0 90 4a 50
+        E 1440 81 3b 00
+        E 240 80 4a 00
+        E 0 90 4c 50
+        E 480 80 4c 00
+        E 0 90 4a 50
+        E 1440 80 4a 00
+        E 0 90 4c 50
+        e 480 80 3e 00
+        E 0 80 4c 00
+        E 0 90 4f 50
+        E 1440 80 4f 00
+        E 0 90 4c 50
+        E 480 80 4c 00
+        E 0 90 53 50
+        e 1680 80 43 00
+        e 0 80 47 00
+        E 0 80 53 00
+        E 0 b0 7b 00
+        CCINTERP 32
+        CHASE_CC_TAKEOFFS 1
+        GUID {7547E02E-5F75-44AF-AE4A-F73C9A4BC171}
+        IGNTEMPO 0 120 4 4
+        SRCCOLOR 40
+        VELLANE -1 100 0
+        CFGEDITVIEW -366.882008 0.108726 44 12 0 -1 0 0 0 0.5
+        KEYSNAP 0
+        TRACKSEL 0
+        EVTFILTER 0 -1 -1 -1 -1 0 0 0 0 -1 -1 -1 -1 0 -1 0 -1 -1
+        CFGEDIT 1 1 0 1 0 0 1 1 1 1 1 0.25 32 106 1670 1000 0 0 0 0 0 0 0 0 0 0.5 0 0 1 64
+      >
+    >
+    <ITEM
+      POSITION 12
+      SNAPOFFS 0
+      LENGTH 3
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0
+      FADEOUT 1 0 0 1 0 0
+      MUTE 0
+      SEL 0
+      IGUID {3C4ACC4D-E060-49FD-9433-A6FA05CEAD33}
+      IID 2
+      NAME Soups-a-alot-sucka.mid
+      VOLPAN 1 0 1 -1
+      SOFFS 0 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {A4EAEBDC-331F-4679-92F1-5735B1ECB40D}
+      <SOURCE MIDI
+        HASDATA 1 480 QN
+        CCINTERP 32
+        POOLEDEVTS {F780FFA1-FE23-4433-A3BB-3894D23EBE49}
+        <X 0 0
+          /1kCAAA=
+        >
+        E 0 c1 21 00
+        E 0 c2 24 00
+        E 0 c3 25 00
+        E 0 b2 07 64
+        E 0 b2 0a 40
+        E 0 b2 5b 00
+        E 0 b2 5d 00
+        E 0 b3 07 64
+        E 0 b3 0a 40
+        E 0 b3 5b 00
+        E 0 b3 5d 00
+        E 0 90 47 60
+        E 0 90 39 60
+        E 0 b1 79 00
+        E 0 b2 79 00
+        E 0 b3 79 00
+        E 1 b1 07 64
+        E 0 b1 0a 40
+        E 0 b1 5b 00
+        E 0 b1 5d 00
+        E 0 91 3b 50
+        E 119 80 47 00
+        E 0 80 39 00
+        E 0 91 3b 00
+        E 120 90 39 50
+        E 1 91 47 50
+        E 0 91 3b 50
+        E 119 80 39 00
+        E 0 91 47 00
+        E 0 91 3b 00
+        E 120 90 47 60
+        E 0 90 39 60
+        E 1 b1 07 64
+        E 0 b1 0a 40
+        E 0 b1 5b 00
+        E 0 b1 5d 00
+        E 0 91 3b 50
+        E 119 80 47 00
+        E 0 80 39 00
+        E 0 91 3b 00
+        E 120 90 39 50
+        E 1 91 47 50
+        E 0 91 3b 50
+        E 119 80 39 00
+        E 0 91 47 00
+        E 0 91 3b 00
+        E 120 90 3e 50
+        E 0 90 42 50
+        E 0 90 4c 50
+        E 120 80 3e 00
+        E 0 80 42 00
+        E 0 80 4c 00
+        E 120 90 3e 50
+        E 0 90 43 50
+        E 0 90 4c 50
+        E 120 80 3e 00
+        E 0 80 43 00
+        E 0 80 4c 00
+        E 120 91 3c 50
+        E 0 90 4c 50
+        E 1 91 45 50
+        E 118 91 3c 00
+        E 1 80 4c 00
+        E 0 91 45 00
+        E 120 90 3b 50
+        E 0 90 48 50
+        E 0 90 4c 50
+        E 120 80 3b 00
+        E 0 80 48 00
+        E 0 80 4c 00
+        E 120 b0 7b 00
+        CCINTERP 32
+        CHASE_CC_TAKEOFFS 1
+        GUID {275CCDB4-B571-4899-9E84-5EC766873480}
+        IGNTEMPO 0 120 4 4
+        SRCCOLOR 3
+        VELLANE -1 100 0
+        CFGEDITVIEW 0 0.289936 41 12 0 -1 0 0 0 0.5
+        KEYSNAP 0
+        TRACKSEL 0
+        EVTFILTER 0 -1 -1 -1 -1 0 0 0 0 -1 -1 -1 -1 0 -1 0 -1 -1
+        CFGEDIT 1 1 0 1 0 0 1 1 1 1 1 0.25 16 90 1670 1000 0 0 0 0 0 0 0 0 0 0.5 0 0 1 64
+      >
+    >
+    <ITEM
+      POSITION 15
+      SNAPOFFS 0
+      LENGTH 3
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0
+      FADEOUT 1 0 0 1 0 0
+      MUTE 0
+      SEL 0
+      IGUID {092F1102-A177-40FB-A4B0-E4C84E517899}
+      IID 2
+      NAME Soups-a-alot-sucka.mid
+      VOLPAN 1 0 1 -1
+      SOFFS 0 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {0FA72CD3-C91C-402D-9EC8-9FAEC1005F21}
+      <SOURCE MIDI
+        HASDATA 1 480 QN
+        CCINTERP 32
+        POOLEDEVTS {EBAEF16B-7B28-4181-8B27-692C166D87A7}
+        <X 0 0
+          /1kCAAA=
+        >
+        E 0 c1 21 00
+        E 0 c2 24 00
+        E 0 c3 25 00
+        E 0 b2 07 64
+        E 0 b2 0a 40
+        E 0 b2 5b 00
+        E 0 b2 5d 00
+        E 0 b3 07 64
+        E 0 b3 0a 40
+        E 0 b3 5b 00
+        E 0 b3 5d 00
+        E 0 90 47 60
+        E 0 90 39 60
+        E 0 b1 79 00
+        E 0 b2 79 00
+        E 0 b3 79 00
+        E 1 b1 07 64
+        E 0 b1 0a 40
+        E 0 b1 5b 00
+        E 0 b1 5d 00
+        E 0 91 3b 50
+        E 119 80 47 00
+        E 0 80 39 00
+        E 0 91 3b 00
+        E 120 90 39 50
+        E 1 91 47 50
+        E 0 91 3b 50
+        E 119 80 39 00
+        E 0 91 47 00
+        E 0 91 3b 00
+        E 120 90 47 60
+        E 0 90 39 60
+        E 1 b1 07 64
+        E 0 b1 0a 40
+        E 0 b1 5b 00
+        E 0 b1 5d 00
+        E 0 91 3b 50
+        E 119 80 47 00
+        E 0 80 39 00
+        E 0 91 3b 00
+        E 120 90 39 50
+        E 1 91 47 50
+        E 0 91 3b 50
+        E 119 80 39 00
+        E 0 91 47 00
+        E 0 91 3b 00
+        e 0 90 39 50
+        e 1 91 47 50
+        e 0 91 3b 50
+        e 119 80 39 00
+        e 0 91 47 00
+        e 0 91 3b 00
+        E 120 90 3e 50
+        E 0 90 42 50
+        E 0 90 4c 50
+        E 120 80 3e 00
+        E 0 80 42 00
+        E 0 80 4c 00
+        E 0 90 3e 50
+        E 0 90 43 50
+        E 0 90 4c 50
+        E 120 80 3e 00
+        E 0 80 43 00
+        E 0 80 4c 00
+        E 120 90 3e 50
+        E 0 90 43 50
+        E 0 90 4c 50
+        E 120 80 3e 00
+        E 0 80 43 00
+        E 0 80 4c 00
+        E 120 90 3b 50
+        E 0 90 48 50
+        E 0 90 4c 50
+        E 120 80 3b 00
+        E 0 80 48 00
+        E 0 80 4c 00
+        E 120 b0 7b 00
+        CCINTERP 32
+        CHASE_CC_TAKEOFFS 1
+        GUID {275CCDB4-B571-4899-9E84-5EC766873480}
+        IGNTEMPO 0 120 4 4
+        SRCCOLOR 3
+        VELLANE -1 100 0
+        CFGEDITVIEW -59.834621 0.667256 41 12 0 -1 0 0 0 0.5
+        KEYSNAP 0
+        TRACKSEL 0
+        EVTFILTER 0 -1 -1 -1 -1 0 0 0 0 -1 -1 -1 -1 0 -1 0 -1 -1
+        CFGEDIT 1 1 0 1 0 0 1 1 1 1 1 0.25 16 90 1670 1000 0 0 0 0 0 0 0 0 0 0.5 0 0 1 64
+      >
+    >
+    <ITEM
+      POSITION 18
+      SNAPOFFS 0
+      LENGTH 3
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0
+      FADEOUT 1 0 0 1 0 0
+      MUTE 0
+      SEL 0
+      IGUID {DD3FB656-E09A-4F31-BCC2-02455AC701DD}
+      IID 2
+      NAME Soups-a-alot-sucka.mid
+      VOLPAN 1 0 1 -1
+      SOFFS 0 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {3C37BD54-08C3-4A73-AB9D-8DEF5D1BFE66}
+      <SOURCE MIDI
+        HASDATA 1 480 QN
+        CCINTERP 32
+        POOLEDEVTS {E1A41439-DF3E-43E9-8482-340BFF0DE3EC}
+        <X 0 0
+          /1kCAAA=
+        >
+        E 0 c1 21 00
+        E 0 c2 24 00
+        E 0 c3 25 00
+        E 0 b2 07 64
+        E 0 b2 0a 40
+        E 0 b2 5b 00
+        E 0 b2 5d 00
+        E 0 b3 07 64
+        E 0 b3 0a 40
+        E 0 b3 5b 00
+        E 0 b3 5d 00
+        E 0 90 47 60
+        E 0 90 39 60
+        E 0 b1 79 00
+        E 0 b2 79 00
+        E 0 b3 79 00
+        E 1 b1 07 64
+        E 0 b1 0a 40
+        E 0 b1 5b 00
+        E 0 b1 5d 00
+        E 0 91 3b 50
+        E 119 80 47 00
+        E 0 80 39 00
+        E 0 91 3b 00
+        E 120 90 39 50
+        E 1 91 47 50
+        E 0 91 3b 50
+        E 119 80 39 00
+        E 0 91 47 00
+        E 0 91 3b 00
+        E 120 90 47 60
+        E 0 90 39 60
+        E 1 b1 07 64
+        E 0 b1 0a 40
+        E 0 b1 5b 00
+        E 0 b1 5d 00
+        E 0 91 3b 50
+        E 119 80 47 00
+        E 0 80 39 00
+        E 0 91 3b 00
+        E 120 90 39 50
+        E 1 91 47 50
+        E 0 91 3b 50
+        E 119 80 39 00
+        E 0 91 47 00
+        E 0 91 3b 00
+        E 120 90 3e 50
+        E 0 90 42 50
+        E 0 90 4c 50
+        E 120 80 3e 00
+        E 0 80 42 00
+        E 0 80 4c 00
+        E 120 90 3e 50
+        E 0 90 43 50
+        E 0 90 4c 50
+        E 120 80 3e 00
+        E 0 80 43 00
+        E 0 80 4c 00
+        E 120 91 3c 50
+        E 0 90 4c 50
+        E 1 91 45 50
+        E 118 91 3c 00
+        E 1 80 4c 00
+        E 0 91 45 00
+        E 120 90 3b 50
+        E 0 90 48 50
+        E 0 90 4c 50
+        E 120 80 3b 00
+        E 0 80 48 00
+        E 0 80 4c 00
+        E 120 b0 7b 00
+        CCINTERP 32
+        CHASE_CC_TAKEOFFS 1
+        GUID {275CCDB4-B571-4899-9E84-5EC766873480}
+        IGNTEMPO 0 120 4 4
+        SRCCOLOR 3
+        VELLANE -1 100 0
+        CFGEDITVIEW 0 0.289936 41 12 0 -1 0 0 0 0.5
+        KEYSNAP 0
+        TRACKSEL 0
+        EVTFILTER 0 -1 -1 -1 -1 0 0 0 0 -1 -1 -1 -1 0 -1 0 -1 -1
+        CFGEDIT 1 1 0 1 0 0 1 1 1 1 1 0.25 16 90 1670 1000 0 0 0 0 0 0 0 0 0 0.5 0 0 1 64
+      >
+    >
+    <ITEM
+      POSITION 21
+      SNAPOFFS 0
+      LENGTH 3
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0
+      FADEOUT 1 0 0 1 0 0
+      MUTE 0
+      SEL 0
+      IGUID {8483EF38-CDF6-43A0-B427-2ED65713D1FE}
+      IID 2
+      NAME Soups-a-alot-sucka.mid
+      VOLPAN 1 0 1 -1
+      SOFFS 0 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {E24C3E38-B3D0-4BD7-9C83-4609F9C66FB2}
+      <SOURCE MIDI
+        HASDATA 1 480 QN
+        CCINTERP 32
+        POOLEDEVTS {369871EF-D751-4405-8918-C46A88D0EACE}
+        <X 0 0
+          /1kCAAA=
+        >
+        E 0 c1 21 00
+        E 0 c2 24 00
+        E 0 c3 25 00
+        E 0 b2 07 64
+        E 0 b2 0a 40
+        E 0 b2 5b 00
+        E 0 b2 5d 00
+        E 0 b3 07 64
+        E 0 b3 0a 40
+        E 0 b3 5b 00
+        E 0 b3 5d 00
+        E 0 90 47 60
+        E 0 90 39 60
+        E 0 b1 79 00
+        E 0 b2 79 00
+        E 0 b3 79 00
+        E 1 b1 07 64
+        E 0 b1 0a 40
+        E 0 b1 5b 00
+        E 0 b1 5d 00
+        E 0 91 3b 50
+        E 119 80 47 00
+        E 0 80 39 00
+        E 0 91 3b 00
+        E 120 90 39 50
+        E 1 91 47 50
+        E 0 91 3b 50
+        E 119 80 39 00
+        E 0 91 47 00
+        E 0 91 3b 00
+        E 120 90 47 60
+        E 0 90 39 60
+        E 1 b1 07 64
+        E 0 b1 0a 40
+        E 0 b1 5b 00
+        E 0 b1 5d 00
+        E 0 91 3b 50
+        E 119 80 47 00
+        E 0 80 39 00
+        E 0 91 3b 00
+        E 120 90 39 50
+        E 1 91 47 50
+        E 0 91 3b 50
+        E 119 80 39 00
+        E 0 91 47 00
+        E 0 91 3b 00
+        E 120 90 3e 50
+        E 0 90 42 50
+        E 0 90 4c 50
+        E 120 80 3e 00
+        E 0 80 42 00
+        E 0 80 4c 00
+        E 120 90 3e 50
+        E 0 90 43 50
+        E 0 90 4c 50
+        E 120 80 3e 00
+        E 0 80 43 00
+        E 0 80 4c 00
+        E 120 91 3c 50
+        E 0 90 4c 50
+        E 1 91 45 50
+        E 118 91 3c 00
+        E 1 80 4c 00
+        E 0 91 45 00
+        E 120 90 3b 50
+        E 0 90 48 50
+        E 0 90 4c 50
+        E 120 80 3b 00
+        E 0 80 48 00
+        E 0 80 4c 00
+        E 120 b0 7b 00
+        CCINTERP 32
+        CHASE_CC_TAKEOFFS 1
+        GUID {275CCDB4-B571-4899-9E84-5EC766873480}
+        IGNTEMPO 0 120 4 4
+        SRCCOLOR 3
+        VELLANE -1 100 0
+        CFGEDITVIEW 0 0.289936 41 12 0 -1 0 0 0 0.5
+        KEYSNAP 0
+        TRACKSEL 0
+        EVTFILTER 0 -1 -1 -1 -1 0 0 0 0 -1 -1 -1 -1 0 -1 0 -1 -1
+        CFGEDIT 1 1 0 1 0 0 1 1 1 1 1 0.25 16 90 1670 1000 0 0 0 0 0 0 0 0 0 0.5 0 0 1 64
+      >
+    >
+    <ITEM
+      POSITION 24
+      SNAPOFFS 0
+      LENGTH 3
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0
+      FADEOUT 1 0 0 1 0 0
+      MUTE 0
+      SEL 0
+      IGUID {15A066C6-C966-4762-8F25-4F3CC3C52018}
+      IID 2
+      NAME Soups-a-alot-sucka.mid
+      VOLPAN 1 0 1 -1
+      SOFFS 0 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {8F18F566-279A-4A30-8F2A-CD70A6E1FCAF}
+      <SOURCE MIDI
+        HASDATA 1 480 QN
+        CCINTERP 32
+        POOLEDEVTS {5C89A4C7-8340-4A44-B301-AAF9ACF1D877}
+        <X 0 0
+          /1kCAAA=
+        >
+        E 0 c1 21 00
+        E 0 c2 24 00
+        E 0 c3 25 00
+        E 0 b2 07 64
+        E 0 b2 0a 40
+        E 0 b2 5b 00
+        E 0 b2 5d 00
+        E 0 b3 07 64
+        E 0 b3 0a 40
+        E 0 b3 5b 00
+        E 0 b3 5d 00
+        E 0 90 47 60
+        E 0 90 39 60
+        E 0 b1 79 00
+        E 0 b2 79 00
+        E 0 b3 79 00
+        E 1 b1 07 64
+        E 0 b1 0a 40
+        E 0 b1 5b 00
+        E 0 b1 5d 00
+        E 0 91 3b 50
+        E 119 80 47 00
+        E 0 80 39 00
+        E 0 91 3b 00
+        E 120 90 39 50
+        E 1 91 47 50
+        E 0 91 3b 50
+        E 119 80 39 00
+        E 0 91 47 00
+        E 0 91 3b 00
+        E 120 90 47 60
+        E 0 90 39 60
+        E 1 b1 07 64
+        E 0 b1 0a 40
+        E 0 b1 5b 00
+        E 0 b1 5d 00
+        E 0 91 3b 50
+        E 119 80 47 00
+        E 0 80 39 00
+        E 0 91 3b 00
+        E 120 90 39 50
+        E 1 91 47 50
+        E 0 91 3b 50
+        E 119 80 39 00
+        E 0 91 47 00
+        E 0 91 3b 00
+        E 120 90 3e 50
+        E 0 90 42 50
+        E 0 90 4c 50
+        E 120 80 3e 00
+        E 0 80 42 00
+        E 0 80 4c 00
+        E 120 90 3e 50
+        E 0 90 43 50
+        E 0 90 4c 50
+        E 120 80 3e 00
+        E 0 80 43 00
+        E 0 80 4c 00
+        E 120 91 3c 50
+        E 0 90 4c 50
+        E 1 91 45 50
+        E 118 91 3c 00
+        E 1 80 4c 00
+        E 0 91 45 00
+        E 120 90 3b 50
+        E 0 90 48 50
+        E 0 90 4c 50
+        E 120 80 3b 00
+        E 0 80 48 00
+        E 0 80 4c 00
+        E 120 b0 7b 00
+        CCINTERP 32
+        CHASE_CC_TAKEOFFS 1
+        GUID {275CCDB4-B571-4899-9E84-5EC766873480}
+        IGNTEMPO 0 120 4 4
+        SRCCOLOR 3
+        VELLANE -1 100 0
+        CFGEDITVIEW 0 0.289936 41 12 0 -1 0 0 0 0.5
+        KEYSNAP 0
+        TRACKSEL 0
+        EVTFILTER 0 -1 -1 -1 -1 0 0 0 0 -1 -1 -1 -1 0 -1 0 -1 -1
+        CFGEDIT 1 1 0 1 0 0 1 1 1 1 1 0.25 16 90 1670 1000 0 0 0 0 0 0 0 0 0 0.5 0 0 1 64
+      >
+    >
+    <ITEM
+      POSITION 27
+      SNAPOFFS 0
+      LENGTH 3
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0
+      FADEOUT 1 0 0 1 0 0
+      MUTE 0
+      SEL 0
+      IGUID {3D9F9CD7-2885-4797-BEF0-E56D3DD8940B}
+      IID 2
+      NAME Soups-a-alot-sucka.mid
+      VOLPAN 1 0 1 -1
+      SOFFS 0 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {D3D34C8D-CE86-4DE3-B43B-33B6BE37D2AB}
+      <SOURCE MIDI
+        HASDATA 1 480 QN
+        CCINTERP 32
+        POOLEDEVTS {CFF50268-8379-4832-A251-8EB62A5E6936}
+        <X 0 0
+          /1kCAAA=
+        >
+        E 0 c1 21 00
+        E 0 c2 24 00
+        E 0 c3 25 00
+        E 0 b2 07 64
+        E 0 b2 0a 40
+        E 0 b2 5b 00
+        E 0 b2 5d 00
+        E 0 b3 07 64
+        E 0 b3 0a 40
+        E 0 b3 5b 00
+        E 0 b3 5d 00
+        E 0 90 47 60
+        E 0 90 39 60
+        E 0 b1 79 00
+        E 0 b2 79 00
+        E 0 b3 79 00
+        E 1 b1 07 64
+        E 0 b1 0a 40
+        E 0 b1 5b 00
+        E 0 b1 5d 00
+        E 0 91 3b 50
+        E 119 80 47 00
+        E 0 80 39 00
+        E 0 91 3b 00
+        E 120 90 39 50
+        E 1 91 47 50
+        E 0 91 3b 50
+        E 119 80 39 00
+        E 0 91 47 00
+        E 0 91 3b 00
+        E 120 90 47 60
+        E 0 90 39 60
+        E 1 b1 07 64
+        E 0 b1 0a 40
+        E 0 b1 5b 00
+        E 0 b1 5d 00
+        E 0 91 3b 50
+        E 119 80 47 00
+        E 0 80 39 00
+        E 0 91 3b 00
+        E 120 90 39 50
+        E 1 91 47 50
+        E 0 91 3b 50
+        E 119 80 39 00
+        E 0 91 47 00
+        E 0 91 3b 00
+        E 120 90 3e 50
+        E 0 90 42 50
+        E 0 90 4c 50
+        E 120 80 3e 00
+        E 0 80 42 00
+        E 0 80 4c 00
+        E 120 90 3e 50
+        E 0 90 43 50
+        E 0 90 4c 50
+        E 120 80 3e 00
+        E 0 80 43 00
+        E 0 80 4c 00
+        E 120 91 3c 50
+        E 0 90 4c 50
+        E 1 91 45 50
+        E 118 91 3c 00
+        E 1 80 4c 00
+        E 0 91 45 00
+        E 120 90 3b 50
+        E 0 90 48 50
+        E 0 90 4c 50
+        E 120 80 3b 00
+        E 0 80 48 00
+        E 0 80 4c 00
+        E 120 b0 7b 00
+        CCINTERP 32
+        CHASE_CC_TAKEOFFS 1
+        GUID {275CCDB4-B571-4899-9E84-5EC766873480}
+        IGNTEMPO 0 120 4 4
+        SRCCOLOR 3
+        VELLANE -1 100 0
+        CFGEDITVIEW 0 0.289936 41 12 0 -1 0 0 0 0.5
+        KEYSNAP 0
+        TRACKSEL 0
+        EVTFILTER 0 -1 -1 -1 -1 0 0 0 0 -1 -1 -1 -1 0 -1 0 -1 -1
+        CFGEDIT 1 1 0 1 0 0 1 1 1 1 1 0.25 16 90 1670 1000 0 0 0 0 0 0 0 0 0 0.5 0 0 1 64
+      >
+    >
+  >
+  <TRACK {99AED3B6-7B9C-4C29-A50D-B0D3659A6AA4}
+    NAME Soups-a-alot-sucka
+    PEAKCOL 16576
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 1 0 -1 -1 1
+    MUTESOLO 0 0 0
+    IPHASE 0
+    PLAYOFFS 0 1
+    ISBUS 0 0
+    BUSCOMP 0 0 0 0 0
+    SHOWINMIX 1 0.6667 0.5 1 0.5 0 0 0
+    FREEMODE 0
+    SEL 1
+    REC 0 0 1 0 0 0 0
+    VU 2
+    TRACKHEIGHT 0 0 0
+    INQ 0 0 0 0.5 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {99AED3B6-7B9C-4C29-A50D-B0D3659A6AA4}
+    PERF 0
+    MIDIOUT -1
+    MAINSEND 1 0
+    <FXCHAIN
+      WNDRECT 197 0 1723 1080
+      SHOW 0
+      LASTSEL 0
+      DOCKED 0
+      BYPASS 0 0 0
+      <VST "VST3i: Dexed (Digital Suburban)" Dexed.vst3 0 "" 475117838{ABCDEF019182FAEB4447534244657864} ""
+        DrlRHO5e7f4AAAAAAgAAAAEAAAAAAAAAAgAAAAAAAAArGAAAAQAAAP//EAA=
+        GxgAAAEAAABWQzIh1hcAADw/eG1sIHZlcnNpb249IjEuMCIgZW5jb2Rpbmc9IlVURi04Ij8+IDxkZXhlZFN0YXRlIGN1dG9mZj0iMC42NjE3MTQyNTU4MDk3ODM5IiBy
+        ZXNvPSIwLjQxNjAwMDI0NzAwMTY0NzkiIGdhaW49IjEuMCIgY3VycmVudFByb2dyYW09IjAiIG1vbm9Nb2RlPSIwIiBlbmdpbmVUeXBlPSIxIiBtYXN0ZXJUdW5lPSIw
+        IiBvcFN3aXRjaD0iMTExMTExIiB0cmFuc3Bvc2UxMkFzU2NhbGU9IjEiIG1wZUVuYWJsZWQ9IjAiIG1wZVBpdGNoQmVuZFJhbmdlPSIyNCIgd2hlZWxNb2Q9IjAgMCAw
+        IDAiIGZvb3RNb2Q9IjAgMCAwIDAiIGJyZWF0aE1vZD0iMCAwIDAgMCIgYWZ0ZXJ0b3VjaE1vZD0iMCAwIDAgMCI+PGRleGVkQmxvYiBiYXNlNjQ6c3lzZXg9IjQxMDQu
+        dk9ELkkuQi5HLlRLaTB4WC4uLi4uLi4uMy52WC4uZkIuRXlYdExGLi4uLi4uLi5OLkxGQS56LlB3TGxLaUEuLi4uLi4uZkMuaUEuLk8uVExpd3hYLi4uLi4uLi4zLnZY
+        RC5QRi5FeVh4TEYuLi4uLi4uLk4uTEYuLlhESndMMVhiQS4uLi4uLi5mQy5pSS4uaU0xWGlJaUx4SHlHT0xCLi4uUExYTFVYNEFSUG1FVlp0NEJSTG8uSGlVRVQuREMu
+        Li4uTkhQRUUudlRSSnZ3WGJvRS54Li4uLmZBQVpRLi53bmpCZkhsWGhBUEo4LmpCSGd2UUQudk1PbnZLaXdFVy5meVYuTC5iRExGQS5iQ0hmelFXZG9FLkRBdlhCLi5B
+        WFFQLjJmaUJ1TGxYLkF2SWlBdkNYZ2ZYRERmWGhJbFgwRGlMeDN2Q2dMQkQuLkFDTEVUVVJrVFFmLkJIZkxsSzFUMFhmTUYuNC4uLi5uQ0FpVXZSaTRoSGFNMVdpQS4u
+        Li4uLnlBZlNHRENWSVVTV2kwRC4uLi4uLi5mYmJyRURDZkVON3owWE1BLi4uLi4uLkxFRU9JLkdYZ0NPY01WUy4uLi4uLi4uaWZ3VEJIbFNmdkJPaVVFLi4uLi4uLmZK
+        LkxGLkdYVVdpTUYuei5QV1E3dkguLi4udy5mUGtFRmNzVUZaeFFsYmlZUkZvTEZSSEF2SS5EdkN2UWZURC52WG1qUUhpY0RQLmJCLi43LmIuUENBLkxGU2k4eFhYQUYu
+        bS4uLk8uRy5iSS4uaWNSRmdMMVEuQXZJLkR2QzNQdlhELnZYbGpBSWlnRFIuYkIuLjcuTi4zREIuTEZTaTh4WFhBRi5tLi4uT2ZDLi5ILi5UODBXN0hpTHhIeUdOVEIu
+        Li4uUFguRVJBSTBTSEFCSGYueFh2RC5GZDhELi52aU0uRHZRTExsRy43MEhIdndYRkEuLnoudkhDdkVET1kuLmVBUkZnTGxRLi4uLi4uLi5hYndYQi5QVXhIZkJpWUQu
+        Lm5DLmsudkIuN2pELnJqS1B2dlhGQS4uemYuLkNyQkNPUS4uSjR3RmVMbFEuLi5PLi4uLmljd1hCLmZXQzhFT3hIaUx4SGZDaERCLi5qQUNDZ2xidTBWWGZUQ0hiVWtP
+        WHp4WGlBLi5mLi4uQ1B3LkxvUFRUb2lEakxWVy4uLkguSEEuNnZRVkQudlVzclFLaU1GLi4ueFguTGYuUExsLi5Ua09YM3hYaUEuLmYuLi5Ddi4uR29QLlZvaURqTFZX
+        Li4uSC5IQS5DUFFWREQuVnNyUUtpTUYuLi54WC5MZi5QTGwuQS4uLi4uZkx4SGlMQ2ZQRi5uLi5Idi5TZ1lXWnpFbGJmLkJXLi4uRGVMMVhpQS4uLlAuLlBNLlRCLmZR
+        Li5RRWFNMVguLi4uLi4uVC4zai4uM0IuT1hCV2lNRi4uLi4uLi5FLmlJLi4uLi4uZkwxWGlBLi4uLi4ubkguVC5MbEwuamZEZk0xWC5mQS5FLi5OLkhFLmk0Qi5iWFJX
+        aU1GLi4uLi4uLi4uaUVQQWlNMVhpSWlMeEh5LktiQS5PLlBETExFYXVNMGNyQXhLdXZrU2VZekJpQTFSLmJDLmEuUGIuN0NBLmZoR1lQeFhab0UueS4uLi5Edy5pSS4u
+        OTdrUUxMRlhPQS5MLjNBLlkuLlFELi5KZGpBSWlva1YuTEMuLi5QWFdMbC5BanlXRnN2WGZzRS5oLmZILmpGLkhJLi5uM1FGakxsVlpBdkwuLi4uSUx3WEIuUE5TQUVV
+        cUxpTHhUUEFiLmlIaWdCRk9JREhHVWxhMWtsY2JNMUVLM3ZYWXdFLk8uLi5EWEUuMFBTLkI0dkJiM1VWWkF2Qy4uLkFWUS5SRi4uVk5MaklpazBRLjcuLi5QZksuZmtL
+        LmZrQ0djeFhZZ0UuTy4uLkQzQy5nSS4uaEExRnBMRkdSQXZDLjMuQXZBLlhENzJYSmIuS2lBVlYuNy4uTlAuYi5MRi4uTDFYaU0xSXhUaUtON1BBLkxGLnpBdlRBY0VI
+        RTBESFVBRUh5bnhIUUwxWGlBZkcuWC4uZk0uS0IudkxRSGhFaU0xWC4zQS5RLi5YQkxsLi5uaElUM3dYaU1GLmYuLi4uLkZCaUkuLjBuUklZTDFYaU1sRy5MLi4uTWZP
+        LkxWTVFIeEVpTTFYLjNBLk0uLlBCSEYuaW9oSVQ3d1hpTUYuZi4uLi4uREJpQXZYaU0xVGk4eE14SHkuTUQuLi5URUJMdmpRT0lVWTVBeEpxdjBYWExGSi4udlguLi4u
+        Li5QTi4uZi4uTEZIaWdCLi5MRi4uLi4uLmpDLmlBdkxpTXhYbi4uLmhBLi4uLi4uNC52WC4udlhtTEZKLi52WC4uLi4uLlBOLkxsLi5MVktpZ0IuLkxGLi4uLi4uakMu
+        aUlmRmlNeFhuTDFRLi4uLi4uLi40LnZYQnp2WGlNRkp4SGlMeDdBQlQ3akdCYkFGRTR6UE9Va1NUVWpUU3N2Q1dmaVNLTUYuLi4uLi4uRy5pVVBJaU0xWDJMMVhpQS4u
+        Li4uLnZBZlcuLnZCT2JRTk5zelguLi4uLi4uRi5MVkFsTDFYaWd5WGlNRi4uLi4uLi4uLmRBLi5LN3ZFMTN6UmlBLi4uLi4udkF2WEVYeFhpTVZNaU0xWC4uLi4uLi5O
+        LjNFLi5MRkdpTWxMeEhpTEQ3ZksuM1BLMGZBVW5VbWFqVWxiZi54TC5UVUNxSHlYLi5mQy4uLi5OQXZUSC4uQ1dVeEowTEYuLjMuLi4uLkQuTEZBLmp3VWhyaE5pQS4u
+        Ti4uLi4uRi5pUS4uLmIwSnE3eFguLmZDLi4uLjMudldELi4uWXd5SkFNRi4uMy4uLi4uWC5IRUMuN1RFN3J4WFBBLi5OLi4uLmZDLmlRLi4uLi4uLkhpTHhIU0VPbkFF
+        aS5QRExUelhuOFZRaWcxYWZMU01HSEJLaVFrRy5EaS4uTC5URFRDRC5Id0JvWHhYNnZBLnguLklDLkRCYkkuLlZmUElxTDFVcy5QTVEudi5JZy5RSi4uSFFyd0ppb0RQ
+        Lm5CLi4uLkpFLmwuLkhnRFp2d1hHUUMudFB2SENIZ0FSSS4uN1hQRWtMbFcwLmZYLi52Q1hrdlhCLnZYaU0xWHhIaUx4ZnZBcC4uLi5EQ0NzRGpTQXd6U0dBUkxzUFJG
+        dzd3WERBLi4uLi4uLmZDQjkueFJrWGdFeExsRU8uLi4uLi4ubjh2WEouLklqWEFLaW9SSS4uLi4uLi5WQXZCTi5uQkRnanhYZi4uLi4uUEEuLnkuaW8uLllmZ0VhTGxQ
+        Li4uLi4uLi5YQS5JZC52SFJYd0hpQTBKLi4uLi4uLi5DTGxCLkwxWGlNbEx4SGlMRHZ2SS5YLi5YTEFUdGp6UEVBaEwwM1JMaXdDSndMMVcuLi4uLi4uLjMuZlNHM3hY
+        N0xSTGk4RS4uLi4uLi4uSi5iMEF0TEZPZkR5WGVBLi4uLi4uLmZDLlNjLkRaY3YuR0xsVy4uLi4uLi4uNi4uTkZEeVh3WEJHaTRFLi4uLi4uLnZOLi5rLitNMUYwcnhY
+        YUEuLi4uLi4uZkMuaUkuLmlvU0tYSENMYklpLkhMQi4uLlBMWFhEU0VnVVJmLkJIZlB5WFVNbEtNd2tYLmJSTVQudk8uMy5BLkxsVlZiQ1RjVUUudkxGREI3Qy5KSS4u
+        aW9oRUZNVlg3LnZJYnNUQisuZlJCLnZYU1l3UGl3RVQuSFJCLi52Ty5qay4uTEZRbUwxWGlNVlguLlBQLjdDLlJJLi5TY2hIOC4xWGNBLi4uLi4uKy52WEIuZldDOEVP
+        eEhpTHhEd0F5YkIuLmpDRkFJRVRmSGlNdi5DSGZMbEsudndYY2NFLjEuLi4uREMuR1EuLmk0Qi5iTFZXV0FmTS4uLi40LlBTQi52WHQuLkdpMDBVLlhDLi4uUEpEUGsu
+        LjNSSFRMeFhiUUUuLi4uLi5ILkNpRS4uaU0xWFlMMVhpQS5KVGIuLnZBUFcuLmZMaU1sR2lNMVguLi4uLi4uYi5MRkEuTDFYaU1sTHhIaUxBWGZJZy4uLjRmUVB4QTJK
+        QlVtZDVJMGJOOGtRY0xGWEtBdk0uckQuNEh2WEQuUEZZdlBPaU0xWC5MQy4uLlBOLlRrLi5EeFdGMHdYaU1GLnYuZkcuREcuWlEuLnhqQUNGTWxWZ0F2TC4uLi40UHdY
+        QkQuR2VZVEdpQTFTLi5DLkNBUC5EbkVBLkhSRkxEeFhpa0MueS4uLi5qQ0JpSS4uSlRmQUZIaUx4SGlFc1RoSmxQQkZYUGtUV0FCSGYuQkhmLnhUTW5TRGlva1YuLlIu
+        Li5QSC5Ea0guSEVDZS53WFhnRS5rRC4uLkRCLjYzLi5ZTUZOakwxWGlBLi4uSC4uby52VC4uUERlWFFIaU0xWC4uLi5HLlBKLkxsLi4zakNLandYUmMwS0wuLi4uREUu
+        QUlCLlEuaEhkTDFYaUEuLi4uLi5RQXZYQi52WGlNbFB5SGlMeGJQQ2lNZkcuSEFGTWtqVElRelNSQVJMZjNFS28zeFgrWEMuaUhUQU5qaS5PQUEuZUVSTGlMMUwxLlBK
+        LlAuQzZIZ1RGLmZXVy5UTWlNaU0uYkRMR1BmTlJiREEuSGpFcGJ4WHlUQy5tYnhBTFRmQ2lJUC5pVXdYYkxGLi4udktkbi5CRklBU0JEdlhVTEZHaUEuLi5uZkdKZmZh
+        VkxsLkF6elYzdnlMeEhpTEd6LlAuLnZYeWZBUUVZVVJMQUJVQU16UktuUUFiTDFXLi4uLi4uLi42LnZSRUxoQlkuZkppNEUuLi4uLi4uLk4uWERBaWtQRi5ueFhkQS4u
+        Li4uLi5mQy5PTWZTTC5RREdMbFcuLi4uLi4uLjY3bVUuLlRELmYuR2lFbFUuLi4uLi52Ti4uMC4wbndCWmJ3WC4uLi4uLi4uLmZDLmlBUFFSQS4uTkhDTXZIQ0RGTEIu
+        Li52Ti5IVVVNSURTRUFCSGZEeVhQMy5EeEh4WC5iQi4uLi5ILlBESC5idkNRUHhYVW9DLm0uLi4uLkIuaUFBLkZ6dkJYWFNVaUF2SS4uLi4zLnZWRC4uRk9Ed0lpVUVI
+        LmJCLi4uLk4uTEZBLmYuQ09UQU1VTUYubS4uLi5mRC5Wdy4uZ1BnRm1MVlUwLnZJLi4uLkhBdlhGLnZYaU0xWHhIaUx4VC5DTHZQQS5mQkNDRXpUQ0VEUUVBaEx3TDFY
+        aU0xWGlNRi5DTUYuLi4yLmljLkRpTTFYaU0xWGlBdlBpTUYuLkxQVy4ueFhpTUZRaU0xWC5yeFhpQS5CQ0wxQUxMMVhpTTFYaU1GLnFMMVguZncuaVEuSGlNMVhpTTFY
+        aUEuRS5MRi5QTHZYR2Z2VGlNMVhpTTFYLlBBLmlBLi5DbkVDTU0xWGlNbEx4SGlMZWouLi4uLi55ZndQclBES0VJRktGQUJIWGZrS2t2eVguLi4uLi4uLjNMdlhSYi5H
+        WEFTSTdMRi4uLi4uLi4uTkNMbENJLkJWdFRCT2lBLi4uLi4uLmZ5LmlvdkNqamtLa3Z5WC4uLi4uLi4uM0x2WEouUEtYNFJJN0xGLi4uLi4uLi5OQ0xGQUtMRlZ1WHhY
+        aUEuLi4uLi4uZnkuaVEuLmlNMVhpSWlMeEh5R0hMRi4uLnZNTFBVY3RRMVR6RUZjaTRrSGRIUUlpY0RGLlhCLkF3dkRQamlGSGJnR1ozeFhRVUMueFhELk9IVkJyUC4u
+        ZFh4THNMRlJiLnZKOFB3LlpEUU5CLlBLV1B4SmlzVE0uLi4uLi52TEZMbC4uTDFGN25RUmlBLi4uN1FCQ2ZRQ2lJLi5pVVFJcEwxWGFBLi4uLi4uamt2WEIudlhpTTFY
+        eEhpTHhYdkNYalNCWURDQ3NiMFNCSURTRUFSTHNqQ0hNNHdYaW9DLkouLi5EZkNCaUEuLkszUUZiTDFYLi5mQi4uLkEzZi5XSi5mRkdRd0lpTUYuLi4uLi5QLk5IekVB
+        Lm52WFRqeFhpQS4uLi4uLi5mQ0FjQVAuUkxGRWlNMVguLi4uLi4uLjNmZlZELi5HaVF3SGlNVkQuLi4uLi4uTkRMRi4uTGxYS3dpTHhIaUxQTHZIWUEuLkhmZ1FJd0RV
+        RUlVS1NjRVRUbi5HWDMwVC5BZkoxLlAuM3YuUEYudkdIYkFHaWNrUC52UkFOTC5OSHZrLi5uRExMUFJUaVFELnVmUEMuZkNFaUkuLlhuUkNKTEZXQkFQS0l2Li4zLlBP
+        RC5mR3RmLkNpTTFQLnpCQkxELk4uUGsuLnZqRER2QlVpWUQucm5QQy4uR0VpSS4uZE16VzdIaUx4SGkuTmZDUS43eUVYTFVQSEVqVEFBQkhmLnhYaVFRTmlNbEIuLi4u
+        Li4uTi5yaUhpY3ZYaWt3WGlNRi4uLi4uLmZDLnNYUU1pTDFYY0wxWGlBLi4uLi4uMy52WEpueEVpTVZGaU0xWC4uLi4uLi5OLkxsQ0dzZ0Vpb1JVaU1GLi4uLi4uZkMu
+        UklCLm5MMVhqTDFYaUEuLi4uLi5QQXZYVFhQUGlNMVh4SGlMeDNmQWkuLi4uREMuRXdUUUNRa1RPNERId0xGLi4udlhpTUYuTy4uLkRiLi5MSS4uS294UWhMMVhpQXZD
+        Li4uQXlBdlhCLnZYSDhRRC5YRC4uNy4uLlB2Ty5MRkQuTDFYakx4WGlBLi5PLi4uRHJDLmlJLi5pQS4uLkwxWGlBdkMuLi5BbUFQVS4uLk1wYmpIaU0xWC43Li4uUHZY
+        LkxsLi5MMVhpTWxMeEhpTFc3dkZuLkEuZmZnUEE0elJTd0JIVDRCSFhMMVhZendGZUxGLi4uLi52QS5WLi52WGlNbEZGVUNNaUEuLi4uLkIuWFQuLnp2WGljUVNNOEQu
+        Li4uLi5mQy5Ndy4uNUwxWGtMMVhpQS4uLi4uLjMudlhCLnZYaU0xRU0welNpQS4uLi4uTi5URENYandYaVV4WGlNRi4uLi4uLmZBLlZRLkZpTTFYaUlpTHhIQ0JOanYu
+        Ry4uRExMRWF1YzJMREFCVGdRVk5mempHaU1sTi5uLi4uUC5MRExWLllyZkdZdndYaUEuLkouLi5EZkNBYmcuLlpiREVtTDFYLi4uLi4uLkFIUVBXeVQuQkpQUUppTUYu
+        Li4uLi4uLk5FemtDLkh3WFRQeFhpQS4uLi4uLi4uVEFaUS4uYkxGRWlMMVhRLi4uLi4uLjNUdlhMLmZYaHNET3hIaUx4LncuaUxsQkguQ0NMWXpTZkwwVUVVRFRmZjA4
+        IiBiYXNlNjQ6cHJvZ3JhbT0iMTYxLkcuVEtpMHhYLi4uLi4uLi4uLi4uLkxGLi4udkFKLlRMaTR4WC4uLi4uLi4uLi4uLi5MRi5CLnZBTS5UTGk0eFguLi4uLi4uLi4u
+        Li4uTEYuLi52QU8uVExpd3hYLi4uLi4uLi4uLi4uLkxGLkIudkFZLlRMaUl5WC4uLi4uLi4uLi4uLi5MRi4ubnZBRmdoTmlNRlFkendYLi4uLi5Idi5CTEYuQS52QWlN
+        MVhpSWlMeEh5LkZELkZOLi4uLi5mLlhMVVg0QVJQbUVWWnQ0eE8rKysrK0MuIi8+PG1pZGlDQy8+PC9kZXhlZFN0YXRlPgAAAAAAAAAAAEpVQ0VQcml2YXRlRGF0YQAB
+        AUJ5cGFzcwABAQMAHQAAAAAAAABKVUNFUHJpdmF0ZURhdGEAAAAAAAAAAA==
+        AFByZXNldCAxOiBXdWIgV3ViABAAAAA=
+      >
+      PRESETNAME "Preset 1: Wub Wub"
+      FLOATPOS 0 0 0 0
+      FXID {E94DDD4A-75D5-4B0F-A9DF-BCE203B52105}
+      WAK 0 0
+      BYPASS 0 0 0
+      <VST "VST: FV-70 Guitar Preamp v.1 (x86) (ronaldpassion@yahoo.com) (mono)" "FV-70 Guitar Preamp v.1.dll" 0 "" 1180055344<5653544656373066762D373020677569> ""
+        MDdWRu5e7f4BAAAAAQAAAAAAAAABAAAAAwAAAAAAAAA4AAAAAQAAAAAAEAA=
+        MzMzPwAAAAAAAIA/mZkZP5qZ2T4zMzM/TEVUJ1MgUk9DSyEhIQAgQWxsIFByb2dyYW1zANgRkQU=
+        AExFVCdTIFJPQ0shISEAEAAAAA==
+      >
+      PRESETNAME "LET'S ROCK!!!"
+      FLOATPOS 0 0 0 0
+      FXID {F5F5A6A6-8A45-4EB3-B802-939394FF4EF8}
+      WAK 0 0
+      BYPASS 0 0 0
+      <JS guitar/distortion ""
+        3.000000 4.000000 -25.000000 2.000000 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+      >
+      FLOATPOS 0 0 0 0
+      FXID {EB64439C-DFBB-4C2A-A8B7-577410E3BA6A}
+      WAK 0 0
+      BYPASS 0 0 0
+      <VST "VST: ReaEQ (Cockos)" reaeq.dll 0 "" 1919247729<56535472656571726561657100000000> ""
+        cWVlcu5e7f4CAAAAAQAAAAAAAAACAAAAAAAAAAIAAAABAAAAAAAAAAIAAAAAAAAA6gAAAAEAAAAAABAA
+        IQAAAAYAAAAAAAAAAQAAAKrRlM/WT0NAgO21oPfGsD4AAAAAAAAAQAEIAAAAAQAAAP/sp7AEolJAxQJIEJg98T8AAAAAAAAAQAEIAAAAAQAAAJvAeTB+yoxAARswsb9I
+        8z8AAAAAAAAAQAEBAAAAAQAAAIAUqU9Eq7NAgcY2NUuV3T8AAAAAAAAAQAEIAAAAAQAAAHdeLgxzk3tAHUtBYP7h6j+AmZmZmZkMQAEIAAAAAQAAAEN4QN8El8BAf0xB
+        YP7h6j8AAAAAAAAAQAEBAAAAAQAAAAAAAAAAAPA/AAAAAMUDAACLAgAA
+        AAAQAAAA
+      >
+      FLOATPOS 0 0 0 0
+      FXID {65AA7A88-615A-449C-92A3-4CD62564EF52}
+      WAK 0 0
+      BYPASS 0 0 0
+      <VST "VST: ReaXcomp (Cockos)" reaxcomp.dll 0 "" 1919252579<5653547265786372656178636F6D7000> ""
+        Y3hlcu5e7f4CAAAAAQAAAAAAAAACAAAAAAAAAAIAAAABAAAAAAAAAAIAAAAAAAAACAEAAAEAAAAAABAA
+        OAAAAAQAAAAAAAAAAABpQAAAAAAAAPA/23CWk/yqfj8AAAAAAAAAQAAAAAAAAAAADwAAAJYAAAAFAAAAEQAAAI7DHcjoKaBAqiocW/JVwj9EhMZkiyNxPwAAAAAAAABA
+        AAAAAAAAAAAPAAAAlgAAAAUAAAARAAAAwDY+8L3zxEC9RzwK1qD2P2BZVeNbvH8/AAAAAAAAAEAAAAAAAAAAAA8AAACWAAAABQAAABEAAAAAAAAAAHDXQM//uqWlAsA/
+        0BJuZ2fUgj8AAAAAAAAAQAAAAAAAAAAADwAAAJYAAAAFAAAAEQAAAAEAAAABAAAAGAAAAAAA8D8AAAAAAAAAAAAAAAAAAAAA
+        AAAQAAAA
+      >
+      FLOATPOS 0 0 0 0
+      FXID {17FA41DD-CC8C-4C8D-B446-4239833C2198}
+      WAK 0 0
+    >
+    <ITEM
+      POSITION 24
+      SNAPOFFS 0
+      LENGTH 6
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0
+      FADEOUT 1 0 0 1 0 0
+      MUTE 0
+      SEL 0
+      IGUID {028E30D4-7A47-40C8-9F3E-37CBFB79A188}
+      IID 2
+      NAME Soups-a-alot-sucka.mid
+      VOLPAN 1 0 1 -1
+      SOFFS 0 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {ADAA92DF-D9EC-4C7A-9632-504F88CB0C48}
+      <SOURCE MIDI
+        HASDATA 1 480 QN
+        CCINTERP 32
+        POOLEDEVTS {659C7505-AF18-44F0-A760-8984FF4CCF34}
+        <X 0 0
+          /1kCAAA=
+        >
+        E 0 c1 21 00
+        E 0 c2 24 00
+        E 0 c3 25 00
+        E 0 b2 07 64
+        E 0 b2 0a 40
+        E 0 b2 5b 00
+        E 0 b2 5d 00
+        E 0 b3 07 64
+        E 0 b3 0a 40
+        E 0 b3 5b 00
+        E 0 b3 5d 00
+        E 0 b1 79 00
+        E 0 b2 79 00
+        E 0 b3 79 00
+        E 240 91 2d 50
+        E 359 91 2d 00
+        E 1 91 2d 50
+        E 359 91 2d 00
+        E 1 91 32 50
+        E 119 91 32 00
+        E 120 90 32 50
+        E 120 80 32 00
+        E 121 90 30 50
+        E 120 80 30 00
+        e 120 90 2f 50
+        e 120 80 2f 00
+        E 360 91 2f 50
+        E 359 91 2f 00
+        E 1 91 2d 50
+        E 359 91 2d 00
+        E 1 91 2d 50
+        E 119 91 2d 00
+        E 241 91 30 50
+        E 120 91 30 00
+        E 0 91 2f 50
+        E 360 91 2f 00
+        E 720 91 2d 50
+        E 359 91 2d 00
+        E 1 91 2b 50
+        E 359 91 2b 00
+        E 1 91 29 50
+        E 119 91 29 00
+        E 481 b0 7b 00
+        CCINTERP 32
+        CHASE_CC_TAKEOFFS 1
+        GUID {275CCDB4-B571-4899-9E84-5EC766873480}
+        IGNTEMPO 0 120 4 4
+        SRCCOLOR 3
+        VELLANE -1 100 0
+        CFGEDITVIEW 430.377384 0.386127 52 12 0 -1 0 0 0 0.5
+        KEYSNAP 0
+        TRACKSEL 0
+        EVTFILTER 0 -1 -1 -1 -1 0 0 0 0 -1 -1 -1 -1 0 -1 0 -1 -1
+        CFGEDIT 1 1 0 1 0 0 1 1 1 1 1 0.25 -22 106 1632 1016 0 0 0 0 0 0 0 0 0 0.5 0 0 1 64
+      >
+    >
+  >
+  <TRACK {D82203E8-69CB-439A-83F5-7E39EABF95EA}
+    NAME Soups-a-alot-sucka
+    PEAKCOL 16576
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 0.75333899751391 0 -1 -1 1
+    MUTESOLO 0 0 0
+    IPHASE 0
+    PLAYOFFS 0 1
+    ISBUS 0 0
+    BUSCOMP 0 0 0 0 0
+    SHOWINMIX 1 0.6667 0.5 1 0.5 0 0 0
+    FREEMODE 0
+    SEL 0
+    REC 0 0 1 0 0 0 0
+    VU 2
+    TRACKHEIGHT 0 0 0
+    INQ 0 0 0 0.5 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {D82203E8-69CB-439A-83F5-7E39EABF95EA}
+    PERF 0
+    MIDIOUT -1
+    MAINSEND 1 0
+    <FXCHAIN
+      WNDRECT 20 10 1773 1070
+      SHOW 0
+      LASTSEL 0
+      DOCKED 0
+      BYPASS 0 0 0
+      <VST "VST3i: LABS (Spitfire Audio)" "LABS (64 Bit).vst3" 0 "" 359949351{56535453664C626C6162730000000000} ""
+        J2R0Fe5e7f4AAAAAAgAAAAEAAAAAAAAAAgAAAAAAAAB3GQAAAQAAAP//EAA=
+        ZxkAAAEAAABWc3RXAAAACAAAAAEAAAAAQ2NuSwAAGU9GQkNoAAAAAlNmTGIAAQMGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYt1ZDMiFyGAAA
+        PExhYnM+PE1FVEEgZmFtaWx5PSJEcnVtcyIgbmFtZT0iRHJ1bXMiIHByb2R1Y3RNb2RlPSIwIiB2ZXJzaW9uPSIxLjAuMyIgdGFncz0iMTAxMDAwMDpEcnVtcyIgbW9k
+        aWZpZWQ9IjEiLz48VUkgdWlzaXplPSIwLjc3MTU1MTcyNDEzNzkzMSIgdWljb2xsYXBzZWQ9IjEiLz48QVJUSUNTPjxTRVRUSU5HIGlkPSJwX3N5bmNUb1RlbXBvIiB2
+        YWx1ZT0iMSIvPjxTRVRUSU5HIGlkPSJwX2R5bmFtaWNzVmVsb2NpdHlNb2RlIiB2YWx1ZT0iQ09NUFJFU1NFRCBWRUxPQ0lUWSBISUdIIi8+PFNFVFRJTkcgaWQ9InBf
+        c2hvcnRSVE1vZGUiIHZhbHVlPSItMSIvPjxTRVRUSU5HIGlkPSJwX3ZlbG9jaXR5Q3VydmUiIHZhbHVlPSJMSU5FQVIgVkVMT0NJVFkiLz48U0VUVElORyBpZD0icF9x
+        dWFudGlzZU1vZGUiIHZhbHVlPSIiLz48U0VUVElORyBpZD0icF9taXhlckFkdmFuY2VkIiB2YWx1ZT0iMSIvPjxTRVRUSU5HIGlkPSJwX21peGVyR2xvYmFsIiB2YWx1
+        ZT0iMSIvPjxTRVRUSU5HIGlkPSJwX21peGVyTG9jayIgdmFsdWU9IjAiLz48U0VUVElORyBpZD0icF9taXhlclBhZ2UiIHZhbHVlPSIiLz48U0VUVElORyBpZD0icF9h
+        cnRpY0xvY2siIHZhbHVlPSIwIi8+PFNFVFRJTkcgaWQ9InBfYXJ0aWNQYWdlIiB2YWx1ZT0iIi8+PFNFVFRJTkcgaWQ9InBfbGFzdFNlbGVjdGVkUHJpbWFyeUFydGlj
+        IiB2YWx1ZT0iMCIvPjxTRVRUSU5HIGlkPSJwX21pZGlDaGFubmVsIiB2YWx1ZT0iMCIvPjxTRVRUSU5HIGlkPSJwX3NlbGVjdGVkVGFncyIgdmFsdWU9IiIvPjxTRVRU
+        SU5HIGlkPSJwX2ZpbHRlclBvcyIgdmFsdWU9IltdIi8+PFNFVFRJTkcgaWQ9InBfcHJlc2V0UG9zIiB2YWx1ZT0iW10iLz48U0VUVElORyBpZD0icF9ldm9Db250YWlu
+        ZXJQb3MiIHZhbHVlPSJbXSIvPjxTRVRUSU5HIGlkPSJwX29jdGF2ZSIgdmFsdWU9IjAiLz48U0VUVElORyBpZD0icF9vZGVzdEluZGljZXMiIHZhbHVlPSIwLDEsMiwz
+        LDQsNSw2LDcsOCw5LDEwLDExLDEyLDEzLDE0LDE1LDE2LDE3LDE4LDE5LDIwLDIxLDIyLDIzLDI0LDI1LDI2LDI3LDI4LDI5LDMwLDMxLDMyLDMzLDM0LDM1LDM2LDM3
+        LDM4LDM5LDQwLDQxLDQyLDQzLDQ0LDQ1LDQ2LDQ3LDQ4LDQ5LDUwLDUxLDUyLDUzLDU0LDU1LDU2LDU3LDU4LDU5LDYwLDYxLDYyLDYzLDY0LDY1LDY2LDY3LDY4LDY5
+        LDcwLDcxLDcyLDczLDc0LDc1LDc2LDc3LDc4LDc5LDgwLDgxLDgyLDgzLDg0LDg1LDg2LDg3LDg4LDg5LDkwLDkxLDkyLDkzLDk0LDk1LDk2LDk3LDk4LDk5LDEwMCwx
+        MDEsMTAyLDEwMywxMDQsMTA1LDEwNiwxMDcsMTA4LDEwOSwxMTAsMTExLDExMiwxMTMsMTE0LDExNSwxMTYsMTE3LDExOCwxMTksMTIwLDEyMSwxMjIsMTIzLDEyNCwx
+        MjUsMTI2LDEyNywxMjgsMTI5LDEzMCwxMzEsMTMyLDEzMywxMzQsMTM1LDEzNiwxMzcsMTM4LDEzOSwxNDAsMTQxLDE0MiwxNDMsMTQ0LDE0NSwxNDYsMTQ3LDE0OCwx
+        NDksMTUwLDE1MSwxNTIsMTUzLDE1NCwxNTUsMTU2LDE1NywxNTgsMTU5LDE2MCwxNjEsMTYyLDE2MywxNjQsMTY1LDE2NiwxNjcsMTY4LDE2OSwxNzAsMTcxLDE3Miwx
+        NzMsMTc0LDE3NSwxNzYsMTc3LDE3OCwxNzksMTgwLDE4MSwxODIsMTgzLDE4NCwxODUsMTg2LDE4NywxODgsMTg5LDE5MCwxOTEsMTkyLDE5MywxOTQsMTk1LDE5Niwx
+        OTcsMTk4LDE5OSwyMDAsMjAxLDIwMiwyMDMsMjA0LDIwNSwyMDYsMjA3LDIwOCwyMDksMjEwLDIxMSwyMTIsMjEzLDIxNCwyMTUsMjE2LDIxNywyMTgsMjE5LDIyMCwy
+        MjEsMjIyLDIyMywyMjQsMjI1LDIyNiwyMjcsMjI4LDIyOSwyMzAsMjMxLDIzMiwyMzMsMjM0LDIzNSwyMzYsMjM3LDIzOCwyMzksMjQwLDI0MSwyNDIsMjQzLDI0NCwy
+        NDUsMjQ2LDI0NywyNDgsMjQ5LDI1MCwyNTEsMjUyLDI1MywyNTQsMjU1LDI1NiwyNTcsMjU4LDI1OSwyNjAsMjYxLDI2MiwyNjMsMjY0Ii8+PEFSVElDPjxTRVRUSU5H
+        IGlkPSJhX25hbWUiIHZhbHVlPSJMQUJTX0RydW1zIi8+PFNFVFRJTkcgaWQ9ImFfdmVyc2lvbiIgdmFsdWU9IjE2Nzc3OTg0Ii8+PFNFVFRJTkcgaWQ9ImFfdGVtcGxh
+        dGVJZHgiIHZhbHVlPSIwIi8+PFNFVFRJTkcgaWQ9ImFfb2Rlc3QiIHZhbHVlPSJSRVZFUkIiLz48U0VUVElORyBpZD0iYV9hY3RpdmUiIHZhbHVlPSIyIi8+PFNFVFRJ
+        TkcgaWQ9ImFfdHdvSGFuZGVkIiB2YWx1ZT0iMCIvPjxTRVRUSU5HIGlkPSJhX2F1dG9NYWtlVXAiIHZhbHVlPSIwIi8+PFNFVFRJTkcgaWQ9InRfdHlwZSIgdmFsdWU9
+        IjAiLz48U0VUVElORyBpZD0idF9lbmFibGVkIiB2YWx1ZT0iMSIvPjxTRVRUSU5HIGlkPSJ0X2xhdGNoIiB2YWx1ZT0iMCIvPjxTRVRUSU5HIGlkPSJ0X2tleXN3aXRj
+        aCIgdmFsdWU9IjAiLz48U0VUVElORyBpZD0idF9taWRpQ2hhbm5lbCIgdmFsdWU9IjEiLz48U0VUVElORyBpZD0idF92ZWxGcm9tIiB2YWx1ZT0iMSIvPjxTRVRUSU5H
+        IGlkPSJ0X3ZlbFRvIiB2YWx1ZT0iMTI3Ii8+PFNFVFRJTkcgaWQ9InRfY2MiIHZhbHVlPSIzMiIvPjxTRVRUSU5HIGlkPSJ0X2NjVmFsdWVGcm9tIiB2YWx1ZT0iMCIv
+        PjxTRVRUSU5HIGlkPSJ0X2NjVmFsdWVUbyIgdmFsdWU9IjEyNyIvPjxTRVRUSU5HIGlkPSJ0X3NwZWVkRnJvbSIgdmFsdWU9IjAiLz48U0VUVElORyBpZD0idF9zcGVl
+        ZFRvIiB2YWx1ZT0iMC41Ii8+PFNFVFRJTkcgaWQ9InRfcHJvZ3JhbUNoYW5nZSIgdmFsdWU9IjAiLz48U0VUVElORyBpZD0icnJfdGltZW91dCIgdmFsdWU9Ii0xIi8+
+        PFNFVFRJTkcgaWQ9InJyX25laWdoYm91ck1pbiIgdmFsdWU9IjM2Ii8+PFNFVFRJTkcgaWQ9InJyX25laWdoYm91ck1heCIgdmFsdWU9IjYxIi8+PFNFVFRJTkcgaWQ9
+        InJyX3VzZU5laWdoYm91ciIgdmFsdWU9IjAiLz48U0VUVElORyBpZD0icnJfY291bnQiIHZhbHVlPSI5Ii8+PFNFVFRJTkcgaWQ9InJyX2luYyIgdmFsdWU9IjEiLz48
+        U0VUVElORyBpZD0icnJfbGF5ZXJzIiB2YWx1ZT0iMSIvPjxTRVRUSU5HIGlkPSJycl9nYWluIiB2YWx1ZT0iMSIvPjxTRVRUSU5HIGlkPSJycl9zdGFydCIgdmFsdWU9
+        IjAiLz48U0VUVElORyBpZD0icnJfc3luYyIgdmFsdWU9IjAiLz48U0VUVElORyBpZD0icnJfcGxheSIgdmFsdWU9IjAiLz48U0VUVElORyBpZD0icnJfa2V5c3dpdGNo
+        RnJvbSIgdmFsdWU9Ii0xIi8+PFNFVFRJTkcgaWQ9InJyX2tleXN3aXRjaFRvIiB2YWx1ZT0iLTEiLz48U0VUVElORyBpZD0icnJfa2V5c3dpdGNoVG8iIHZhbHVlPSIt
+        MSIvPjxTRVRUSU5HIGlkPSJycl9tb2RlIiB2YWx1ZT0iMCIvPjxTRVRUSU5HIGlkPSJyX21pZGlDaGFubmVsIiB2YWx1ZT0iMCIvPjxTRVRUSU5HIGlkPSJyX3RyYW5z
+        cG9zZSIgdmFsdWU9IjAiLz48U0VUVElORyBpZD0icl9sYXllclRyYW5zcG9zZSIgdmFsdWU9IjAiLz48U0VUVElORyBpZD0iaV9leHByZXNzaW9uIiB2YWx1ZT0iMSIv
+        PjxTRVRUSU5HIGlkPSJpX2R5bmFtaWNzIiB2YWx1ZT0iMCIvPjxTRVRUSU5HIGlkPSJpX3JldmVyYiIgdmFsdWU9IjAiLz48U0VUVElORyBpZD0iaV9yZWxlYXNlIiB2
+        YWx1ZT0iMC41Ii8+PFNFVFRJTkcgaWQ9ImlfdGlnaHQiIHZhbHVlPSIwLjUiLz48U0VUVElORyBpZD0iaV92aWJyYXRvIiB2YWx1ZT0iMSIvPjxTRVRUSU5HIGlkPSJp
+        X3ZhcmlhdGlvbiIgdmFsdWU9IjAiLz48U0VUVElORyBpZD0ic19wYW4iIHZhbHVlPSIwLjUiLz48U0VUVElORyBpZD0ic193aWR0aCIgdmFsdWU9IjAuNSIvPjxTRVRU
+        SU5HIGlkPSJzX2ZsaXAiIHZhbHVlPSIwIi8+PE1JWD48U0VUVElORyBpZD0ibV9tYWluIiB2YWx1ZT0iMSIgbWljSWQ9IjEiLz48U0VUVElORyBpZD0iZV9tYWluIiB2
+        YWx1ZT0iMSIgbWljSWQ9IjEiLz48U0VUVElORyBpZD0iYl9tYWluIiB2YWx1ZT0iMCIgbWljSWQ9IjEiLz48U0VUVElORyBpZD0ibV9hbHQxIiB2YWx1ZT0iMCIgbWlj
+        SWQ9IjIiLz48U0VUVElORyBpZD0iZV9hbHQxIiB2YWx1ZT0iMCIgbWljSWQ9IjIiLz48U0VUVElORyBpZD0iYl9hbHQxIiB2YWx1ZT0iMCIgbWljSWQ9IjIiLz48U0VU
+        VElORyBpZD0ibV9hbHQyIiB2YWx1ZT0iMCIgbWljSWQ9IjMiLz48U0VUVElORyBpZD0iZV9hbHQyIiB2YWx1ZT0iMCIgbWljSWQ9IjMiLz48U0VUVElORyBpZD0iYl9h
+        bHQyIiB2YWx1ZT0iMCIgbWljSWQ9IjMiLz48U0VUVElORyBpZD0ibV9hbHQzIiB2YWx1ZT0iMCIgbWljSWQ9IjQiLz48U0VUVElORyBpZD0iZV9hbHQzIiB2YWx1ZT0i
+        MCIgbWljSWQ9IjQiLz48U0VUVElORyBpZD0iYl9hbHQzIiB2YWx1ZT0iMCIgbWljSWQ9IjQiLz48L01JWD48L0FSVElDPjwvQVJUSUNTPjxQQVJBTUVURVJTPjxQQVJB
+        TSBpZD0iZ19nYWluIiB2YWx1ZT0iNCIgY2M9IjciLz48UEFSQU0gaWQ9ImdfcGFuIiB2YWx1ZT0iMC41MDM5MzcwMDU5OTY3MDQxIiBjYz0iMTAiLz48UEFSQU0gaWQ9
+        ImdfdHVuZSIgdmFsdWU9IjAiIGNjPSItMSIvPjxQQVJBTSBpZD0iaV9yZXZlcmIiIHZhbHVlPSIwIiBjYz0iMTkiLz48UEFSQU0gaWQ9ImlfdGlnaHQiIHZhbHVlPSIw
+        LjUiIGNjPSIxOCIvPjxQQVJBTSBpZD0iaV9zcGVlZCIgdmFsdWU9IjAiIGNjPSItMSIvPjxQQVJBTSBpZD0iaV9yZWxlYXNlIiB2YWx1ZT0iMC41IiBjYz0iMTciLz48
+        UEFSQU0gaWQ9ImlfZXhwcmVzc2lvbiIgdmFsdWU9IjEiIGNjPSIxMSIvPjxQQVJBTSBpZD0iaV9keW5hbWljcyIgdmFsdWU9IjAiIGNjPSIxIi8+PFBBUkFNIGlkPSJp
+        X3ZhcmlhdGlvbiIgdmFsdWU9IjAiIGNjPSIyMCIvPjxQQVJBTSBpZD0iaV92aWJyYXRvIiB2YWx1ZT0iMSIgY2M9IjIxIi8+PFBBUkFNIGlkPSJpX2VudmF0dCIgdmFs
+        dWU9IjAuMDk5OTk5OTg2NTg4OTU0OTMiIGNjPSItMSIvPjxQQVJBTSBpZD0iaV9lbnZkZWMiIHZhbHVlPSIwLjA5OTk5OTk5NDAzOTUzNTUyIiBjYz0iLTEiLz48UEFS
+        QU0gaWQ9ImlfZW52c3VzIiB2YWx1ZT0iMSIgY2M9Ii0xIi8+PFBBUkFNIGlkPSJpX2VudnJlbCIgdmFsdWU9IjIiIGNjPSItMSIvPjxQQVJBTSBpZD0iaV9taXhzaW1w
+        bGUiIHZhbHVlPSIwLjUiIGNjPSItMSIvPjxQQVJBTSBpZD0ic19mbGlwIiB2YWx1ZT0iMCIgY2M9Ii0xIi8+PFBBUkFNIGlkPSJzX3dpZHRoIiB2YWx1ZT0iMC41IiBj
+        Yz0iLTEiLz48UEFSQU0gaWQ9InNfcGFuIiB2YWx1ZT0iMC41IiBjYz0iLTEiLz48UEFSQU0gaWQ9ImlfZGVsYXkiIHZhbHVlPSIwIiBjYz0iLTEiLz48UEFSQU0gaWQ9
+        ImlfYW1vdW50IiB2YWx1ZT0iMCIgY2M9Ii0xIi8+PFBBUkFNIGlkPSJpX2Rpc3RvcnQiIHZhbHVlPSIwIiBjYz0iLTEiLz48UEFSQU0gaWQ9ImlfbHVzaFZlcmIiIHZh
+        bHVlPSIwIiBjYz0iLTEiLz48UEFSQU0gaWQ9ImlfcGVkdm9sIiB2YWx1ZT0iMC41IiBjYz0iLTEiLz48UEFSQU0gaWQ9ImlfcGVkRHluIiB2YWx1ZT0iMC41IiBjYz0i
+        LTEiLz48UEFSQU0gaWQ9ImlfbGVuZ3RoIiB2YWx1ZT0iMCIgY2M9Ii0xIi8+PFBBUkFNIGlkPSJpX3RpbWVNYWNoaW5lIiB2YWx1ZT0iMCIgY2M9Ii0xIi8+PFBBUkFN
+        IGlkPSJpX3N0cmV0Y2giIHZhbHVlPSIwIiBjYz0iLTEiLz48UEFSQU0gaWQ9Imlfc29mdFBlZGFsIiB2YWx1ZT0iMCIgY2M9Ii0xIi8+PFBBUkFNIGlkPSJpX3Jlc3Bv
+        bnNlIiB2YWx1ZT0iMCIgY2M9Ii0xIi8+PFBBUkFNIGlkPSJpX21hbGxldCIgdmFsdWU9IjAiIGNjPSItMSIvPjxQQVJBTSBpZD0iaV9zdG9wZU11dGUiIHZhbHVlPSIw
+        IiBjYz0iLTEiLz48UEFSQU0gaWQ9ImlfZGlyZWN0aW9uIiB2YWx1ZT0iMCIgY2M9Ii0xIi8+PFBBUkFNIGlkPSJpX2xwRmlsdGVyIiB2YWx1ZT0iMCIgY2M9Ii0xIi8+
+        PFBBUkFNIGlkPSJpX3BvcnRhbWVudG8iIHZhbHVlPSIwIiBjYz0iLTEiLz48UEFSQU0gaWQ9ImlfbWV0YVsxOF0iIHZhbHVlPSIwIiBjYz0iLTEiLz48UEFSQU0gaWQ9
+        ImlfbWV0YVsxOV0iIHZhbHVlPSIwIiBjYz0iLTEiLz48UEFSQU0gaWQ9ImlfbWV0YVsyMF0iIHZhbHVlPSIwIiBjYz0iLTEiLz48UEFSQU0gaWQ9ImlfbWV0YVsyMV0i
+        IHZhbHVlPSIwIiBjYz0iLTEiLz48UEFSQU0gaWQ9ImlfbWV0YVsyMl0iIHZhbHVlPSIwIiBjYz0iLTEiLz48UEFSQU0gaWQ9ImlfbWV0YVsyM10iIHZhbHVlPSIwIiBj
+        Yz0iLTEiLz48UEFSQU0gaWQ9ImlfbWV0YVsyNF0iIHZhbHVlPSIwIiBjYz0iLTEiLz48UEFSQU0gaWQ9ImlfbWV0YVsyNV0iIHZhbHVlPSIwIiBjYz0iLTEiLz48UEFS
+        QU0gaWQ9ImlfbWV0YVsyNl0iIHZhbHVlPSIwIiBjYz0iLTEiLz48UEFSQU0gaWQ9Im1fbWFpbiIgdmFsdWU9IjEiIGNjPSIyMiIvPjxQQVJBTSBpZD0ibV9hbHQxIiB2
+        YWx1ZT0iMCIgY2M9IjIzIi8+PFBBUkFNIGlkPSJtX2FsdDIiIHZhbHVlPSIwIiBjYz0iMjQiLz48UEFSQU0gaWQ9Im1fYWx0MyIgdmFsdWU9IjAiIGNjPSIyNSIvPjwv
+        UEFSQU1FVEVSUz48L0xhYnM+AAAAAAAAAAAASlVDRVByaXZhdGVEYXRhAAEBQnlwYXNzAAEBAwAdAAAAAAAAAEpVQ0VQcml2YXRlRGF0YQAAAAAAAAAA
+        AAAQAAAA
+      >
+      FLOATPOS 0 0 0 0
+      FXID {FE3884E3-A1A6-4AED-B190-5E9D2C2DF15D}
+      WAK 0 0
+    >
+    <ITEM
+      POSITION 18
+      SNAPOFFS 0
+      LENGTH 6
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0
+      FADEOUT 1 0 0 1 0 0
+      MUTE 0
+      SEL 0
+      IGUID {C1848FA9-A533-4708-9BB1-39FE35B2F016}
+      IID 3
+      NAME Soups-a-alot-sucka.mid
+      VOLPAN 1 0 1 -1
+      SOFFS 0 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {2D5795B2-DCD5-4EE4-BA44-CCD817743ECF}
+      <SOURCE MIDI
+        HASDATA 1 480 QN
+        CCINTERP 32
+        POOLEDEVTS {AB8C7247-585F-43DC-9E89-65B1D440231B}
+        <X 0 0
+          /1kCAAA=
+        >
+        E 0 c9 00 00
+        E 0 b9 07 64
+        E 0 b9 0a 40
+        E 0 b9 5b 00
+        E 0 b9 5d 00
+        E 0 99 24 50
+        E 0 b9 79 00
+        E 119 99 24 00
+        E 241 99 24 50
+        E 119 99 24 00
+        E 1 99 26 50
+        E 0 99 24 50
+        E 119 99 24 00
+        E 121 99 24 50
+        E 119 99 24 00
+        E 1 99 24 50
+        E 119 99 26 00
+        E 0 99 24 00
+        E 121 99 24 50
+        E 119 99 24 00
+        E 1 99 24 50
+        E 119 99 24 00
+        E 1 99 24 50
+        E 119 99 24 00
+        E 1 99 26 50
+        E 120 99 24 50
+        E 119 99 24 00
+        E 1 99 24 50
+        E 119 99 24 00
+        E 1 99 24 50
+        E 119 99 26 00
+        E 0 99 24 00
+        E 1 99 24 50
+        E 119 99 24 00
+        E 241 99 24 50
+        E 119 99 24 00
+        E 1 99 26 50
+        E 0 99 24 50
+        E 119 99 24 00
+        E 121 99 24 50
+        E 119 99 24 00
+        E 1 99 24 50
+        E 119 99 26 00
+        E 0 99 24 00
+        E 121 99 24 50
+        E 119 99 24 00
+        E 1 99 24 50
+        E 119 99 24 00
+        E 1 99 24 50
+        E 119 99 24 00
+        E 1 99 26 50
+        E 120 99 24 50
+        E 119 99 24 00
+        E 1 99 24 50
+        E 119 99 24 00
+        E 1 99 24 50
+        E 119 99 26 00
+        E 0 99 24 00
+        E 1 b0 7b 00
+        CCINTERP 32
+        CHASE_CC_TAKEOFFS 1
+        GUID {22F9DA02-31AE-4B25-BE3E-BE9A3533FB7C}
+        IGNTEMPO 0 120 4 4
+        SRCCOLOR 4
+        VELLANE -1 100 0
+        CFGEDITVIEW -11491.410431 0.217708 70 12 0 -1 0 0 0 0.5
+        KEYSNAP 0
+        TRACKSEL 0
+        EVTFILTER 0 -1 -1 -1 -1 0 0 0 0 -1 -1 -1 -1 0 -1 0 -1 -1
+        CFGEDIT 1 1 0 1 0 0 1 1 1 1 1 0.25 32 106 1670 1000 0 0 0 0 0 0 0 0 0 0.5 0 0 1 64
+      >
+    >
+    <ITEM
+      POSITION 24
+      SNAPOFFS 0
+      LENGTH 6
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0
+      FADEOUT 1 0 0 1 0 0
+      MUTE 0
+      SEL 0
+      IGUID {B3DAC840-9160-429B-94FB-52857C14D2CF}
+      IID 3
+      NAME Soups-a-alot-sucka.mid
+      VOLPAN 1 0 1 -1
+      SOFFS 0 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {6DB31419-0AB7-4B27-BBB9-3DDCBFD1084C}
+      <SOURCE MIDI
+        HASDATA 1 480 QN
+        CCINTERP 32
+        POOLEDEVTS {B9079761-D4B4-4C42-ADC5-DB0530029067}
+        <X 0 0
+          /1kCAAA=
+        >
+        E 0 c9 00 00
+        E 0 b9 07 64
+        E 0 b9 0a 40
+        E 0 b9 5b 00
+        E 0 b9 5d 00
+        E 0 99 24 50
+        E 0 b9 79 00
+        E 119 99 24 00
+        E 241 99 24 50
+        E 119 99 24 00
+        E 1 99 26 50
+        E 0 99 24 50
+        E 119 99 24 00
+        E 121 99 24 50
+        E 119 99 24 00
+        E 1 99 24 50
+        E 119 99 26 00
+        E 0 99 24 00
+        E 121 99 24 50
+        E 119 99 24 00
+        E 1 99 24 50
+        E 119 99 24 00
+        E 1 99 24 50
+        E 119 99 24 00
+        E 1 99 26 50
+        E 120 99 24 50
+        E 119 99 24 00
+        E 1 99 24 50
+        E 119 99 24 00
+        E 1 99 24 50
+        E 119 99 26 00
+        E 0 99 24 00
+        E 1 99 24 50
+        E 119 99 24 00
+        E 241 99 24 50
+        E 119 99 24 00
+        E 1 99 26 50
+        E 0 99 24 50
+        E 119 99 24 00
+        E 121 99 24 50
+        E 119 99 24 00
+        E 1 99 24 50
+        E 119 99 26 00
+        E 0 99 24 00
+        E 121 99 24 50
+        E 119 99 24 00
+        E 1 99 24 50
+        E 119 99 24 00
+        E 1 99 24 50
+        E 119 99 24 00
+        E 1 99 26 50
+        E 120 99 24 50
+        E 119 99 24 00
+        E 1 99 24 50
+        E 119 99 24 00
+        E 1 99 24 50
+        E 119 99 26 00
+        E 0 99 24 00
+        E 1 b0 7b 00
+        CCINTERP 32
+        CHASE_CC_TAKEOFFS 1
+        GUID {22F9DA02-31AE-4B25-BE3E-BE9A3533FB7C}
+        IGNTEMPO 0 120 4 4
+        SRCCOLOR 4
+        VELLANE -1 100 0
+        CFGEDITVIEW -11491.410431 0.217708 70 12 0 -1 0 0 0 0.5
+        KEYSNAP 0
+        TRACKSEL 0
+        EVTFILTER 0 -1 -1 -1 -1 0 0 0 0 -1 -1 -1 -1 0 -1 0 -1 -1
+        CFGEDIT 1 1 0 1 0 0 1 1 1 1 1 0.25 32 106 1670 1000 0 0 0 0 0 0 0 0 0 0.5 0 0 1 64
+      >
+    >
+  >
+  <TRACK {6F17D739-A844-41EF-BB75-E8918FEBA800}
+    NAME Soups-a-alot-sucka
+    PEAKCOL 16576
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 0.33613221313416 0 -1 -1 1
+    MUTESOLO 0 0 0
+    IPHASE 0
+    PLAYOFFS 0 1
+    ISBUS 0 0
+    BUSCOMP 0 0 0 0 0
+    SHOWINMIX 1 0.6667 0.5 1 0.5 0 0 0
+    FREEMODE 0
+    SEL 0
+    REC 0 0 1 0 0 0 0
+    VU 2
+    TRACKHEIGHT 0 0 0
+    INQ 0 0 0 0.5 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {6F17D739-A844-41EF-BB75-E8918FEBA800}
+    PERF 0
+    MIDIOUT -1
+    MAINSEND 1 0
+    <FXCHAIN
+      WNDRECT 20 10 980 683
+      SHOW 0
+      LASTSEL 2
+      DOCKED 0
+      BYPASS 0 0 0
+      <VST "VST3i: LABS (Spitfire Audio)" "LABS (64 Bit).vst3" 0 "" 359949351{56535453664C626C6162730000000000} ""
+        J2R0Fe5e7f4AAAAAAgAAAAEAAAAAAAAAAgAAAAAAAAB3GQAAAQAAAP//EAA=
+        ZxkAAAEAAABWc3RXAAAACAAAAAEAAAAAQ2NuSwAAGU9GQkNoAAAAAlNmTGIAAQMGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYt1ZDMiFyGAAA
+        PExhYnM+PE1FVEEgZmFtaWx5PSJEcnVtcyIgbmFtZT0iRHJ1bXMiIHByb2R1Y3RNb2RlPSIwIiB2ZXJzaW9uPSIxLjAuMyIgdGFncz0iMTAxMDAwMDpEcnVtcyIgbW9k
+        aWZpZWQ9IjEiLz48VUkgdWlzaXplPSIwLjc3MTU1MTcyNDEzNzkzMSIgdWljb2xsYXBzZWQ9IjEiLz48QVJUSUNTPjxTRVRUSU5HIGlkPSJwX3N5bmNUb1RlbXBvIiB2
+        YWx1ZT0iMSIvPjxTRVRUSU5HIGlkPSJwX2R5bmFtaWNzVmVsb2NpdHlNb2RlIiB2YWx1ZT0iQ09NUFJFU1NFRCBWRUxPQ0lUWSBISUdIIi8+PFNFVFRJTkcgaWQ9InBf
+        c2hvcnRSVE1vZGUiIHZhbHVlPSItMSIvPjxTRVRUSU5HIGlkPSJwX3ZlbG9jaXR5Q3VydmUiIHZhbHVlPSJMSU5FQVIgVkVMT0NJVFkiLz48U0VUVElORyBpZD0icF9x
+        dWFudGlzZU1vZGUiIHZhbHVlPSIiLz48U0VUVElORyBpZD0icF9taXhlckFkdmFuY2VkIiB2YWx1ZT0iMSIvPjxTRVRUSU5HIGlkPSJwX21peGVyR2xvYmFsIiB2YWx1
+        ZT0iMSIvPjxTRVRUSU5HIGlkPSJwX21peGVyTG9jayIgdmFsdWU9IjAiLz48U0VUVElORyBpZD0icF9taXhlclBhZ2UiIHZhbHVlPSIiLz48U0VUVElORyBpZD0icF9h
+        cnRpY0xvY2siIHZhbHVlPSIwIi8+PFNFVFRJTkcgaWQ9InBfYXJ0aWNQYWdlIiB2YWx1ZT0iIi8+PFNFVFRJTkcgaWQ9InBfbGFzdFNlbGVjdGVkUHJpbWFyeUFydGlj
+        IiB2YWx1ZT0iMCIvPjxTRVRUSU5HIGlkPSJwX21pZGlDaGFubmVsIiB2YWx1ZT0iMCIvPjxTRVRUSU5HIGlkPSJwX3NlbGVjdGVkVGFncyIgdmFsdWU9IiIvPjxTRVRU
+        SU5HIGlkPSJwX2ZpbHRlclBvcyIgdmFsdWU9IltdIi8+PFNFVFRJTkcgaWQ9InBfcHJlc2V0UG9zIiB2YWx1ZT0iW10iLz48U0VUVElORyBpZD0icF9ldm9Db250YWlu
+        ZXJQb3MiIHZhbHVlPSJbXSIvPjxTRVRUSU5HIGlkPSJwX29jdGF2ZSIgdmFsdWU9IjAiLz48U0VUVElORyBpZD0icF9vZGVzdEluZGljZXMiIHZhbHVlPSIwLDEsMiwz
+        LDQsNSw2LDcsOCw5LDEwLDExLDEyLDEzLDE0LDE1LDE2LDE3LDE4LDE5LDIwLDIxLDIyLDIzLDI0LDI1LDI2LDI3LDI4LDI5LDMwLDMxLDMyLDMzLDM0LDM1LDM2LDM3
+        LDM4LDM5LDQwLDQxLDQyLDQzLDQ0LDQ1LDQ2LDQ3LDQ4LDQ5LDUwLDUxLDUyLDUzLDU0LDU1LDU2LDU3LDU4LDU5LDYwLDYxLDYyLDYzLDY0LDY1LDY2LDY3LDY4LDY5
+        LDcwLDcxLDcyLDczLDc0LDc1LDc2LDc3LDc4LDc5LDgwLDgxLDgyLDgzLDg0LDg1LDg2LDg3LDg4LDg5LDkwLDkxLDkyLDkzLDk0LDk1LDk2LDk3LDk4LDk5LDEwMCwx
+        MDEsMTAyLDEwMywxMDQsMTA1LDEwNiwxMDcsMTA4LDEwOSwxMTAsMTExLDExMiwxMTMsMTE0LDExNSwxMTYsMTE3LDExOCwxMTksMTIwLDEyMSwxMjIsMTIzLDEyNCwx
+        MjUsMTI2LDEyNywxMjgsMTI5LDEzMCwxMzEsMTMyLDEzMywxMzQsMTM1LDEzNiwxMzcsMTM4LDEzOSwxNDAsMTQxLDE0MiwxNDMsMTQ0LDE0NSwxNDYsMTQ3LDE0OCwx
+        NDksMTUwLDE1MSwxNTIsMTUzLDE1NCwxNTUsMTU2LDE1NywxNTgsMTU5LDE2MCwxNjEsMTYyLDE2MywxNjQsMTY1LDE2NiwxNjcsMTY4LDE2OSwxNzAsMTcxLDE3Miwx
+        NzMsMTc0LDE3NSwxNzYsMTc3LDE3OCwxNzksMTgwLDE4MSwxODIsMTgzLDE4NCwxODUsMTg2LDE4NywxODgsMTg5LDE5MCwxOTEsMTkyLDE5MywxOTQsMTk1LDE5Niwx
+        OTcsMTk4LDE5OSwyMDAsMjAxLDIwMiwyMDMsMjA0LDIwNSwyMDYsMjA3LDIwOCwyMDksMjEwLDIxMSwyMTIsMjEzLDIxNCwyMTUsMjE2LDIxNywyMTgsMjE5LDIyMCwy
+        MjEsMjIyLDIyMywyMjQsMjI1LDIyNiwyMjcsMjI4LDIyOSwyMzAsMjMxLDIzMiwyMzMsMjM0LDIzNSwyMzYsMjM3LDIzOCwyMzksMjQwLDI0MSwyNDIsMjQzLDI0NCwy
+        NDUsMjQ2LDI0NywyNDgsMjQ5LDI1MCwyNTEsMjUyLDI1MywyNTQsMjU1LDI1NiwyNTcsMjU4LDI1OSwyNjAsMjYxLDI2MiwyNjMsMjY0Ii8+PEFSVElDPjxTRVRUSU5H
+        IGlkPSJhX25hbWUiIHZhbHVlPSJMQUJTX0RydW1zIi8+PFNFVFRJTkcgaWQ9ImFfdmVyc2lvbiIgdmFsdWU9IjE2Nzc3OTg0Ii8+PFNFVFRJTkcgaWQ9ImFfdGVtcGxh
+        dGVJZHgiIHZhbHVlPSIwIi8+PFNFVFRJTkcgaWQ9ImFfb2Rlc3QiIHZhbHVlPSJSRVZFUkIiLz48U0VUVElORyBpZD0iYV9hY3RpdmUiIHZhbHVlPSIyIi8+PFNFVFRJ
+        TkcgaWQ9ImFfdHdvSGFuZGVkIiB2YWx1ZT0iMCIvPjxTRVRUSU5HIGlkPSJhX2F1dG9NYWtlVXAiIHZhbHVlPSIwIi8+PFNFVFRJTkcgaWQ9InRfdHlwZSIgdmFsdWU9
+        IjAiLz48U0VUVElORyBpZD0idF9lbmFibGVkIiB2YWx1ZT0iMSIvPjxTRVRUSU5HIGlkPSJ0X2xhdGNoIiB2YWx1ZT0iMCIvPjxTRVRUSU5HIGlkPSJ0X2tleXN3aXRj
+        aCIgdmFsdWU9IjAiLz48U0VUVElORyBpZD0idF9taWRpQ2hhbm5lbCIgdmFsdWU9IjEiLz48U0VUVElORyBpZD0idF92ZWxGcm9tIiB2YWx1ZT0iMSIvPjxTRVRUSU5H
+        IGlkPSJ0X3ZlbFRvIiB2YWx1ZT0iMTI3Ii8+PFNFVFRJTkcgaWQ9InRfY2MiIHZhbHVlPSIzMiIvPjxTRVRUSU5HIGlkPSJ0X2NjVmFsdWVGcm9tIiB2YWx1ZT0iMCIv
+        PjxTRVRUSU5HIGlkPSJ0X2NjVmFsdWVUbyIgdmFsdWU9IjEyNyIvPjxTRVRUSU5HIGlkPSJ0X3NwZWVkRnJvbSIgdmFsdWU9IjAiLz48U0VUVElORyBpZD0idF9zcGVl
+        ZFRvIiB2YWx1ZT0iMC41Ii8+PFNFVFRJTkcgaWQ9InRfcHJvZ3JhbUNoYW5nZSIgdmFsdWU9IjAiLz48U0VUVElORyBpZD0icnJfdGltZW91dCIgdmFsdWU9Ii0xIi8+
+        PFNFVFRJTkcgaWQ9InJyX25laWdoYm91ck1pbiIgdmFsdWU9IjM2Ii8+PFNFVFRJTkcgaWQ9InJyX25laWdoYm91ck1heCIgdmFsdWU9IjYxIi8+PFNFVFRJTkcgaWQ9
+        InJyX3VzZU5laWdoYm91ciIgdmFsdWU9IjAiLz48U0VUVElORyBpZD0icnJfY291bnQiIHZhbHVlPSI5Ii8+PFNFVFRJTkcgaWQ9InJyX2luYyIgdmFsdWU9IjEiLz48
+        U0VUVElORyBpZD0icnJfbGF5ZXJzIiB2YWx1ZT0iMSIvPjxTRVRUSU5HIGlkPSJycl9nYWluIiB2YWx1ZT0iMSIvPjxTRVRUSU5HIGlkPSJycl9zdGFydCIgdmFsdWU9
+        IjAiLz48U0VUVElORyBpZD0icnJfc3luYyIgdmFsdWU9IjAiLz48U0VUVElORyBpZD0icnJfcGxheSIgdmFsdWU9IjAiLz48U0VUVElORyBpZD0icnJfa2V5c3dpdGNo
+        RnJvbSIgdmFsdWU9Ii0xIi8+PFNFVFRJTkcgaWQ9InJyX2tleXN3aXRjaFRvIiB2YWx1ZT0iLTEiLz48U0VUVElORyBpZD0icnJfa2V5c3dpdGNoVG8iIHZhbHVlPSIt
+        MSIvPjxTRVRUSU5HIGlkPSJycl9tb2RlIiB2YWx1ZT0iMCIvPjxTRVRUSU5HIGlkPSJyX21pZGlDaGFubmVsIiB2YWx1ZT0iMCIvPjxTRVRUSU5HIGlkPSJyX3RyYW5z
+        cG9zZSIgdmFsdWU9IjAiLz48U0VUVElORyBpZD0icl9sYXllclRyYW5zcG9zZSIgdmFsdWU9IjAiLz48U0VUVElORyBpZD0iaV9leHByZXNzaW9uIiB2YWx1ZT0iMSIv
+        PjxTRVRUSU5HIGlkPSJpX2R5bmFtaWNzIiB2YWx1ZT0iMCIvPjxTRVRUSU5HIGlkPSJpX3JldmVyYiIgdmFsdWU9IjAiLz48U0VUVElORyBpZD0iaV9yZWxlYXNlIiB2
+        YWx1ZT0iMC41Ii8+PFNFVFRJTkcgaWQ9ImlfdGlnaHQiIHZhbHVlPSIwLjUiLz48U0VUVElORyBpZD0iaV92aWJyYXRvIiB2YWx1ZT0iMSIvPjxTRVRUSU5HIGlkPSJp
+        X3ZhcmlhdGlvbiIgdmFsdWU9IjAiLz48U0VUVElORyBpZD0ic19wYW4iIHZhbHVlPSIwLjUiLz48U0VUVElORyBpZD0ic193aWR0aCIgdmFsdWU9IjAuNSIvPjxTRVRU
+        SU5HIGlkPSJzX2ZsaXAiIHZhbHVlPSIwIi8+PE1JWD48U0VUVElORyBpZD0ibV9tYWluIiB2YWx1ZT0iMSIgbWljSWQ9IjEiLz48U0VUVElORyBpZD0iZV9tYWluIiB2
+        YWx1ZT0iMSIgbWljSWQ9IjEiLz48U0VUVElORyBpZD0iYl9tYWluIiB2YWx1ZT0iMCIgbWljSWQ9IjEiLz48U0VUVElORyBpZD0ibV9hbHQxIiB2YWx1ZT0iMCIgbWlj
+        SWQ9IjIiLz48U0VUVElORyBpZD0iZV9hbHQxIiB2YWx1ZT0iMCIgbWljSWQ9IjIiLz48U0VUVElORyBpZD0iYl9hbHQxIiB2YWx1ZT0iMCIgbWljSWQ9IjIiLz48U0VU
+        VElORyBpZD0ibV9hbHQyIiB2YWx1ZT0iMCIgbWljSWQ9IjMiLz48U0VUVElORyBpZD0iZV9hbHQyIiB2YWx1ZT0iMCIgbWljSWQ9IjMiLz48U0VUVElORyBpZD0iYl9h
+        bHQyIiB2YWx1ZT0iMCIgbWljSWQ9IjMiLz48U0VUVElORyBpZD0ibV9hbHQzIiB2YWx1ZT0iMCIgbWljSWQ9IjQiLz48U0VUVElORyBpZD0iZV9hbHQzIiB2YWx1ZT0i
+        MCIgbWljSWQ9IjQiLz48U0VUVElORyBpZD0iYl9hbHQzIiB2YWx1ZT0iMCIgbWljSWQ9IjQiLz48L01JWD48L0FSVElDPjwvQVJUSUNTPjxQQVJBTUVURVJTPjxQQVJB
+        TSBpZD0iZ19nYWluIiB2YWx1ZT0iNCIgY2M9IjciLz48UEFSQU0gaWQ9ImdfcGFuIiB2YWx1ZT0iMC41MDM5MzcwMDU5OTY3MDQxIiBjYz0iMTAiLz48UEFSQU0gaWQ9
+        ImdfdHVuZSIgdmFsdWU9IjAiIGNjPSItMSIvPjxQQVJBTSBpZD0iaV9yZXZlcmIiIHZhbHVlPSIwIiBjYz0iMTkiLz48UEFSQU0gaWQ9ImlfdGlnaHQiIHZhbHVlPSIw
+        LjUiIGNjPSIxOCIvPjxQQVJBTSBpZD0iaV9zcGVlZCIgdmFsdWU9IjAiIGNjPSItMSIvPjxQQVJBTSBpZD0iaV9yZWxlYXNlIiB2YWx1ZT0iMC41IiBjYz0iMTciLz48
+        UEFSQU0gaWQ9ImlfZXhwcmVzc2lvbiIgdmFsdWU9IjEiIGNjPSIxMSIvPjxQQVJBTSBpZD0iaV9keW5hbWljcyIgdmFsdWU9IjAiIGNjPSIxIi8+PFBBUkFNIGlkPSJp
+        X3ZhcmlhdGlvbiIgdmFsdWU9IjAiIGNjPSIyMCIvPjxQQVJBTSBpZD0iaV92aWJyYXRvIiB2YWx1ZT0iMSIgY2M9IjIxIi8+PFBBUkFNIGlkPSJpX2VudmF0dCIgdmFs
+        dWU9IjAuMDk5OTk5OTg2NTg4OTU0OTMiIGNjPSItMSIvPjxQQVJBTSBpZD0iaV9lbnZkZWMiIHZhbHVlPSIwLjA5OTk5OTk5NDAzOTUzNTUyIiBjYz0iLTEiLz48UEFS
+        QU0gaWQ9ImlfZW52c3VzIiB2YWx1ZT0iMSIgY2M9Ii0xIi8+PFBBUkFNIGlkPSJpX2VudnJlbCIgdmFsdWU9IjIiIGNjPSItMSIvPjxQQVJBTSBpZD0iaV9taXhzaW1w
+        bGUiIHZhbHVlPSIwLjUiIGNjPSItMSIvPjxQQVJBTSBpZD0ic19mbGlwIiB2YWx1ZT0iMCIgY2M9Ii0xIi8+PFBBUkFNIGlkPSJzX3dpZHRoIiB2YWx1ZT0iMC41IiBj
+        Yz0iLTEiLz48UEFSQU0gaWQ9InNfcGFuIiB2YWx1ZT0iMC41IiBjYz0iLTEiLz48UEFSQU0gaWQ9ImlfZGVsYXkiIHZhbHVlPSIwIiBjYz0iLTEiLz48UEFSQU0gaWQ9
+        ImlfYW1vdW50IiB2YWx1ZT0iMCIgY2M9Ii0xIi8+PFBBUkFNIGlkPSJpX2Rpc3RvcnQiIHZhbHVlPSIwIiBjYz0iLTEiLz48UEFSQU0gaWQ9ImlfbHVzaFZlcmIiIHZh
+        bHVlPSIwIiBjYz0iLTEiLz48UEFSQU0gaWQ9ImlfcGVkdm9sIiB2YWx1ZT0iMC41IiBjYz0iLTEiLz48UEFSQU0gaWQ9ImlfcGVkRHluIiB2YWx1ZT0iMC41IiBjYz0i
+        LTEiLz48UEFSQU0gaWQ9ImlfbGVuZ3RoIiB2YWx1ZT0iMCIgY2M9Ii0xIi8+PFBBUkFNIGlkPSJpX3RpbWVNYWNoaW5lIiB2YWx1ZT0iMCIgY2M9Ii0xIi8+PFBBUkFN
+        IGlkPSJpX3N0cmV0Y2giIHZhbHVlPSIwIiBjYz0iLTEiLz48UEFSQU0gaWQ9Imlfc29mdFBlZGFsIiB2YWx1ZT0iMCIgY2M9Ii0xIi8+PFBBUkFNIGlkPSJpX3Jlc3Bv
+        bnNlIiB2YWx1ZT0iMCIgY2M9Ii0xIi8+PFBBUkFNIGlkPSJpX21hbGxldCIgdmFsdWU9IjAiIGNjPSItMSIvPjxQQVJBTSBpZD0iaV9zdG9wZU11dGUiIHZhbHVlPSIw
+        IiBjYz0iLTEiLz48UEFSQU0gaWQ9ImlfZGlyZWN0aW9uIiB2YWx1ZT0iMCIgY2M9Ii0xIi8+PFBBUkFNIGlkPSJpX2xwRmlsdGVyIiB2YWx1ZT0iMCIgY2M9Ii0xIi8+
+        PFBBUkFNIGlkPSJpX3BvcnRhbWVudG8iIHZhbHVlPSIwIiBjYz0iLTEiLz48UEFSQU0gaWQ9ImlfbWV0YVsxOF0iIHZhbHVlPSIwIiBjYz0iLTEiLz48UEFSQU0gaWQ9
+        ImlfbWV0YVsxOV0iIHZhbHVlPSIwIiBjYz0iLTEiLz48UEFSQU0gaWQ9ImlfbWV0YVsyMF0iIHZhbHVlPSIwIiBjYz0iLTEiLz48UEFSQU0gaWQ9ImlfbWV0YVsyMV0i
+        IHZhbHVlPSIwIiBjYz0iLTEiLz48UEFSQU0gaWQ9ImlfbWV0YVsyMl0iIHZhbHVlPSIwIiBjYz0iLTEiLz48UEFSQU0gaWQ9ImlfbWV0YVsyM10iIHZhbHVlPSIwIiBj
+        Yz0iLTEiLz48UEFSQU0gaWQ9ImlfbWV0YVsyNF0iIHZhbHVlPSIwIiBjYz0iLTEiLz48UEFSQU0gaWQ9ImlfbWV0YVsyNV0iIHZhbHVlPSIwIiBjYz0iLTEiLz48UEFS
+        QU0gaWQ9ImlfbWV0YVsyNl0iIHZhbHVlPSIwIiBjYz0iLTEiLz48UEFSQU0gaWQ9Im1fbWFpbiIgdmFsdWU9IjEiIGNjPSIyMiIvPjxQQVJBTSBpZD0ibV9hbHQxIiB2
+        YWx1ZT0iMCIgY2M9IjIzIi8+PFBBUkFNIGlkPSJtX2FsdDIiIHZhbHVlPSIwIiBjYz0iMjQiLz48UEFSQU0gaWQ9Im1fYWx0MyIgdmFsdWU9IjAiIGNjPSIyNSIvPjwv
+        UEFSQU1FVEVSUz48L0xhYnM+AAAAAAAAAAAASlVDRVByaXZhdGVEYXRhAAEBQnlwYXNzAAEBAwAdAAAAAAAAAEpVQ0VQcml2YXRlRGF0YQAAAAAAAAAA
+        AAAQAAAA
+      >
+      FLOATPOS 0 0 0 0
+      FXID {18885A8E-F39F-4A37-90AD-CFE868BC4A5C}
+      WAK 0 0
+      BYPASS 0 0 0
+      <VST "VST: ReaEQ (Cockos)" reaeq.dll 0 "" 1919247729<56535472656571726561657100000000> ""
+        cWVlcu5e7f4CAAAAAQAAAAAAAAACAAAAAAAAAAIAAAABAAAAAAAAAAIAAAAAAAAAqAAAAAEAAAAAABAA
+        IQAAAAQAAAAAAAAAAQAAAISBUNLNIYFAgO21oPfGsD4AAAAAAAAAQAEIAAAAAQAAAAAAAAAAwHJAAAAAAAAA8D8AAAAAAAAAQAEIAAAAAQAAAAAAAAAAQI9AAAAAAAAA
+        8D8AAAAAAAAAQAEBAAAAAQAAADiDa9hgEMJAfdmMHOqR9T8AAAAAAAAAQAEBAAAAAQAAAAAAAAAAAPA/AAAAAMUDAACLAgAA
+        AAAQAAAA
+      >
+      FLOATPOS 0 0 0 0
+      FXID {34FAEEB6-31BE-468F-821A-0FEFB2DDDC8A}
+      WAK 0 0
+      BYPASS 0 0 0
+      <VST "VST: Ambient Reverb (Stone Voices)" AmbientReverb.dll 0 "" 1398161746<56535453564152616D6269656E742072> ""
+        UkFWU+9e7f4CAAAAAQAAAAAAAAACAAAAAAAAAAIAAAABAAAAAAAAAAIAAAAAAAAAUAAAAAAAAAAAABAA
+        776t3g3wrd4AAIA/AACAP86KXT8XMV4/RuF6PwAAAAAAAAAAO7TIPgAAAAAAAAA/AABAP6uqqj7WiZ09l2/5PgAAAD/TE8E8AAAAP8x6Pz4=
+        RGVmYXVsdABEZWZhdWx0ABAAAAA=
+      >
+      PRESETNAME Default
+      FLOATPOS 0 0 0 0
+      FXID {619856C6-F124-4EA6-B8A7-5F3BEA8D3E9E}
+      WAK 0 0
+    >
+    <ITEM
+      POSITION 18
+      SNAPOFFS 0
+      LENGTH 6
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0
+      FADEOUT 1 0 0 1 0 0
+      MUTE 0
+      SEL 0
+      IGUID {F20FC3D9-8132-4FDC-9EA3-5361F3DE582F}
+      IID 3
+      NAME Soups-a-alot-sucka.mid
+      VOLPAN 1 0 1 -1
+      SOFFS 0 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {D41B13F3-C1E8-41E8-8DBA-AC226A8F636C}
+      <SOURCE MIDI
+        HASDATA 1 480 QN
+        CCINTERP 32
+        POOLEDEVTS {D89F1BF4-84AE-458B-9D3D-40D0BC07026F}
+        <X 0 0
+          /1kCAAA=
+        >
+        E 0 c9 00 00
+        E 0 90 2a 60
+        E 0 b9 79 00
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 b0 7b 00
+        CCINTERP 32
+        CHASE_CC_TAKEOFFS 1
+        GUID {22F9DA02-31AE-4B25-BE3E-BE9A3533FB7C}
+        IGNTEMPO 0 120 4 4
+        SRCCOLOR 4
+        VELLANE -1 100 0
+        CFGEDITVIEW -237.662431 0.165043 70 12 0 -1 0 0 0 0.5
+        KEYSNAP 0
+        TRACKSEL 0
+        EVTFILTER 0 -1 -1 -1 -1 0 0 0 0 -1 -1 -1 -1 0 -1 0 -1 -1
+        CFGEDIT 1 1 0 1 0 0 1 1 1 1 1 0.25 32 106 1670 1000 0 0 0 0 0 0 0 0 0 0.5 0 0 1 64
+      >
+    >
+    <ITEM
+      POSITION 24
+      SNAPOFFS 0
+      LENGTH 6
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0
+      FADEOUT 1 0 0 1 0 0
+      MUTE 0
+      SEL 0
+      IGUID {71D5948E-A1BB-4517-A09D-72C5EE4623FE}
+      IID 3
+      NAME Soups-a-alot-sucka.mid
+      VOLPAN 1 0 1 -1
+      SOFFS 0 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {3661444A-EE7C-4F51-8749-E6C7F1CDA4E5}
+      <SOURCE MIDI
+        HASDATA 1 480 QN
+        CCINTERP 32
+        POOLEDEVTS {D05F6F60-1DCE-4666-9B56-45301AA1212B}
+        <X 0 0
+          /1kCAAA=
+        >
+        E 0 c9 00 00
+        E 0 90 2a 60
+        E 0 b9 79 00
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 90 2a 60
+        E 120 80 2a 00
+        E 0 b0 7b 00
+        CCINTERP 32
+        CHASE_CC_TAKEOFFS 1
+        GUID {22F9DA02-31AE-4B25-BE3E-BE9A3533FB7C}
+        IGNTEMPO 0 120 4 4
+        SRCCOLOR 4
+        VELLANE -1 100 0
+        CFGEDITVIEW -237.662431 0.165043 70 12 0 -1 0 0 0 0.5
+        KEYSNAP 0
+        TRACKSEL 0
+        EVTFILTER 0 -1 -1 -1 -1 0 0 0 0 -1 -1 -1 -1 0 -1 0 -1 -1
+        CFGEDIT 1 1 0 1 0 0 1 1 1 1 1 0.25 32 106 1670 1000 0 0 0 0 0 0 0 0 0 0.5 0 0 1 64
+      >
+    >
+  >
+>
