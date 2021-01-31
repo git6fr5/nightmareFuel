@@ -9,7 +9,9 @@ public class BackgroundMusic : MonoBehaviour
     private float elapsedDuration = 0f;*/
 
     public int tempo = 120;
-    [Range(0, 1)] public float volume = 1f;
+    [Range(0, 1)] public float maxVolume = 1f;
+    private float volume = 0f;
+    private float volumeIncrement;
 
     public bool intro = true;
     public bool intense = false;
@@ -23,33 +25,37 @@ public class BackgroundMusic : MonoBehaviour
     public AudioSource audioSource;
 
 
-    // Start is called before the first frame update
+    /* --- Unity Methods --- */
     void Start()
     {
         audioSource.volume = volume;
         PlaySound();
         intro = false;
+
+        volumeIncrement = maxVolume / GameRules.gameDuration * Time.fixedDeltaTime;
+
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!audioSource.isPlaying)
         {
             PlaySound();
         }
-        else
-        {
-            //print("sound is being played");
-        }
     }
 
-    private void PlaySound()
+    void FixedUpdate()
+    {
+        IncreaseIntensity();
+    }
+
+    /* --- Methods --- */
+
+    void PlaySound()
     {
         bool sounded = false;
 
         /*--- High Priority ---*/
-        //print("attempting to play sound");
         if (intense && intenseMusic)
         {
             audioSource.clip = intenseMusic;
@@ -70,6 +76,16 @@ public class BackgroundMusic : MonoBehaviour
         audioSource.clip = mainMusic;
         audioSource.Play();
         return;
+    }
+
+    public void IncreaseIntensity()
+    {
+        volume = volume + volumeIncrement;
+        if (volume > maxVolume)
+        {
+            volume = maxVolume;
+        }
+        audioSource.volume = volume;
     }
 
 }

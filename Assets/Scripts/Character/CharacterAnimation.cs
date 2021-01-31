@@ -26,6 +26,8 @@ public class CharacterAnimation : MonoBehaviour
     // Audio
     public AudioClip hurtAudio;
     public AudioClip deathAudio;
+    public AudioClip aggroAudio;
+    public AudioClip idleAudio;
 
     public AudioSource audioSource;
 
@@ -37,6 +39,7 @@ public class CharacterAnimation : MonoBehaviour
     [HideInInspector] public float speed = 0f;
     [HideInInspector] public bool hurt = false;
     [HideInInspector] public bool death = false;
+    [HideInInspector] public bool aggro = false;
 
     private bool overriding = false;
     private string prevAnim;
@@ -57,10 +60,6 @@ public class CharacterAnimation : MonoBehaviour
         if (!overriding)
         {
             SetAnimation();
-        }
-        if (!audioSource.isPlaying)
-        {
-            PlaySound();
         }
     }
 
@@ -125,7 +124,7 @@ public class CharacterAnimation : MonoBehaviour
         }
     }
 
-    private void PlaySound()
+    public void PlaySound()
     {
         bool sounded = false;
 
@@ -143,9 +142,18 @@ public class CharacterAnimation : MonoBehaviour
             audioSource.Play();
             sounded = true;
         }
+        else if (aggro && aggroAudio)
+        {
+            audioSource.clip = aggroAudio;
+            audioSource.Play();
+            sounded = true;
+        }
         if (sounded) { return; }
 
         /*--- Low Priority ---*/
+
+        audioSource.clip = idleAudio;
+        audioSource.Play();
         return;
     }
 

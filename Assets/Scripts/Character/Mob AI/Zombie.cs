@@ -30,6 +30,11 @@ public class Zombie : MonoBehaviour
 
     private float baseDamage = 0.1f;
 
+    private float volume = 0.3f;
+    private float gruntDelayMin = 2.0f;
+    private float gruntDelayMid = 3.0f;
+    private float gruntDelayMax = 10.0f;
+
     /* --- Unity Methods --- */
     void Start()
     {
@@ -37,8 +42,10 @@ public class Zombie : MonoBehaviour
 
         characterMovement.speed = baseSpeed;
         characterState.attackDamage = baseDamage;
+        characterAnimation.audioSource.volume = volume;
 
         StartCoroutine(IEZombieMove(minMoveDuration));
+        StartCoroutine(IEZombieGrunt(Random.Range(minMoveDuration, maxMoveDuration)));
     }
 
     void Update()
@@ -86,6 +93,27 @@ public class Zombie : MonoBehaviour
             characterMovement.horizontalMove = Random.Range(-3, 4);
             characterMovement.verticalMove = Random.Range(-3, 4);
             StartCoroutine(IEZombieMove(Random.Range(minMoveDuration, maxMoveDuration)));
+        }
+
+        yield return null;
+    }
+
+    private IEnumerator IEZombieGrunt(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        // Get a new direction for the zombie to move in
+        if (isAggroing)
+        {
+            characterAnimation.aggro = true;
+            characterAnimation.PlaySound();
+            StartCoroutine(IEZombieGrunt(Random.Range(gruntDelayMin, gruntDelayMid)));
+        }
+        else if (!isAggroing)
+        {
+            characterAnimation.aggro = false;
+            characterAnimation.PlaySound();
+            StartCoroutine(IEZombieGrunt(Random.Range(gruntDelayMid, gruntDelayMax)));
         }
 
         yield return null;

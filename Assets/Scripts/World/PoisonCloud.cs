@@ -25,7 +25,7 @@ public class PoisonCloud : MonoBehaviour
     void Start()
     {
         if (DEBUG_init) { print(DebugTag + "Activated"); }
-        print(GameRules.gameDuration);
+        //print(GameRules.gameDuration);
 
         cloudVision.pointLightOuterRadius = radius;
         cloudVision.pointLightInnerRadius = radius - trail;

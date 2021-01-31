@@ -11,7 +11,7 @@ public class CharacterState : MonoBehaviour
 
     /*--- Components ---*/
     public HUD hud;
-    public Light2D vision;
+    public Light2D shadow;
     public Collider2D hitbox;
     public Collider2D hull;
     public SpriteRenderer spriteRenderer;
@@ -34,7 +34,7 @@ public class CharacterState : MonoBehaviour
     {
         if (DEBUG_init) { print(DebugTag + "Activated for " + gameObject.name); }
         //if (isClient) { hud.gameObject.SetActive(true); hud.Inspect(this); }
-        //if (isClient) { vision.gameObject.SetActive(true); }
+        //if (isClient) { shadow.gameObject.SetActive(true); }
         depth = transform.position.y + hull.offset.y;
     }
 

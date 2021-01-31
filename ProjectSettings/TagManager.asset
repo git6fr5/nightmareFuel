@@ -17,10 +17,10 @@ TagManager:
   - UI
   - 
   - 
-  - Ground
+  - Path
   - Mob
   - Player
-  - 
+  - Collidable
   - 
   - 
   - 
@@ -47,6 +47,12 @@ TagManager:
     locked: 0
   - name: World
     uniqueID: 3495103087
+    locked: 0
+  - name: Path
+    uniqueID: 1324043359
+    locked: 0
+  - name: Collidable
+    uniqueID: 906841971
     locked: 0
   - name: Characters
     uniqueID: 1329455229
