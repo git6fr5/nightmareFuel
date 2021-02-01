@@ -17,7 +17,7 @@ public class CharacterState : MonoBehaviour
     public SpriteRenderer spriteRenderer;
 
     /* --- Internal Variables --- */
-    public bool isClient;
+    //public bool isClient;
     public Sprite portrait;
 
     [HideInInspector] public float maxHealth = 1f;
@@ -27,7 +27,9 @@ public class CharacterState : MonoBehaviour
     [HideInInspector] public float attackTime = 0.5f;
     [HideInInspector] public bool isAttacking = false;
 
-    public float depth = 0;
+    [HideInInspector] public bool isDead = false;
+
+    [HideInInspector] public float depth = 0;
 
     /*--- Unity Methods ---*/
     void Start()
@@ -54,7 +56,7 @@ public class CharacterState : MonoBehaviour
         currHealth = currHealth - damage;
         if (currHealth < 0)
         {
-            Destroy(gameObject);
+            isDead = true;
         }
     }
 }

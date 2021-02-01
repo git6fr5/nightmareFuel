@@ -5,34 +5,38 @@ using UnityEngine;
 public class BackgroundMusic : MonoBehaviour
 {
 
-    /*private float duration;
-    private float elapsedDuration = 0f;*/
+    /* --- Debug --- */
+    private string DebugTag = "[Entaku Island] {BackgroundMusic}: ";
+    private bool DEBUG_init = false;
 
-    public int tempo = 120;
-    [Range(0, 1)] public float maxVolume = 1f;
-    private float volume = 0f;
-    private float volumeIncrement;
-
-    public bool intro = true;
-    public bool intense = false;
-
-    /*--- Audio ---*/
-
+    /* --- Components --- */
     public AudioClip mainMusic;
     public AudioClip introMusic;
     public AudioClip intenseMusic;
 
     public AudioSource audioSource;
 
+    /* --- Internal Variables --- */
+    public int tempo = 120;
+    [Range(0, 1)] public float maxVolume = 1f;
+    private float volume = 0.5f;
+    private float volumeIncrement;
+
+    public bool intro = true;
+    public bool intense = false;
+
 
     /* --- Unity Methods --- */
     void Start()
     {
+
+        if (DEBUG_init) { print(DebugTag + "Activated"); }
+
         audioSource.volume = volume;
         PlaySound();
         intro = false;
 
-        volumeIncrement = maxVolume / GameRules.gameDuration * Time.fixedDeltaTime;
+        volumeIncrement = (maxVolume - volume) / GameRules.gameDuration * Time.fixedDeltaTime;
 
     }
 
@@ -50,7 +54,6 @@ public class BackgroundMusic : MonoBehaviour
     }
 
     /* --- Methods --- */
-
     void PlaySound()
     {
         bool sounded = false;

@@ -10,8 +10,12 @@ public class WorldRenderer : MonoBehaviour
     private bool DEBUG_init = false;
 
     /*--- Components ---*/
+    public GameObject plusPrefab;
 
-    /* --- Info --- */
+    /* --- Internal Variables --- */
+    [HideInInspector] public float plusTime = 0f;
+    private float plusSpawnTime = 5f;
+    private GameObject plusObject;
 
     /* --- Stats --- */
 
@@ -24,6 +28,11 @@ public class WorldRenderer : MonoBehaviour
     void Update()
     {
         MinimumSort();
+    }
+
+    void FixedUpdate()
+    {
+        SpawnPlus();
     }
 
     void OnMouseDown()
@@ -106,6 +115,17 @@ public class WorldRenderer : MonoBehaviour
         {
             //print(characterStates[i].name + ", " + i.ToString());
             characterStates[i].spriteRenderer.sortingOrder = i;
+        }
+    }
+
+    void SpawnPlus()
+    {
+        if (plusObject == null) { plusTime = plusTime + Time.fixedDeltaTime; }
+        if (plusTime >= plusSpawnTime)
+        {
+            plusObject = Instantiate(plusPrefab, new Vector3(Random.Range(-4, 4), Random.Range(-4, 4), 0), Quaternion.identity, transform);
+            plusObject.SetActive(true);
+            plusTime = 0;
         }
     }
 

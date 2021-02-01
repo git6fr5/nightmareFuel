@@ -8,22 +8,43 @@ public class Particle : MonoBehaviour
     private string DebugTag = "[Entaku Island] {Particle}: ";
     private bool DEBUG_init = false;
 
-    /*--- Components ---*/
+    /* --- Components --- */
     public Skeleton skeleton;
+    public AnimationClip clip;
+
+    /* --- Internal Variables --- */
+    public float length = 0f;
 
     /*--- Unity Methods ---*/
     void Start()
     {
         if (DEBUG_init) { print(DebugTag + "Activated"); }
+        length = clip.length;
     }
 
     /*--- Methods ---*/
-    public void Create()
+    public void Activate(bool activate)
     {
-        gameObject.SetActive(true);
+        gameObject.SetActive(activate);
     }
 
-    public void CreateForDuration(float duration)
+    public IEnumerator TimedDeactivate(float delay)
     {
+        yield return new WaitForSeconds(delay);
+
+        gameObject.SetActive(false);
+
+        yield return null;
+    }
+
+    public void ActivateForDuration(float duration)
+    {
+        gameObject.SetActive(true);
+        StartCoroutine(TimedDeactivate(duration));
+    }
+
+    public void Fire()
+    {
+        ActivateForDuration(length);
     }
 }

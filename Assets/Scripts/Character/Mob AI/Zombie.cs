@@ -45,7 +45,7 @@ public class Zombie : MonoBehaviour
         characterAnimation.audioSource.volume = volume;
 
         StartCoroutine(IEZombieMove(minMoveDuration));
-        StartCoroutine(IEZombieGrunt(Random.Range(minMoveDuration, maxMoveDuration)));
+        StartCoroutine(IEZombieGrunt(Random.Range(0, gruntDelayMin)));
     }
 
     void Update()

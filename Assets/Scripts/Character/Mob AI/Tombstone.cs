@@ -16,7 +16,7 @@ public class Tombstone : MonoBehaviour
     public GameObject zombiePrefab;
 
     /* --- Internal Variables --- */
-    private float spawnInterval = 3.0f;
+    private float spawnInterval = 2f;
     private float spawnRadius = 4f;
     private float bufferRadius = 2f;
 
@@ -30,6 +30,7 @@ public class Tombstone : MonoBehaviour
         // Start the Zombie Spawner
         StartCoroutine(IEZombieSpawner(spawnInterval));
         characterAnimation.skeleton.root.Attach(characterAnimation.particles[0].skeleton.root);
+        characterAnimation.particles[0].Activate(false);
     }
 
     /* --- Methods --- */
@@ -43,6 +44,7 @@ public class Tombstone : MonoBehaviour
             Zombie zombie = Instantiate(zombiePrefab, spawnLocation, Quaternion.identity, transform).GetComponent<Zombie>();
             zombie.gameObject.SetActive(true);
             zombies.Add(zombie);
+            characterAnimation.particles[0].Fire();
         }
         StartCoroutine(IEZombieSpawner(spawnInterval));
 

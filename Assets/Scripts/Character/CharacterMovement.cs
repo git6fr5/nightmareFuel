@@ -31,38 +31,12 @@ public class CharacterMovement : MonoBehaviour
         if (DEBUG_init) { print(DebugTag + "Activated for " + gameObject.name); }
     }
 
-    void Update()
-    {
-        if (characterState.isClient) { MoveFlag(); }
-
-        /*if (Input.GetKeyDown("p"))
-        {
-            print(characterAnimation.particles[0].skeleton);
-            characterAnimation.skeleton.root.Attach(characterAnimation.particles[0].skeleton.root);
-            characterAnimation.particles[0].gameObject.SetActive(true);
-
-        }*/
-
-
-        if (Input.GetMouseButtonDown(0) && characterState.isClient)
-        {
-            //forehand.BeginAttack();
-        }
-    }
-
     void FixedUpdate()
     {
         Move();
     }
 
     /* --- Methods --- */
-    void MoveFlag() // this should go in a player script
-    {
-        // Get the input from the player
-        horizontalMove = Input.GetAxisRaw("Horizontal");
-        verticalMove = Input.GetAxisRaw("Vertical");
-    }
-
     void Move()
     {
         if (horizontalMove < 0 && facingRight) { Flip(); }
