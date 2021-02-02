@@ -11,6 +11,7 @@ public class Particle : MonoBehaviour
     /* --- Components --- */
     public Skeleton skeleton;
     public AnimationClip clip;
+    public SpriteRenderer spriteRenderer;
 
     /* --- Internal Variables --- */
     public float length = 0f;
@@ -25,6 +26,7 @@ public class Particle : MonoBehaviour
     /*--- Methods ---*/
     public void Activate(bool activate)
     {
+        //if (transform.parent != null) { spriteRenderer.sortingLayer = 
         gameObject.SetActive(activate);
     }
 

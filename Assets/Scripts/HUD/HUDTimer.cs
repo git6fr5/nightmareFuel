@@ -23,7 +23,22 @@ public class HUDTimer : MonoBehaviour
 
     void Update()
     {
-        timerText.text = Mathf.Floor(time).ToString();
+        if (time < 10) 
+        {
+            timerText.text = "00" + Mathf.Floor(time).ToString();
+        }
+        else if (time < 100)
+        {
+            timerText.text = "0" + Mathf.Floor(time).ToString();
+        }
+        else if (time < 1000)
+        {
+            timerText.text = Mathf.Floor(time).ToString();
+        }
+        else if (time >= 1000)
+        {
+            timerText.text = "999";
+        }
     }
 
     void FixedUpdate()
