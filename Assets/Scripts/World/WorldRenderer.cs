@@ -14,8 +14,8 @@ public class WorldRenderer : MonoBehaviour
 
     /* --- Internal Variables --- */
     [HideInInspector] public float plusTime = 0f;
-    private float plusSpawnTime = 5f;
-    private GameObject plusObject;
+    private float plusSpawnTime = 2f;
+    private Plus plus;
 
     /* --- Stats --- */
 
@@ -120,11 +120,18 @@ public class WorldRenderer : MonoBehaviour
 
     void SpawnPlus()
     {
-        if (plusObject == null) { plusTime = plusTime + Time.fixedDeltaTime; }
+        if (plus == null) { plusTime = plusTime + Time.fixedDeltaTime; }
         if (plusTime >= plusSpawnTime)
         {
-            plusObject = Instantiate(plusPrefab, new Vector3(Random.Range(-4, 4), Random.Range(-4, 4), 0), Quaternion.identity, transform);
-            plusObject.SetActive(true);
+            PoisonCloud poisonCloud = GameObject.FindGameObjectsWithTag("Poison Cloud")[0].GetComponent<PoisonCloud>();
+
+            float magnitude = Random.Range(poisonCloud.radius / 4, poisonCloud.radius / 2);
+            Vector2 direction = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
+            Vector3 randomVector = direction * magnitude;
+            Vector3 nonRandomVector = new Vector2(1, 0) * magnitude;
+            plus = Instantiate(plusPrefab, randomVector, Quaternion.identity, transform).GetComponent<Plus>();
+            //plusObject.SetActive(true);
+            plus.plusValue = plusTime;
             plusTime = 0;
         }
     }

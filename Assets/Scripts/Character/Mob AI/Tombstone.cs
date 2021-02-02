@@ -16,7 +16,7 @@ public class Tombstone : MonoBehaviour
     public GameObject zombiePrefab;
 
     /* --- Internal Variables --- */
-    private float spawnInterval = 2f;
+    private float spawnInterval = 3f;
     private float spawnRadius = 4f;
     private float bufferRadius = 2f;
 

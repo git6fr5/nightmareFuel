@@ -18,9 +18,9 @@ public class PoisonCloud : MonoBehaviour
     /* --- Internal Variables --- */
     [HideInInspector] public float maxRadius = 60f;
     [HideInInspector] public float radius = 40f;
-    private float trail = 5f;
+    [HideInInspector] public float trail = 5f;
 
-    private float radiusIncrement;
+    [HideInInspector] public float radiusIncrement;
 
     /*--- Unity Methods ---*/
     void Start()
