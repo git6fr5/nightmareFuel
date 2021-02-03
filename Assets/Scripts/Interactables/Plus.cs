@@ -40,6 +40,10 @@ public class Plus : MonoBehaviour
 
         if (colliderLayer == playerLayer)
         {
+
+            collider.gameObject.GetComponent<CharacterAnimation>().collect = true;
+            collider.gameObject.GetComponent<CharacterAnimation>().PlaySound();
+            if (collider.gameObject.GetComponent<CharacterAnimation>()) { print("made collect true"); }
             Activate();
         }
     }

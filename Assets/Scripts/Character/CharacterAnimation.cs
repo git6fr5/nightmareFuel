@@ -28,6 +28,7 @@ public class CharacterAnimation : MonoBehaviour
     public AudioClip deathAudio;
     public AudioClip aggroAudio;
     public AudioClip idleAudio;
+    public AudioClip collectAudio;
 
     public AudioSource audioSource;
 
@@ -40,6 +41,7 @@ public class CharacterAnimation : MonoBehaviour
     [HideInInspector] public bool hurt = false;
     [HideInInspector] public bool death = false;
     [HideInInspector] public bool aggro = false;
+    [HideInInspector] public bool collect = false;
 
     private bool overriding = false;
     private string prevAnim;
@@ -148,6 +150,15 @@ public class CharacterAnimation : MonoBehaviour
             audioSource.Play();
             sounded = true;
         }
+        else if (collect && collectAudio)
+        {
+            print("hello");
+            audioSource.clip = collectAudio;
+            audioSource.Play();
+            sounded = true;
+        }
+
+        DisableHighPrio();
         if (sounded) { return; }
 
         /*--- Low Priority ---*/
@@ -161,5 +172,6 @@ public class CharacterAnimation : MonoBehaviour
     {
         hurt = false;
         death = false;
+        collect = false;
     }
 }

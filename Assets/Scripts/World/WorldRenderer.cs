@@ -14,7 +14,7 @@ public class WorldRenderer : MonoBehaviour
 
     /* --- Internal Variables --- */
     [HideInInspector] public float plusTime = 0f;
-    private float plusSpawnTime = 2f;
+    private float plusSpawnTime = 3f;
     private Plus plus;
 
     /* --- Stats --- */
