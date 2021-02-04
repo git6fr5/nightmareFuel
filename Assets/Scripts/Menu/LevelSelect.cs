@@ -20,7 +20,7 @@ public class LevelSelect : MonoBehaviour
     public Sprite clownSprite;
 
     /* --- Internal Variables --- */
-    private string[] levels = new string[] { "ZombieScene", "PinkEyeScene" };
+    private string[] levels = new string[] { "ZombieScene", "PinkEyeScene", "ClownScene" };
     private string[] levelNames = new string[] { "Bob", "Steve", "Jack" };
     private string[] levelDescriptions = new string[] { "Zombies and Bad Breath", "Pink Eye and Electrocution", "Clowns and Fire" };
 
