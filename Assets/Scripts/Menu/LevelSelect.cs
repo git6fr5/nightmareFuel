@@ -14,17 +14,12 @@ public class LevelSelect : MonoBehaviour
     public Text levelName;
     public Text levelDescriptor;
 
-
-    public Sprite zombieSprite;
-    public Sprite pinkEyeSprite;
-    public Sprite clownSprite;
+    public Sprite[] levelSprites;
 
     /* --- Internal Variables --- */
-    private string[] levels = new string[] { "ZombieScene", "PinkEyeScene", "ClownScene" };
-    private string[] levelNames = new string[] { "Bob", "Steve", "Jack" };
-    private string[] levelDescriptions = new string[] { "Zombies and Bad Breath", "Pink Eye and Electrocution", "Clowns and Fire" };
-
-    private Sprite[] levelSprites;
+    private string[] levels = new string[] { "ZombieScene", "PinkEyeScene", "ClownScene", "BeeScene" };
+    private string[] levelNames = new string[] { "Bob", "Steve", "Jack", "Jenny" };
+    private string[] levelDescriptions = new string[] { "Zombies and Bad Breath", "Pink Eye and Electrocution", "Clowns and Fire", "Bees and Whales(?)" };
 
     public int levelIndex = 0;
     public string selectedLevel;
@@ -36,7 +31,6 @@ public class LevelSelect : MonoBehaviour
     {
         if (DEBUG_init) { print(DebugTag + "Activated"); }
         selectedLevel = levels[levelIndex];
-        levelSprites = new Sprite[] { zombieSprite, pinkEyeSprite, clownSprite };
         levelImage.sprite = levelSprites[levelIndex];
     }
 

@@ -1376,9 +1376,11 @@ MonoBehaviour:
   levelImage: {fileID: 1923402819}
   levelName: {fileID: 212246632}
   levelDescriptor: {fileID: 2061847970}
-  zombieSprite: {fileID: 21300000, guid: e506f8176a948ca4a8f37718f7942218, type: 3}
-  pinkEyeSprite: {fileID: 21300000, guid: ff1364328a60d1b4786847809a43f50b, type: 3}
-  clownSprite: {fileID: 21300000, guid: 89bfe89a7d4f2be43becccff26af8165, type: 3}
+  levelSprites:
+  - {fileID: 21300000, guid: e506f8176a948ca4a8f37718f7942218, type: 3}
+  - {fileID: 21300000, guid: ff1364328a60d1b4786847809a43f50b, type: 3}
+  - {fileID: 21300000, guid: 89bfe89a7d4f2be43becccff26af8165, type: 3}
+  - {fileID: 21300000, guid: 1c7e283f5b965d548b99893bc3c7d04b, type: 3}
   levelIndex: 0
   selectedLevel: 
 --- !u!1 &2061847968
