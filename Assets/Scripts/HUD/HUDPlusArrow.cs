@@ -35,7 +35,7 @@ public class HUDPlusArrow : MonoBehaviour
     void Point()
     {
         Plus plus = null;
-        GameObject[] plusArray = GameObject.FindGameObjectsWithTag("Plus");
+        GameObject[] plusArray = GameObject.FindGameObjectsWithTag("Collectible");
         if (plusArray.Length > 0)
         {
             plusArrow.enabled = true;

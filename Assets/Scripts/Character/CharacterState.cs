@@ -14,6 +14,7 @@ public class CharacterState : MonoBehaviour
     public Light2D shadow;
     public Collider2D hitbox;
     public Collider2D hull;
+    public Transform hand;
     public SpriteRenderer spriteRenderer;
 
     /* --- Internal Variables --- */
@@ -35,15 +36,12 @@ public class CharacterState : MonoBehaviour
     void Start()
     {
         if (DEBUG_init) { print(DebugTag + "Activated for " + gameObject.name); }
-        //if (isClient) { hud.gameObject.SetActive(true); hud.Inspect(this); }
-        //if (isClient) { shadow.gameObject.SetActive(true); }
-        depth = transform.position.y + hull.offset.y;
+        CheckDepth();
     }
 
     void Update()
     {
-        depth = transform.position.y + hull.offset.y;
-        //print(name + ": " + depth.ToString());
+        CheckDepth();
     }
 
     void OnMouseDown()
@@ -51,6 +49,11 @@ public class CharacterState : MonoBehaviour
     }
 
     /*--- Methods ---*/
+    public void CheckDepth()
+    {
+        depth = transform.position.y + hull.offset.y;
+    }
+
     public void Damage(float damage)
     {
         currHealth = currHealth - damage;

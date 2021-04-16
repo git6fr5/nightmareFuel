@@ -57,7 +57,7 @@ public class Zombie : MonoBehaviour
     {
         LayerMask colliderLayer = LayerMask.GetMask(LayerMask.LayerToName(collider.gameObject.layer));
 
-        if (colliderLayer == playerLayer)
+        if (colliderLayer == playerLayer && collider.gameObject.GetComponent<CharacterState>())
         {
             Attack(collider.gameObject.GetComponent<CharacterState>());
         }

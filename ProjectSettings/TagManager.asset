@@ -8,7 +8,8 @@ TagManager:
   - World
   - Character
   - Poison Cloud
-  - Plus
+  - Weapon
+  - Collectible
   layers:
   - Default
   - TransparentFX

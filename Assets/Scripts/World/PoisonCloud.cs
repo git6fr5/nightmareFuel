@@ -10,14 +10,13 @@ public class PoisonCloud : MonoBehaviour
     private bool DEBUG_init = false;
 
     /*--- Components ---*/
-    public Light2D cloudVision;
     public CircleCollider2D cloudCollider;
 
     public GameObject poisonPrefab;
 
     /* --- Internal Variables --- */
-    [HideInInspector] public float maxRadius = 60f;
-    [HideInInspector] public float radius = 40f;
+    [HideInInspector] public float maxRadius = 40f;
+    [HideInInspector] public float radius = 36f;
     [HideInInspector] public float trail = 5f;
 
     [HideInInspector] public float radiusIncrement;
@@ -28,10 +27,8 @@ public class PoisonCloud : MonoBehaviour
         if (DEBUG_init) { print(DebugTag + "Activated"); }
         //print(GameRules.gameDuration);
 
-        cloudVision.pointLightOuterRadius = radius;
-        cloudVision.pointLightInnerRadius = radius - trail;
-
         cloudCollider.radius = radius;
+        Shader.SetGlobalFloat("_Radius", radius / maxRadius);
 
         radiusIncrement = radius / GameRules.gameDuration * Time.fixedDeltaTime;
     }
@@ -46,10 +43,9 @@ public class PoisonCloud : MonoBehaviour
         {
             radius = trail;
         }
-        cloudVision.pointLightOuterRadius = radius;
-        cloudVision.pointLightInnerRadius = radius - trail;
 
         cloudCollider.radius = radius;
+        Shader.SetGlobalFloat("_Radius", radius / maxRadius);
     }
 
     void OnTriggerExit2D(Collider2D collider)
