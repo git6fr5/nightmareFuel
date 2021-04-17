@@ -22,7 +22,7 @@ public class Weapon : MonoBehaviour
     // stats
     [HideInInspector] public int maxDurability = 1;
     [HideInInspector] public int durability;
-    [HideInInspector] public float attackDamage = 1.2f;
+    [HideInInspector] public float attackDamageBonus = 0.5f;
 
     // swing
     [HideInInspector] protected float backSwingTime = 0.5f;
@@ -68,14 +68,14 @@ public class Weapon : MonoBehaviour
 
     public virtual void OnTriggerEnter2D(Collider2D collider2D)
     {
+    }
+
+    public virtual void OnTriggerStay2D(Collider2D collider2D)
+    {
         if (isSwinging) { CheckAttack(collider2D); }
     }
 
-    public virtual void OnTriggerStay2D(Collider2D hitInfo)
-    {
-    }
-
-    public virtual void OnTriggerExit2D(Collider2D hitInfo)
+    public virtual void OnTriggerExit2D(Collider2D collider2D)
     {
     }
 
@@ -92,7 +92,7 @@ public class Weapon : MonoBehaviour
     public virtual void Attack(CharacterState targetState)
     {
         print("attacking a mob");
-        targetState.Damage(attackDamage);
+        targetState.Damage(controllerState.attackDamage + attackDamageBonus);
     }
 
     public virtual void StartAttack()
@@ -102,6 +102,7 @@ public class Weapon : MonoBehaviour
         originalPosition = transform.localPosition;
         originalRotation = transform.localRotation;
         controller.characterMovement.stickyDirection = true;
+        hitBox.enabled = true;
         StartCoroutine(BackSwing(backSwingTime));
     }
 
@@ -146,6 +147,7 @@ public class Weapon : MonoBehaviour
         transform.localPosition = originalPosition;
         transform.localRotation = originalRotation;
         controller.characterMovement.stickyDirection = false;
+        hitBox.enabled = false;
 
         yield return null;
     }

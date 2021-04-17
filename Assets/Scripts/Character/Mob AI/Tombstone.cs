@@ -31,9 +31,25 @@ public class Tombstone : MonoBehaviour
         StartCoroutine(IEZombieSpawner(spawnInterval));
         characterAnimation.skeleton.root.Attach(characterAnimation.particles[0].skeleton.root);
         characterAnimation.particles[0].Activate(false);
+
+        characterState.maxHealth = 100f;
+        characterState.currHealth = 100f;
+    }
+
+    void Update()
+    {
+        DeathFlag();
     }
 
     /* --- Methods --- */
+    void DeathFlag()
+    {
+        if (characterState.isDead)
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
     private IEnumerator IEZombieSpawner(float delay)
     {
         yield return new WaitForSeconds(delay);

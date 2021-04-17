@@ -109,6 +109,7 @@ public class Player : MonoBehaviour
         weapon.transform.parent = characterState.hand;
         weapon.controllerState = characterState;
         weapon.controller = this;
+        weapon.hitBox.enabled = false;
         weapon.gameObject.SetActive(true);
         AdjustHandle(weapon);
     }

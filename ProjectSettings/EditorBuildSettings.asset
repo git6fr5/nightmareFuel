@@ -11,10 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ZombieScene.unity
     guid: 848e83ac1bb99fa419e4d1dae2a53c30
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/PinkEyeScene.unity
     guid: e1e36d89954b12c48a8fde1fade71145
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/BeeScene.unity
     guid: e3430d1cdba213c4988f15eadf09ec1a
   m_configObjects: {}

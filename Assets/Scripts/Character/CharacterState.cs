@@ -17,6 +17,8 @@ public class CharacterState : MonoBehaviour
     public Transform hand;
     public SpriteRenderer spriteRenderer;
 
+    public Material hurtMaterial;
+
     /* --- Internal Variables --- */
     //public bool isClient;
     public Sprite portrait;
@@ -61,5 +63,6 @@ public class CharacterState : MonoBehaviour
         {
             isDead = true;
         }
+        spriteRenderer.material = hurtMaterial;
     }
 }
