@@ -51,6 +51,7 @@ public class Zombie : MonoBehaviour
     void Update()
     {
         CheckAggro();
+        DeathFlag();
     }
 
     void OnTriggerEnter2D(Collider2D collider)
@@ -64,6 +65,14 @@ public class Zombie : MonoBehaviour
     }
 
     /* --- Methods --- */
+    void DeathFlag()
+    {
+        if (characterState.isDead)
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
     void Attack(CharacterState targetState)
     {
         targetState.Damage(characterState.attackDamage);

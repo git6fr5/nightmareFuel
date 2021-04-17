@@ -24,6 +24,7 @@ public class CharacterMovement : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
     private float movementSmoothing = 0.05f;
     private bool facingRight = true;
+    [HideInInspector] public bool stickyDirection = false;
 
     /* --- Unity Methods --- */
     void Start()
@@ -39,8 +40,11 @@ public class CharacterMovement : MonoBehaviour
     /* --- Methods --- */
     void Move()
     {
-        if (horizontalMove < 0 && facingRight) { Flip(); }
-        else if (horizontalMove > 0 && !facingRight) { Flip(); }
+        if (!stickyDirection)
+        {
+            if (horizontalMove < 0 && facingRight) { Flip(); }
+            else if (horizontalMove > 0 && !facingRight) { Flip(); }
+        }
 
         // Apply the movement
         Vector3 targetVelocity = new Vector2(horizontalMove, verticalMove).normalized * speed;

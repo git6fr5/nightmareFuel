@@ -5,7 +5,7 @@ using UnityEngine;
 public class Collectible : MonoBehaviour
 {
     /* --- Debug --- */
-    private string DebugTag = "[DungeonCrawler Gem]: ";
+    protected string DebugTag = "[DungeonCrawler Gem]: ";
     protected bool DEBUG_init = false;
 
 

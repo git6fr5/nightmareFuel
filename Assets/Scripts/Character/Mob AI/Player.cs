@@ -32,12 +32,7 @@ public class Player : MonoBehaviour
 
     void LateUpdate()
     {
-        if (characterState.isDead)
-        {
-            characterState.hud.hudGameOver.gameObject.SetActive(true); 
-            characterState.hud.hudTimer.gameObject.SetActive(false); 
-            gameObject.SetActive(false);
-        }
+        DeathFlag();
     }
 
     void OnTriggerEnter2D(Collider2D collider2D)
@@ -67,6 +62,16 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && equippedWeapon && !equippedWeapon.isAttacking)
         {
             equippedWeapon.StartAttack();
+        }
+    }
+
+    void DeathFlag()
+    {
+        if (characterState.isDead)
+        {
+            characterState.hud.hudGameOver.gameObject.SetActive(true);
+            characterState.hud.hudTimer.gameObject.SetActive(false);
+            gameObject.SetActive(false);
         }
     }
 
@@ -102,6 +107,8 @@ public class Player : MonoBehaviour
         //print("equipping");
         equippedWeapon = weapon;
         weapon.transform.parent = characterState.hand;
+        weapon.controllerState = characterState;
+        weapon.controller = this;
         weapon.gameObject.SetActive(true);
         AdjustHandle(weapon);
     }
