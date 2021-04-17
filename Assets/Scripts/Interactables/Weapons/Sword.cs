@@ -21,17 +21,16 @@ public class Sword : Weapon
     /* --- Overridden Unity Methods --- */
 
     /* --- Overridden Methods --- */
-    public override void Attack()
+    public override void AttackSwing()
     {
         if (isAttacking)
         {
-            Slash();
+            SlashSwing();
         }
     }
 
     /* --- Additional Methods --- */
-
-    void Slash()
+    void SlashSwing()
     {
         float rotationFactor = Time.deltaTime * transform.right.x;
         if (isBackSwinging)

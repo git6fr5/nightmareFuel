@@ -21,7 +21,6 @@ public class Player : MonoBehaviour
     /* --- Unity Methods --- */
     void Start()
     {
-        characterAnimation.skeleton.root.Attach(characterAnimation.particles[0].skeleton.root);
     }
 
     void Update()
@@ -101,6 +100,8 @@ public class Player : MonoBehaviour
     {
         //print("equipping");
         equippedWeapon = weapon;
+        weapon.controllerState = characterState;
+        weapon.controller = this;
         weapon.transform.parent = characterState.hand;
         weapon.gameObject.SetActive(true);
         AdjustHandle(weapon);

@@ -5,37 +5,55 @@ using UnityEngine.Experimental.Rendering.Universal;
 
 public class CharacterState : MonoBehaviour
 {
+
+    /* ----- Info ----- */
+    // This script controls the basic state of a character
+    // Holds all necessary variables required such as
+    // current health, movespeed, etc
+    // It also holds all the necessary components here    
+
+
     /* --- Debug --- */
-    private string DebugTag = "[Entaku Island] {CharacterState}: ";
-    private bool DEBUG_init = false;
+    private string DebugTag = "[NightmareFuel CharacterState]";
+    private bool Debug = false;
+
 
     /*--- Components ---*/
-    public HUD hud;
-    public Light2D shadow;
-    public Collider2D hitbox;
-    public Collider2D hull;
-    public Transform hand;
-    public SpriteRenderer spriteRenderer;
+
+    // rendering
+    public SpriteRenderer spriteRenderer; // renders the characters sprite
+
+    // hud
+    public HUD hud; // the pl
+    public Sprite portrait; // th
+
+    // collisions
+    public Collider2D hitbox; // controls trigger effects
+    public Collider2D hull; // controls percieved position and actual volume
+    public Transform hand; // 
 
     /* --- Internal Variables --- */
-    //public bool isClient;
-    public Sprite portrait;
 
-    [HideInInspector] public float maxHealth = 1f;
+    // stats
+    public float maxHealth = 1f;
     [HideInInspector] public float currHealth = 1f;
+    public float baseAttackDamage = 0.5f;
+    public float attackTime = 0.5f;
 
-    [HideInInspector] public float attackDamage = 0.5f;
-    [HideInInspector] public float attackTime = 0.5f;
+    // states
     [HideInInspector] public bool isAttacking = false;
-
     [HideInInspector] public bool isDead = false;
 
+    // rendering
     [HideInInspector] public float depth = 0;
+
+    // equipment
+    [HideInInspector] public Weapon equippedWeapon;
+
 
     /*--- Unity Methods ---*/
     void Start()
     {
-        if (DEBUG_init) { print(DebugTag + "Activated for " + gameObject.name); }
         CheckDepth();
     }
 
@@ -44,22 +62,9 @@ public class CharacterState : MonoBehaviour
         CheckDepth();
     }
 
-    void OnMouseDown()
-    {
-    }
-
     /*--- Methods ---*/
     public void CheckDepth()
     {
         depth = transform.position.y + hull.offset.y;
-    }
-
-    public void Damage(float damage)
-    {
-        currHealth = currHealth - damage;
-        if (currHealth < 0)
-        {
-            isDead = true;
-        }
     }
 }

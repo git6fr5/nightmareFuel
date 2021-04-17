@@ -10,6 +10,7 @@ TagManager:
   - Poison Cloud
   - Weapon
   - Collectible
+  - Mob
   layers:
   - Default
   - TransparentFX

@@ -6,7 +6,6 @@ using UnityEngine.Experimental.Rendering.Universal;
 public class Plus : Collectible
 {
     /* --- Debug --- */
-    private string DebugTag = "[Entaku Island] {Plus}: ";
 
     /*--- Components ---*/
     public Rigidbody2D body;

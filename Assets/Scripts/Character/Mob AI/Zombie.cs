@@ -35,6 +35,8 @@ public class Zombie : MonoBehaviour
     private float gruntDelayMid = 3.0f;
     private float gruntDelayMax = 10.0f;
 
+    private string playerTag = "Player";
+
     /* --- Unity Methods --- */
     void Start()
     {
@@ -52,18 +54,30 @@ public class Zombie : MonoBehaviour
     {
         CheckAggro();
     }
-
-    void OnTriggerEnter2D(Collider2D collider)
+    
+    void LateUpdate()
     {
-        LayerMask colliderLayer = LayerMask.GetMask(LayerMask.LayerToName(collider.gameObject.layer));
-
-        if (colliderLayer == playerLayer && collider.gameObject.GetComponent<CharacterState>())
+        if (characterState.isDead)
         {
-            Attack(collider.gameObject.GetComponent<CharacterState>());
+            gameObject.SetActive(false);
         }
     }
 
+    void OnTriggerEnter2D(Collider2D collider2D)
+    {
+        CheckAttack(collider2D);
+    }
+
     /* --- Methods --- */
+    void CheckAttack(Collider2D collider2D)
+    {
+        GameObject _object = collider2D.gameObject;
+        if (_object.tag == playerTag)
+        {
+            Attack(_object.GetComponent<CharacterState>());
+        }
+    }
+
     void Attack(CharacterState targetState)
     {
         targetState.Damage(characterState.attackDamage);
