@@ -63,6 +63,6 @@ public class CharacterState : MonoBehaviour
         {
             isDead = true;
         }
-        spriteRenderer.material = hurtMaterial;
+        //spriteRenderer.material = hurtMaterial;
     }
 }

@@ -3,7 +3,7 @@
     Properties
     {
         [PerRendererData] _MainTex("Sprite Texture", 2D) = "white" {}
-        _Color("Tint", Color) = (1,1,1,1)
+        _Color("Color", Color) = (1,1,1,1)
         [MaterialToggle] PixelSnap("Pixel snap", Float) = 0
     }
     SubShader
@@ -44,6 +44,7 @@
 
             sampler2D _MainTex;
             float4 _MainTex_ST;
+            float4 _Color;
 
             v2f vert (appdata v)
             {
@@ -55,9 +56,12 @@
 
             fixed4 frag (v2f i) : SV_Target
             {
-                fixed4 col = tex2D(_MainTex, i.uv);
-                col.r = sin(_Time[1]);
-                return float4(1, 1, 1, 1);
+                fixed4 col = _Color;
+
+                float2 vec = float2( (i.uv.x - 0.5) * 2, (i.uv.y - 0.5) * 2 );
+                float dist = ( (vec.x * vec.x + vec.y * vec.y) / 2 ) + 1;
+
+                return  float4(col.rgb / dist, 1 / dist); 
             }
             ENDCG
         }

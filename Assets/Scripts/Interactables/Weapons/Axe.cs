@@ -8,8 +8,8 @@ public class Axe : Weapon
     /* --- Overridden Variables ---*/
     public Axe()
     {
-        backSwingTime = 0.6f;
-        swingTime = 0.3f;
+        backSwingTime = 0.2f;
+        swingTime = 0.1f;
         resetTime = 0.4f;
 
         backSwingAngle = 270f;
