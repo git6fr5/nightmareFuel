@@ -10,11 +10,7 @@ Shader "NightmareFuel/CharacterShader"
         _ShadowDisplacementFactor("ShadowDisplacementFactor", Float) = 4
         _ShadowIntensity("ShadowIntensity", Float) = 0.2
 
-        _varDeg("Degrees", Float) = 180
-        _diffX("Diff X", Float) = 0
-        _diffY("Diff Y", Float) = 0
-        _varX("X Offset", Float) = 0
-        _varY("Y Offset", Float) = 0
+        _Degrees("Degrees", Float) = 180
 
     }
     SubShader
@@ -55,65 +51,55 @@ Shader "NightmareFuel/CharacterShader"
                 float4 vertex : SV_POSITION;
             };
 
-            float3 rotate(float4 vertex, float degrees)
+            float3 rotate(float3 vec, float radians)
             {
-                float radians = degrees * UNITY_PI / 180.0;
                 float sina, cosa;
                 sincos(radians, sina, cosa);
                 float2x2 rotationMatrix = float2x2(cosa, -sina, sina, cosa);
-                return float3(mul(rotationMatrix, vertex.xy), vertex.z).xyz;
+                return float3(mul(rotationMatrix, vec.xy), vec.z).xyz;
             };
 
             sampler2D _MainTex;
             float4 _MainTex_ST;
-            float _ShadowDisplacementFactor;
-            float _ShadowIntensity;
-            float _Degrees;
+
             uniform float3 _LightWorldPosition;
 
-            float _diffX;
-            float _diffY;
-            float _varX;
-            float _varY;
-            float _varDeg;
+            float _ShadowDisplacementFactor;
+            float _ShadowIntensity;
+
+            float _Degrees;
 
             v2f vert (appdata v)
             {
                 v2f o;
-
                 
-                float3 worldOrigin = mul( unity_ObjectToWorld, float4(0, 0.5, 0, 1));
-                float3 lightPos = _LightWorldPosition;
-                float3 diff = lightPos - worldOrigin;
+                // rotation point in object space
+                float3 rotationPoint = float3(0, -1, 0);
 
-                //_varDeg = (_diffY / abs(_diffY + 0.001) - 1) * 90;
-                float deg = _varDeg % 360;
-                float rad = deg / 180 * UNITY_PI;
+                // get the angle from the light position
+                float3 diff = _LightWorldPosition - mul(unity_ObjectToWorld, float4(rotationPoint, 1));
+                float degQuad = (diff.y / abs(diff.y + 0.001) - 1) * 90;
+                //float deg = degQuad + atan(diff.y / diff.x) / UNITY_PI * 180.0;
+                float deg = _Degrees % 360;
+                float rad =  deg * UNITY_PI / 180.0;
 
-                float x = -_varX * sin(rad);
-                float y = -_varY * cos(rad) - _varY;
-
-                x = x / _MainTex_ST.x / 2;
-                y = y / _MainTex_ST.y / 2;
-
-                float3 rotatedVertex = rotate(v.vertex, deg);
-                float4 vertex = UnityObjectToClipPos(rotatedVertex);
-                o.vertex = float4(vertex.x - x, vertex.y - y, vertex.zw);
-
-                //o.vertex = UnityObjectToClipPos(v.vertex);
-                //float4 vertex = float4(o.vertex.x - x, o.vertex.y -y, o.vertex.zw);
-                //vertex = float4(rotate(vertex, deg), 1);
-                //o.vertex = float4(vertex.x, vertex.yzw);
-
-                //o.vertex = UnityObjectToClipPos(v.vertex);
-                //o.vertex.y += _MainTex_ST.y / _ShadowDisplacementFactor;
+                // translate the vertex to new origin in object space
+                float3 translatedVertex = v.vertex.xyz  - rotationPoint;
                 
-                float2 uv = TRANSFORM_TEX(v.uv, _MainTex);
-                //o.uv = uv;
-                o.uv = float2(uv.x, -(uv.y-0.5) + 0.5);
+                // rotate the translated vertex in object space
+                float3 rotatedTranslatedVertex = rotate(translatedVertex, rad);
 
+                // translate the vertex back
+                float3 rotatedVertex = rotatedTranslatedVertex.xyz + rotationPoint;
+
+                // transform to clip space
+                float4 clipVertex = UnityObjectToClipPos(rotatedVertex);
+
+                // pass the data to the fragment shader
+                o.vertex = clipVertex;
+                o.uv = TRANSFORM_TEX(v.uv, _MainTex); 
                 o.worldPos = mul(unity_ObjectToWorld, v.vertex);
-                o.lightPos = (_LightWorldPosition);
+                o.lightPos = _LightWorldPosition;
 
                 return o;
             }
