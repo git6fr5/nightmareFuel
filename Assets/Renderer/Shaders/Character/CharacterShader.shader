@@ -10,11 +10,9 @@ Shader "NightmareFuel/CharacterShader"
         _ShadowDisplacementFactor("ShadowDisplacementFactor", Float) = 4
         _ShadowIntensity("ShadowIntensity", Float) = 0.2
 
-        _varDeg("Degrees", Float) = 180
-        _diffX("Diff X", Float) = 0
-        _diffY("Diff Y", Float) = 0
-        _varX("X Offset", Float) = 0
-        _varY("Y Offset", Float) = 0
+        _Degrees("Degrees", Float) = 180
+        _var1("Var1", Float) = 0
+        _var2("Var2", Float) = 0
 
     }
     SubShader
@@ -71,11 +69,8 @@ Shader "NightmareFuel/CharacterShader"
             float _Degrees;
             uniform float3 _LightWorldPosition;
 
-            float _diffX;
-            float _diffY;
-            float _varX;
-            float _varY;
-            float _varDeg;
+            float _var1;
+            float _var2;    
 
             v2f vert (appdata v)
             {
@@ -85,32 +80,26 @@ Shader "NightmareFuel/CharacterShader"
                 float3 worldOrigin = mul( unity_ObjectToWorld, float4(0, 0.5, 0, 1));
                 float3 lightPos = _LightWorldPosition;
                 float3 diff = lightPos - worldOrigin;
+                float deg = - UNITY_PI * 0.5 + atan(diff.y / diff.x);
 
-                //_varDeg = (_diffY / abs(_diffY + 0.001) - 1) * 90;
-                float deg = _varDeg % 360;
-                float rad = deg / 180 * UNITY_PI;
+                //float3 rotatedVertex = rotate(v.vertex, deg);
+                //o.vertex = UnityObjectToClipPos(rotatedVertex);
 
-                float x = -_varX * sin(rad);
-                float y = -_varY * cos(rad) - _varY;
-
-                x = x / _MainTex_ST.x / 2;
-                y = y / _MainTex_ST.y / 2;
-
-                float3 rotatedVertex = rotate(v.vertex, deg);
-                float4 vertex = UnityObjectToClipPos(rotatedVertex);
-                o.vertex = float4(vertex.x - x, vertex.y - y, vertex.zw);
-
-                //o.vertex = UnityObjectToClipPos(v.vertex);
-                //float4 vertex = float4(o.vertex.x - x, o.vertex.y -y, o.vertex.zw);
-                //vertex = float4(rotate(vertex, deg), 1);
-                //o.vertex = float4(vertex.x, vertex.yzw);
+                float rad = _Degrees % 360;// *UNITY_PI / 180.0;
+                _var1 = 0.0433 + -0.0117 * rad + 1.84 * pow(10, -4) * pow(rad, 2) + -6.92 * pow(10, -7) * pow(rad, 3) + 7.5 * pow(10, -10) * pow(rad, 4);
+                _var2 = -0.0428 + 0.0114 * rad + -1.26 * pow(10, -5) * pow(rad, 2) + -2.47 * pow(10, -7) * pow(rad, 3) + 5.46 * pow(10, -10) * pow(rad, 4);
+                
+                o.vertex = UnityObjectToClipPos(v.vertex);
+                float4 vertex = float4(o.vertex.x - _var1, o.vertex.y -_var2, o.vertex.zw);
+                vertex = float4(rotate(vertex, _Degrees), 1);
+                o.vertex = float4(vertex.x, vertex.yzw);
 
                 //o.vertex = UnityObjectToClipPos(v.vertex);
                 //o.vertex.y += _MainTex_ST.y / _ShadowDisplacementFactor;
                 
                 float2 uv = TRANSFORM_TEX(v.uv, _MainTex);
                 //o.uv = uv;
-                o.uv = float2(uv.x, -(uv.y-0.5) + 0.5);
+                o.uv = float2(uv.x, uv.y);
 
                 o.worldPos = mul(unity_ObjectToWorld, v.vertex);
                 o.lightPos = (_LightWorldPosition);
@@ -127,8 +116,10 @@ Shader "NightmareFuel/CharacterShader"
 
                 float2 diff = i.worldPos - i.lightPos;
                 float intensity = 1 / sqrt(diff.x * diff.x + diff.y * diff.y);
+                intensity = 1;
+                col.a = col.a * intensity;
 
-                return float4(col * 1);
+                return float4(col.rgb * intensity, col.a);
             }
             ENDCG
         }
