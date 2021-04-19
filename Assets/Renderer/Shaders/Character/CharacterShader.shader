@@ -7,11 +7,10 @@ Shader "NightmareFuel/CharacterShader"
         [PerRendererData] _MainTex("Sprite Texture", 2D) = "white" {}
         _Color("Tint", Color) = (1,1,1,1)
         [MaterialToggle] PixelSnap("Pixel snap", Float) = 0
-        _ShadowDisplacementFactor("ShadowDisplacementFactor", Float) = 4
+        _ShadowOffset("Shadow Offset", Float) = 4
         _ShadowIntensity("ShadowIntensity", Float) = 0.2
 
-        _Degrees("Degrees", Float) = 180
-
+        _isFlipped("Flipped", Float) = 1
     }
     SubShader
     {
@@ -46,8 +45,7 @@ Shader "NightmareFuel/CharacterShader"
             struct v2f
             {
                 float2 uv : TEXCOORD0;
-                float2 worldPos : TEXCOORD1;
-                float2 lightPos : TEXCOORD2;
+                float intensity : TEXCOORD1;
                 float4 vertex : SV_POSITION;
             };
 
@@ -59,13 +57,20 @@ Shader "NightmareFuel/CharacterShader"
                 return float3(mul(rotationMatrix, vec.xy), vec.z).xyz;
             };
 
+            float3 stretch(float3 vec, float x, float y)
+            {
+                float2x2 stretchMatrix = float2x2(x, 0, 0, y);
+                return float3(mul(stretchMatrix, vec.xy), vec.z).xyz;
+            };
+
             sampler2D _MainTex;
             float4 _MainTex_ST;
 
             uniform float3 _LightWorldPosition;
 
-            float _ShadowDisplacementFactor;
+            float _ShadowOffset;
             float _ShadowIntensity;
+            float _isFlipped;
 
             float _Degrees;
 
@@ -74,13 +79,14 @@ Shader "NightmareFuel/CharacterShader"
                 v2f o;
                 
                 // rotation point in object space
-                float3 rotationPoint = float3(0, -1, 0);
+                float3 rotationPoint = float3(0, _ShadowOffset, 0);
 
                 // get the angle from the light position
                 float3 diff = _LightWorldPosition - mul(unity_ObjectToWorld, float4(rotationPoint, 1));
-                float degQuad = (diff.y / abs(diff.y + 0.001) - 1) * 90;
-                //float deg = degQuad + atan(diff.y / diff.x) / UNITY_PI * 180.0;
-                float deg = _Degrees % 360;
+                float degQuad = (diff.x / abs(diff.x + 0.001)) * 90;
+                float flip = _isFlipped;
+                float deg = flip * ( degQuad + atan(diff.y / diff.x) / UNITY_PI * 180.0);
+                //float deg = _Degrees % 360;
                 float rad =  deg * UNITY_PI / 180.0;
 
                 // translate the vertex to new origin in object space
@@ -89,17 +95,20 @@ Shader "NightmareFuel/CharacterShader"
                 // rotate the translated vertex in object space
                 float3 rotatedTranslatedVertex = rotate(translatedVertex, rad);
 
+                // stretch the matrix
+                float3 stretchedTranslatedMatrix = stretch(rotatedTranslatedVertex, diff.y, diff.x);
+
                 // translate the vertex back
-                float3 rotatedVertex = rotatedTranslatedVertex.xyz + rotationPoint;
+                float3 untranslatedVertex = rotatedTranslatedVertex.xyz + rotationPoint;
 
                 // transform to clip space
-                float4 clipVertex = UnityObjectToClipPos(rotatedVertex);
+                float4 clipVertex = UnityObjectToClipPos(untranslatedVertex);
 
                 // pass the data to the fragment shader
                 o.vertex = clipVertex;
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex); 
-                o.worldPos = mul(unity_ObjectToWorld, v.vertex);
-                o.lightPos = _LightWorldPosition;
+                o.intensity = 1 / pow((diff.x * diff.x + diff.y * diff.y), 0.25) - 0.2;
+
 
                 return o;
             }
@@ -110,11 +119,9 @@ Shader "NightmareFuel/CharacterShader"
 
                 fixed4 col = tex2D(_MainTex, i.uv);
                 col.rgb = float3(0, 0, 0);
+                float intensity = col.a * i.intensity;
 
-                float2 diff = i.worldPos - i.lightPos;
-                float intensity = 1 / sqrt(diff.x * diff.x + diff.y * diff.y);
-
-                return float4(col * 1);
+                return float4(col.rgb * intensity, intensity);
             }
             ENDCG
         }

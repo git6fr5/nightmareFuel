@@ -61,6 +61,15 @@ public class CharacterMovement : MonoBehaviour
         // Flip the player transform
         transform.Rotate(0f, 180f, 0f);
 
+        if (!facingRight)
+        {
+            characterState.spriteRenderer.material.SetFloat("_isFlipped", -1);
+        }
+        else
+        {
+            characterState.spriteRenderer.material.SetFloat("_isFlipped", 1);
+        }
+
         if (forehand) { forehand.Flip(); }
         if (offhand) { offhand.Flip(); }
     }
