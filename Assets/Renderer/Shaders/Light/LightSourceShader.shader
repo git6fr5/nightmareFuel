@@ -5,7 +5,7 @@
         _MainTex ("Texture", 2D) = "white" {}
         _LightTint("Light Tint", Color) = (1, 1, 1, 1)
         _DarkTint("Dark Tint", Color) = (0, 0, 0, 0)
-        
+
         _TintIntensity("Tint Intensity", Float) = 0.2
 
         _Intensity("Intensity", Float) = 1
@@ -53,11 +53,10 @@
 
             sampler2D _MainTex;
             float4 _LightTint;
-            float4 _DarkTint;
             float _TintIntensity;
 
-            float _Threshold;
             float _Intensity;
+            float _Threshold;
             float _Radius;
 
             fixed4 frag (v2f i) : SV_Target
@@ -70,29 +69,15 @@
 
                 float2 vec = lightPos - pos;
 
-                //return float4(vec, 0, 1);
-                float dist5 = pow((vec.x * vec.x + vec.y * vec.y),5) / _Intensity + 1 + 0.1 * sin(_Time[1] * 3.145 * 0.5);
-                float dist3 = pow((vec.x * vec.x + vec.y * vec.y), 3) / _Intensity + 1 + 0.1 * sin(_Time[1] * 3.145 * 0.5);
-                float dist = pow((vec.x * vec.x + vec.y * vec.y), 1) / _Intensity + 1 + 0.1 * sin(_Time[1] * 3.145 * 0.5);
+                //float vec.y = vec.y * min(1, vec.y * 10) 
 
+                float dist5 = pow(((vec.x * vec.x + vec.y * vec.y) / _Radius), 5)  + 1 + 0.05 * sin(_Time[1] * 3.145 * 0.25);
+                float dist3 = pow(((vec.x * vec.x + vec.y * vec.y) / _Radius), 3) + 1 + 0.05 * sin(_Time[1] * 3.145 * 0.1);
+                float dist = pow(((vec.x * vec.x + vec.y * vec.y) / _Radius), 1) + 1 + 0.05 * sin(_Time[1] * 3.145 * 0.5);
 
-                float invDist = 1 / dist - _Threshold;
-                //invDist = min(_Radius, invDist);
-                //float invDist = max(1 / _Radius, 1 / dist - _Threshold);
-
-                //invDist = min(invDist, _Thresholds.x); // 0.8
-                //invDist = min(invDist, _Thresholds.y); // 0.5
-                //invDist = min(invDist, _Thresholds.z); // 0.3
-
-                //return (float3(1, 1, 1) * invDist, invDist);
-
-                float3 darkness = dist5 * _DarkTint.rgb + dist3 * _DarkTint.rgb + dist * _DarkTint.rgb;
-
-                //float3 ambience = _TintIntensity * normalize(darkness + invDist * _LightTint.rgb);
-
-
+                float invDist = 1 / (dist*dist3*dist5) - _Threshold;
                 
-                return float4(1-darkness, invDist);
+                return float4( (col.rgb + _LightTint * _TintIntensity * invDist) * invDist  , invDist);
             }
             ENDCG
         }
