@@ -7,7 +7,9 @@ Shader "NightmareFuel/CharacterShader"
         [PerRendererData] _MainTex("Sprite Texture", 2D) = "white" {}
         _Color("Tint", Color) = (1,1,1,1)
         [MaterialToggle] PixelSnap("Pixel snap", Float) = 0
-        _ShadowOffset("Shadow Offset", Float) = 4
+        _HullYOffset("Hull Y Offset", Float) = 0
+        _HullXOffset("Hull X Offset", Float) = 0
+
         _ShadowIntensity("ShadowIntensity", Float) = 0.2
 
         _isFlipped("Flipped", Float) = 1
@@ -68,7 +70,9 @@ Shader "NightmareFuel/CharacterShader"
 
             uniform float3 _LightWorldPosition;
 
-            float _ShadowOffset;
+            float _HullYOffset;
+            float _HullXOffset;
+
             float _ShadowIntensity;
             float _isFlipped;
 
@@ -79,24 +83,29 @@ Shader "NightmareFuel/CharacterShader"
                 v2f o;
                 
                 // rotation point in object space
-                float3 rotationPoint = float3(0, _ShadowOffset, 0);
+                float3 rotationPoint = float3(0, -_HullYOffset, 0);
 
                 // get the angle from the light position
                 float3 diff = _LightWorldPosition - mul(unity_ObjectToWorld, float4(rotationPoint, 1));
+                float3 scale = diff - mul(unity_ObjectToWorld, v.vertex);
+
                 float degQuad = (diff.x / abs(diff.x + 0.001)) * 90;
                 float flip = _isFlipped;
                 float deg = flip * ( degQuad + atan(diff.y / diff.x) / UNITY_PI * 180.0);
                 //float deg = _Degrees % 360;
                 float rad =  deg * UNITY_PI / 180.0;
 
+                // update the rotation point using the angle
+                //rotationPoint = float3(_HullXOffset * cos(rad), _HullYOffset * sin(rad), 0);
+
                 // translate the vertex to new origin in object space
                 float3 translatedVertex = v.vertex.xyz  - rotationPoint;
-                
-                // rotate the translated vertex in object space
-                float3 rotatedTranslatedVertex = rotate(translatedVertex, rad);
 
                 // stretch the matrix
-                float3 stretchedTranslatedMatrix = stretch(rotatedTranslatedVertex, diff.y, diff.x);
+                float3 stretchedTranslatedMatrix = stretch(translatedVertex, 1, abs(diff.y) + abs(diff.x));
+                
+                // rotate the translated vertex in object space
+                float3 rotatedTranslatedVertex = rotate(stretchedTranslatedMatrix, rad);
 
                 // translate the vertex back
                 float3 untranslatedVertex = rotatedTranslatedVertex.xyz + rotationPoint;

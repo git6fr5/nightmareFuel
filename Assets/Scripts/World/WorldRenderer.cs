@@ -32,7 +32,7 @@ public class WorldRenderer : MonoBehaviour
 
     void FixedUpdate()
     {
-        SpawnPlus();
+        //SpawnPlus();
     }
 
     void OnMouseDown()
