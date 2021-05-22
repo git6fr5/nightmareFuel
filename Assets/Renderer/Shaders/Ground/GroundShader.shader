@@ -58,8 +58,8 @@
             {
                 fixed4 col = tex2D(_MainTex, i.uv);
                 
-                float noiseX = abs(fmod(i.worldPos.x / _NoiseScale, _NoiseTex_ST.x));
-                float noiseY = abs(fmod(i.worldPos.y / _NoiseScale, _NoiseTex_ST.y));
+                float noiseX = abs( (i.worldPos.x / _NoiseScale )% _NoiseTex_ST.x);
+                float noiseY = abs( (i.worldPos.y / _NoiseScale )% _NoiseTex_ST.y);
 
                 fixed4 noise = tex2D(_NoiseTex, float2(noiseX, noiseY));
                 noise.rgb = (noise.rgb - 0.5) * _NoiseIntensity;

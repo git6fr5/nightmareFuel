@@ -15,6 +15,7 @@ public class WorldRenderer : MonoBehaviour
     /* --- Internal Variables --- */
     [HideInInspector] public float plusTime = 0f;
     private float plusSpawnTime = 3f;
+    private float worldBound = 10f;
     private Plus plus;
 
     /* --- Stats --- */
@@ -32,7 +33,7 @@ public class WorldRenderer : MonoBehaviour
 
     void FixedUpdate()
     {
-        //SpawnPlus();
+        SpawnPlus();
     }
 
     void OnMouseDown()
@@ -123,9 +124,7 @@ public class WorldRenderer : MonoBehaviour
         if (plus == null) { plusTime = plusTime + Time.fixedDeltaTime; }
         if (plusTime >= plusSpawnTime)
         {
-            PoisonCloud poisonCloud = GameObject.FindGameObjectsWithTag("Poison Cloud")[0].GetComponent<PoisonCloud>();
-
-            float magnitude = Random.Range(poisonCloud.radius / 4, poisonCloud.radius / 2);
+            float magnitude = Random.Range(worldBound / 4, worldBound / 2);
             Vector2 direction = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
             Vector3 randomVector = direction * magnitude;
             Vector3 nonRandomVector = new Vector2(1, 0) * magnitude;

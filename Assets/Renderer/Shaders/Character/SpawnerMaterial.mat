@@ -25,9 +25,24 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - PixelSnap: 0
+    - _Degrees: 1855
+    - _Degress: 145.7
+    - _HullXOffset: 0
+    - _HullYOffset: 1.32
     - _ShadowDisplacementFactor: 2
     - _ShadowIntensity: 0.4
+    - _ShadowOffset: -1.33
     - _ShadowScale: 1
+    - _diffX: 0
+    - _diffY: 0
+    - _isFlipped: 1
+    - _shadowOffset: 4
+    - _var: 0
+    - _var1: 0
+    - _var2: 0
+    - _varDeg: 0
+    - _varX: 0.2
+    - _varY: -0.5
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

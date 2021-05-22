@@ -27,11 +27,11 @@ public class Plus : Collectible
     /* --- Methods --- */
     public override void Activate()
     {
-        PoisonCloud poisonCloud = GameObject.FindGameObjectsWithTag("Poison Cloud")[0].GetComponent<PoisonCloud>();
-        poisonCloud.radius = poisonCloud.radius + (plusValue / Time.fixedDeltaTime) * poisonCloud.radiusIncrement;
-        if (poisonCloud.radius > poisonCloud.maxRadius)
+        LightSource lightSource = GameObject.FindGameObjectsWithTag("Light Source")[0].GetComponent<LightSource>();
+        lightSource.radius = lightSource.radius + (plusValue / Time.fixedDeltaTime) * lightSource.radiusIncrement;
+        if (lightSource.radius > lightSource.maxRadius)
         {
-            poisonCloud.radius = poisonCloud.maxRadius;
+            lightSource.radius = lightSource.maxRadius;
         }
         Destroy(gameObject);
     }

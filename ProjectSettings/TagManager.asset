@@ -7,10 +7,10 @@ TagManager:
   - HUD
   - World
   - Character
-  - Poison Cloud
   - Weapon
   - Collectible
   - Mob
+  - Light Source
   layers:
   - Default
   - TransparentFX

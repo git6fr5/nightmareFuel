@@ -43,7 +43,7 @@ public class Bee : MonoBehaviour
     private float gruntDelayMid = 3.0f;
     private float gruntDelayMax = 10.0f;
 
-    private PoisonCloud poisonCloud;
+    //private PoisonCloud poisonCloud;
 
     /* --- Unity Methods --- */
     void Start()
@@ -59,7 +59,7 @@ public class Bee : MonoBehaviour
         StartCoroutine(IEBeeMove(moveDuration));
         StartCoroutine(IEBeeGrunt(0));
 
-        poisonCloud = GameObject.FindGameObjectsWithTag("Poison Cloud")[0].GetComponent<PoisonCloud>();
+        //poisonCloud = GameObject.FindGameObjectsWithTag("Poison Cloud")[0].GetComponent<PoisonCloud>();
 
     }
 
@@ -80,7 +80,7 @@ public class Bee : MonoBehaviour
             }
         }
 
-        maxRadius = poisonCloud.radius * 2 / 3;
+        maxRadius = 10f;  //poisonCloud.radius * 2 / 3;
         CheckControlPoint();
         //print(maxIdleCircleRadius);
     }

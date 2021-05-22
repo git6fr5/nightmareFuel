@@ -14,6 +14,7 @@ Shader "NightmareFuel/CharacterShader"
 
         _isFlipped("Flipped", Float) = 1
     }
+
     SubShader
     {
         Tags
@@ -87,22 +88,21 @@ Shader "NightmareFuel/CharacterShader"
 
                 // get the angle from the light position
                 float3 diff = _LightWorldPosition - mul(unity_ObjectToWorld, float4(rotationPoint, 1));
-                float3 scale = diff - mul(unity_ObjectToWorld, v.vertex);
-
                 float degQuad = (diff.x / abs(diff.x + 0.001)) * 90;
                 float flip = _isFlipped;
                 float deg = flip * ( degQuad + atan(diff.y / diff.x) / UNITY_PI * 180.0);
                 //float deg = _Degrees % 360;
                 float rad =  deg * UNITY_PI / 180.0;
 
-                // update the rotation point using the angle
-                //rotationPoint = float3(_HullXOffset * cos(rad), _HullYOffset * sin(rad), 0);
+                // make the origin a single point
+                float4 scale = UnityObjectToClipPos(v.vertex);
 
                 // translate the vertex to new origin in object space
                 float3 translatedVertex = v.vertex.xyz  - rotationPoint;
 
                 // stretch the matrix
-                float3 stretchedTranslatedMatrix = stretch(translatedVertex, 1, abs(diff.y) + abs(diff.x));
+                float yStretch = sqrt(diff.y * diff.y + diff.x * diff.x);
+                float3 stretchedTranslatedMatrix = stretch(translatedVertex, 1, yStretch);
                 
                 // rotate the translated vertex in object space
                 float3 rotatedTranslatedVertex = rotate(stretchedTranslatedMatrix, rad);

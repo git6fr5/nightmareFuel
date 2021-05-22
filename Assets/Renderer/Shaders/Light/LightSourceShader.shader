@@ -6,11 +6,11 @@
         _LightTint("Light Tint", Color) = (1, 1, 1, 1)
         _DarkTint("Dark Tint", Color) = (0, 0, 0, 0)
 
-        _TintIntensity("Tint Intensity", Float) = 0.2
+        //_TintIntensity("Tint Intensity", Float) = 0.2
 
         _Intensity("Intensity", Float) = 1
         _Threshold("Threshold", Float) = 0
-        _Radius("Radius", Float) = 0.2
+        //_Radius("Radius", Float) = 0.2
 
     }
     SubShader
@@ -53,11 +53,11 @@
 
             sampler2D _MainTex;
             float4 _LightTint;
-            float _TintIntensity;
+            uniform float _TintIntensity;
 
             float _Intensity;
             float _Threshold;
-            float _Radius;
+            uniform float _Radius;
 
             fixed4 frag (v2f i) : SV_Target
             {

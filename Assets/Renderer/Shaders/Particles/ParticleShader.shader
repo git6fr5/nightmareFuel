@@ -9,7 +9,7 @@
         _Opacity("Opacity", Float) = 0.5
 
         [MaterialToggle] Glow("Glow", Float) = 0
-        _GlowRadius("GlowRadius", Float) = 0.5
+        //_GlowRadius("GlowRadius", Float) = 0.5
         _GlowColor("Glow Color", Color) = (1,1,1,1)
         _GlowIntensity("_GlowIntensity", Float) = 0.2
 
@@ -56,7 +56,7 @@
 
             sampler2D _MainTex;
             float4 _MainTex_ST;
-            float _GlowRadius;
+            uniform float _GlowRadius;
             float4 _GlowColor;
             float _GlowIntensity;
 
@@ -82,7 +82,7 @@
             ENDCG
         }
 
-        Pass // Normal
+        Pass // Normal + Distory
         {
             CGPROGRAM
             #pragma vertex vert
@@ -109,6 +109,7 @@
             v2f vert(appdata v)
             {
                 v2f o;
+                //v.vertex += float4(0.1 * sin(_Time[1] * UNITY_PI / 2), 0, 0, 0 );
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
                 return o;
@@ -116,6 +117,7 @@
 
             fixed4 frag(v2f i) : SV_Target
             {
+                //float2 circularShimmer = float2(0.1 * sin(_Time[1] * UNITY_PI / 2),0.1 * sin(_Time[1] * UNITY_PI / 2));
                 fixed4 col = tex2D(_MainTex, i.uv);
                 col.a *= _Opacity;
                 col.rbg *= col.a;
