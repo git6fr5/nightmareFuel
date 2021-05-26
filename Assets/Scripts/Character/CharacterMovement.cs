@@ -34,7 +34,7 @@ public class CharacterMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        Move();
+        if (characterState.isMobile) { Move(); }
     }
 
     /* --- Methods --- */

@@ -29,6 +29,8 @@ public class Zombie : MonoBehaviour
     private float aggroSpeed = 3f;
 
     private float baseDamage = 0.1f;
+    private float knockbackDuration = 0.3f;
+    private float knockbackHeight = 0.5f;
 
     private float volume = 0.3f;
     private float gruntDelayMin = 2.0f;
