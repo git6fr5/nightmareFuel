@@ -9,9 +9,9 @@ public class Zombie : MonoBehaviour
     private bool DEBUG_init = false;
 
     /* --- Components --- */
-    public State characterState;
-    public Animation characterAnimation;
-    public Movement characterMovement;
+    public CharacterState characterState;
+    public CharacterAnimation characterAnimation;
+    public CharacterMovement characterMovement;
 
     public LayerMask playerLayer;
 
@@ -29,8 +29,8 @@ public class Zombie : MonoBehaviour
     private float aggroSpeed = 3f;
 
     private float baseDamage = 0.1f;
-    private float knockbackDuration = 0.2f;
-    //private float knockbackHeight = 0.5f;
+    private float knockbackDuration = 0.3f;
+    private float knockbackHeight = 0.5f;
 
     private float volume = 0.3f;
     private float gruntDelayMin = 2.0f;
@@ -75,12 +75,9 @@ public class Zombie : MonoBehaviour
         }
     }
 
-    void Attack(State targetState)
+    void Attack(CharacterState targetState)
     {
         targetState.Damage(characterState.attackDamage);
-
-        Vector3 forceDirection = new Vector3(characterMovement.horizontalMove, characterMovement.verticalMove, 0);
-        targetState.gameObject.GetComponent<CharacterMovement>().Knockback(knockbackDuration, forceDirection);
     }
 
     private IEnumerator IEZombieMove(float delay)

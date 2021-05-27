@@ -23,7 +23,7 @@ public class HUD : MonoBehaviour
     }
 
     /* --- Methods ---*/
-    public void Inspect(State state)
+    public void Inspect(CharacterState characterState)
     {
         
     }

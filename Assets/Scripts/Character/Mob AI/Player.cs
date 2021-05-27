@@ -32,7 +32,6 @@ public class Player : MonoBehaviour
 
     void LateUpdate()
     {
-        HurtFlag();
         DeathFlag();
     }
 
@@ -63,19 +62,6 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && equippedWeapon && !equippedWeapon.isAttacking)
         {
             equippedWeapon.StartAttack();
-        }
-    }
-
-    void HurtFlag()
-    {
-        if (characterState.currHealth / characterState.maxHealth < 0.3)
-        {
-            Camera.main.GetComponent<PostEffects>().enabled = true;
-            Camera.main.GetComponent<PostEffects>().postEffectMaterials[0].SetFloat("_BloodTintIntensity", (0.3f - characterState.currHealth / characterState.maxHealth) );
-        }
-        else if (Camera.main.GetComponent<PostEffects>().enabled == true)
-        {
-            Camera.main.GetComponent<PostEffects>().enabled = false;
         }
     }
 
