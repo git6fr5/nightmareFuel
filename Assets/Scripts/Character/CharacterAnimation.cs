@@ -4,39 +4,36 @@ using UnityEngine;
 
 public class CharacterAnimation : MonoBehaviour
 {
-    /* --- Debug --- */
-    private string DebugTag = "[Entaku Island] {CharacterMovement}: ";
-    private bool DEBUG_init = false;
-    //private bool DEBUG_clips = false;
-    //private bool DEBUG_sound = false;
 
     /* --- Components --- */
 
     // Animation
+    public Animator animator;
     public AnimationClip idleAnim;
     public AnimationClip runningAnim;
     public AnimationClip hurtAnim;
     public AnimationClip deathAnim;
 
-    public Animator animator;
-    private RuntimeAnimatorController animatorController;
-    private List<AnimationClip> animationClips = new List<AnimationClip>();
-    private AnimationClip[] controllerClips;
-
     // Audio
+    public AudioSource audioSource;
     public AudioClip hurtAudio;
     public AudioClip deathAudio;
     public AudioClip aggroAudio;
     public AudioClip idleAudio;
     public AudioClip collectAudio;
 
-    public AudioSource audioSource;
+    // Material
+    public SpriteRenderer spriteRenderer;
+    public Material hurtMaterial;
+    public Material deathMaterial;
 
     // Model
     public Skeleton skeleton;
     public Particle[] particles;
 
     /* --- Internal Variables --- */
+
+    // Controls
     [HideInInspector] public float speed = 0f;
     [HideInInspector] public bool hurt = false;
     [HideInInspector] public bool death = false;
@@ -44,7 +41,6 @@ public class CharacterAnimation : MonoBehaviour
     [HideInInspector] public bool collect = false;
 
     private bool overriding = false;
-    private string prevAnim;
     private float hurtDuration = 0.2f;
     private float deathDuration = 0.4f;
 
@@ -52,126 +48,36 @@ public class CharacterAnimation : MonoBehaviour
     private float elapsedDuration = 0f;
 
     /* --- Unity Methods --- */
-    void Start()
-    {
-        if (DEBUG_init) { print(DebugTag + "Activated for " + gameObject.name); }
-    }
-
     void Update()
     {
-        if (!overriding)
-        {
-            SetAnimation();
-        }
-    }
-
-    void FixedUpdate()
-    {
-        if (overriding)
-        {
-            elapsedDuration = elapsedDuration + Time.fixedDeltaTime;
-            OverrideAnimationForDuration(elapsedDuration, duration);
-        }
+        SetAnimation();
+        SetMaterial();
+        SetAudio();
     }
 
     public void SetAnimation()
     {
         bool animated = false;
 
-        /* --- High Priority --- */
-        if (death && deathAnim)
-        {
-            animator.Play(deathAnim.name);
-            overriding = true; duration = deathDuration;
-            animated = true;
-        }
-        else if (hurt && hurtAnim)
-        {
-            animator.Play(hurtAnim.name);
-            overriding = true; duration = hurtDuration;
-            animated = true;
-        }
-        if (animated) { return; }
-
-        /* --- Mid Priority --- */
-        if (speed != 0 && runningAnim)
+        if (characterMovement.isMobile && characterMovement.currSpeed != 0 && runningAnim)
         {
             animator.Play(runningAnim.name);
             animated = true;
+            return;
         }
-        if (animated) { return; }
-
-        /* --- Low Priority --- */
         animator.Play(idleAnim.name);
         return;
     }
 
-    public void OverrideAnimation()
+    public void SetMaterial()
     {
-        string currAnim = animator.GetCurrentAnimatorClipInfo(0)[0].clip.name;
-        //curr_anim = animator.GetCurrentAnimatorStateInfo();
-        if (currAnim != prevAnim)
-        {
-            overriding = false;
-        }
-        print(prevAnim + ", " + currAnim);
-        prevAnim = currAnim;
+        // death
+        // hurt
     }
 
-    public void OverrideAnimationForDuration(float elapsedDuration, float duration)
+    public void SetAudio()
     {
-        if (elapsedDuration > duration)
-        {
-            overriding = false;
-        }
-    }
-
-    public void PlaySound()
-    {
-        bool sounded = false;
-
-        /*--- High Priority ---*/
-        //print("attempting to play sound");
-        if (death && deathAudio)
-        {
-            audioSource.clip = deathAudio;
-            audioSource.Play();
-            sounded = true;
-        }
-        else if (hurt && hurtAudio)
-        {
-            audioSource.clip = hurtAudio;
-            audioSource.Play();
-            sounded = true;
-        }
-        else if (aggro && aggroAudio)
-        {
-            audioSource.clip = aggroAudio;
-            audioSource.Play();
-            sounded = true;
-        }
-        else if (collect && collectAudio)
-        {
-            print("hello");
-            audioSource.clip = collectAudio;
-            audioSource.Play();
-            sounded = true;
-        }
-
-        DisableHighPrio();
-        if (sounded) { return; }
-
-        /*--- Low Priority ---*/
-
-        audioSource.clip = idleAudio;
-        audioSource.Play();
         return;
     }
 
-    private void DisableHighPrio()
-    {
-        hurt = false;
-        death = false;
-        collect = false;
-    }
 }

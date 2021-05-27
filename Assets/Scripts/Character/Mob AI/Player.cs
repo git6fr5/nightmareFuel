@@ -10,10 +10,6 @@ public class Player : MonoBehaviour
     public CharacterAnimation characterAnimation;
     public CharacterMovement characterMovement;
 
-    // weapons
-    [HideInInspector] public string weaponTag = "Weapon";
-    [HideInInspector] public Weapon equippedWeapon;
-
     // collectibles
     [HideInInspector] public string collectibleTag = "Collectible";
 
@@ -27,7 +23,6 @@ public class Player : MonoBehaviour
     void Update()
     {
         MoveFlag();
-        AttackFlag();
     }
 
     void LateUpdate()
@@ -37,7 +32,7 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider2D)
     {
-        CheckCollect(collider2D);
+        CollectFlag(collider2D);
     }
 
     /* --- Methods --- */
@@ -57,14 +52,6 @@ public class Player : MonoBehaviour
         }
     }
 
-    void AttackFlag()
-    {
-        if (Input.GetKeyDown(KeyCode.Space) && equippedWeapon && !equippedWeapon.isAttacking)
-        {
-            equippedWeapon.StartAttack();
-        }
-    }
-
     void DeathFlag()
     {
         if (characterState.isDead)
@@ -75,48 +62,18 @@ public class Player : MonoBehaviour
         }
     }
 
-    void CheckCollect(Collider2D collider2D)
+    void CollectFlag(Collider2D collider2D)
     {
         GameObject _object = collider2D.gameObject;
-        if (_object.tag == weaponTag && _object.GetComponent<Weapon>())
-        {
-            CollectWeapon(_object.GetComponent<Weapon>());
-        }
         if (_object.tag == collectibleTag && _object.GetComponent<Collectible>())
         {
             CollectCollectible(_object.GetComponent<Collectible>());
         }
     }
 
-    void CollectWeapon(Weapon weapon)
-    {
-        if (!weapon.isCollectible) { return; }
-        if (!equippedWeapon)
-        {
-            Equip(weapon);
-        }
-    }
-
     void CollectCollectible(Collectible collectible)
     {
         collectible.Activate();
-    }
-
-    void Equip(Weapon weapon)
-    {
-        //print("equipping");
-        equippedWeapon = weapon;
-        weapon.transform.parent = characterState.hand;
-        weapon.controllerState = characterState;
-        weapon.controller = this;
-        weapon.hitBox.enabled = false;
-        weapon.gameObject.SetActive(true);
-        AdjustHandle(weapon);
-    }
-
-    void AdjustHandle(Weapon weapon)
-    {
-        weapon.transform.localPosition = -weapon.handle.localPosition;
     }
 
 }
