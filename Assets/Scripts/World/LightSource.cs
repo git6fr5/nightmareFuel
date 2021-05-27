@@ -6,7 +6,7 @@ using UnityEngine;
 public class LightSource : MonoBehaviour
 {
 
-    private Vector3 initLocalPosition = new Vector3(0.38f, 0.445f, 0f);
+    private Vector3 initLocalPosition;
     private float flutterRadius = 0.05f;
     private float flutterSpeed = 0.1f;
     private Vector3 displacement = new Vector3(0f, 1.2f, 0f);
@@ -24,43 +24,25 @@ public class LightSource : MonoBehaviour
 
     [HideInInspector] public float radiusIncrement;
 
+    [SerializeField] public LayerMask lightInteractableLayers;
+    [SerializeField] public Collider2D lightCollider;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        radiusIncrement = radius / GameRules.gameDuration * Time.fixedDeltaTime;
         StartCoroutine("Flutter", flutterSpeed);
+        initLocalPosition = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 lightPos = Camera.main.WorldToScreenPoint(transform.position - displacement);
-        lightPos = new Vector3( lightPos.x / Camera.main.pixelWidth, lightPos.y / Camera.main.pixelHeight, 0);
-
-        Shader.SetGlobalVector("_LightWorldPosition", transform.position - displacement);
-        Shader.SetGlobalVector("_LightSourcePosition", lightPos);
-
-    }
-
-    void FixedUpdate()
-    {
-        if (radius > trail)
+        Collider2D[] lightInterables = Physics2D.OverlapCircleAll(transform.position, 40f * 0.2f, lightInteractableLayers);
+        for (int i = 0; i < lightInterables.Length; i++)
         {
-            radius = radius - radiusIncrement;
+            print(lightInterables[i].name);
         }
-        if (radius < trail)
-        {
-            radius = trail;
-        }
-
-        //Shader.SetGlobalFloat("_Radius", Mathf.Log(radius));
-        Shader.SetGlobalFloat("_Radius", Mathf.Sqrt(radius) * radius / (radius + 0.2f));
-
-        Shader.SetGlobalFloat("_TintIntensity", (tintMax * Mathf.Sqrt(radius / maxRadius) * radius / (radius + 0.2f) + tintMin));
-        Shader.SetGlobalFloat("_GlowRadius", (-glowMin * radius/ (maxRadius- trail)) + glowMin);
-
     }
 
     IEnumerator Flutter(float elapsedTime)

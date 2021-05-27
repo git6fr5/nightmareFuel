@@ -5,7 +5,7 @@ Shader "NightmareFuel/CharacterShader"
     Properties
     {
         [PerRendererData] _MainTex("Sprite Texture", 2D) = "white" {}
-        _Color("Tint", Color) = (1,1,1,1)
+        _DamageTint("Damage Tint", Color) = (1,0,0,1)
         [MaterialToggle] PixelSnap("Pixel snap", Float) = 0
         _HullYOffset("Hull Y Offset", Float) = 0
         _HullXOffset("Hull X Offset", Float) = 0
@@ -13,6 +13,7 @@ Shader "NightmareFuel/CharacterShader"
         _ShadowIntensity("ShadowIntensity", Float) = 0.2
 
         _isFlipped("Flipped", Float) = 1
+        _isDamaged("Flipped", Float) = 0
     }
 
     SubShader
@@ -158,6 +159,9 @@ Shader "NightmareFuel/CharacterShader"
             sampler2D _MainTex;
             float4 _MainTex_ST;
 
+            float _isDamaged;
+            float4 _DamageTint;
+
             v2f vert(appdata v)
             {
                 v2f o;
@@ -169,6 +173,7 @@ Shader "NightmareFuel/CharacterShader"
             fixed4 frag(v2f i) : SV_Target
             {
                 fixed4 col = tex2D(_MainTex, i.uv);
+                col.rgb = col.rgb + col.a * _isDamaged * _DamageTint.rgb;
                 return col;
             }
             ENDCG

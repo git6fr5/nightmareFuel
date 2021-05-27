@@ -14,7 +14,7 @@ public class Weapon : MonoBehaviour
     public Collider2D hitBox;
     public Sprite portrait;
     public Transform handle;
-    public CharacterState controllerState;
+    public State controllerState;
     public Player controller;
 
     /* --- Internal Variables ---*/
@@ -89,7 +89,7 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    public virtual void Attack(CharacterState targetState)
+    public virtual void Attack(State targetState)
     {
         print("attacking a mob");
         targetState.Damage(controllerState.attackDamage + attackDamageBonus);
