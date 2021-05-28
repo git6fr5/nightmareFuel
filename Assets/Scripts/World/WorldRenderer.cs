@@ -45,47 +45,47 @@ public class WorldRenderer : MonoBehaviour
     {
         // Declare the object array and the array of sorted characters
         GameObject[] characters = GameObject.FindGameObjectsWithTag("Character");
-        List<CharacterState> characterStates = new List<CharacterState>();
+        List<CharacterRenderer> characterRenderers = new List<CharacterRenderer>();
 
         // There is no need to sort if there is less than two characters
         if (characters.Length < 2) { return; }
 
         // Add the first input into the characters array
-        characterStates.Add(characters[0].GetComponent<CharacterState>());
+        characterRenderers.Add(characters[0].GetComponent<CharacterRenderer>());
 
         // Itterate through the rest of the list
         for (int i = 1; i < characters.Length; i++)
         {
-            CharacterState characterState  = characters[i].GetComponent<CharacterState>();
+            CharacterRenderer characterRenderer  = characters[i].GetComponent<CharacterRenderer>();
             bool inserted = false;
-            for (int j = 0; j < characterStates.Count; j++)
+            for (int j = 0; j < characterRenderers.Count; j++)
             {
                 // The larger the depth, the further behind the character is
-                if (characterState.depth > characters[j].GetComponent<CharacterState>().depth)
+                if (characterRenderer.depth > characters[j].GetComponent<CharacterRenderer>().depth)
                 {
-                    characterStates.Insert(j, characterState);
+                    characterRenderers.Insert(j, characterRenderer);
                     inserted = true;
                     break;
                 }
             }
             if (!inserted)
             {
-                characterStates.Add(characterState);
+                characterRenderers.Add(characterRenderer);
             }
         }
 
-        for (int i = 0; i < characterStates.Count; i++)
+        for (int i = 0; i < characterRenderers.Count; i++)
         {
-            print(characterStates[i].name + ", " + i.ToString());
-            characterStates[i].spriteRenderer.sortingOrder = i;
+            print(characterRenderers[i].name + ", " + i.ToString());
+            characterRenderers[i].spriteRenderer.sortingOrder = i;
         }
     }
 
     public static void MinimumSort()
     {
         // Declare the object array and the array of sorted characters
-        GameObject[] characters = GameObject.FindGameObjectsWithTag("Character");
-        List<CharacterState> characterStates = new List<CharacterState>();
+        GameObject[] characters = GameObject.FindGameObjectsWithTag("Mob");
+        List<CharacterRenderer> characterRenderers = new List<CharacterRenderer>();
         List<float> characterDepths = new List<float>();
 
         // There is no need to sort if there is less than two characters
@@ -94,28 +94,28 @@ public class WorldRenderer : MonoBehaviour
         // Itterate through the rest of the list
         for (int i = 0; i < characters.Length; i++)
         {
-            CharacterState characterState = characters[i].GetComponent<CharacterState>();
-            characterDepths.Add(characterState.depth);
+            CharacterRenderer characterRenderer = characters[i].GetComponent<CharacterRenderer>();
+            characterDepths.Add(characterRenderer.depth);
         }
         
         while (characterDepths.Count > 0)
         {
             for (int i = 0; i < characters.Length; i++)
             {
-                CharacterState characterState = characters[i].GetComponent<CharacterState>();
-                if (characterState.depth == characterDepths.Max())
+                CharacterRenderer characterRenderer = characters[i].GetComponent<CharacterRenderer>();
+                if (characterRenderer.depth == characterDepths.Max())
                 {
-                    characterStates.Add(characterState);
+                    characterRenderers.Add(characterRenderer);
                     characterDepths.Remove(characterDepths.Max());
                     if (characterDepths.Count == 0) { break; }
                 }
             }
         }
 
-        for (int i = 0; i < characterStates.Count; i++)
+        for (int i = 0; i < characterRenderers.Count; i++)
         {
-            //print(characterStates[i].name + ", " + i.ToString());
-            characterStates[i].spriteRenderer.sortingOrder = i;
+            //print(characterRenderers[i].name + ", " + i.ToString());
+            characterRenderers[i].spriteRenderer.sortingOrder = i;
         }
     }
 

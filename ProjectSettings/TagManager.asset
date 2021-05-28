@@ -5,12 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - HUD
-  - World
-  - Character
   - Weapon
   - Collectible
   - Mob
   - Light Source
+  - Ground
+  - Music
+  - Shadow
   layers:
   - Default
   - TransparentFX
@@ -20,10 +21,10 @@ TagManager:
   - UI
   - 
   - 
-  - Path
-  - Mob
-  - Player
-  - Collidable
+  - Opaque
+  - Transparent
+  - 
+  - 
   - 
   - 
   - 
@@ -50,12 +51,6 @@ TagManager:
     locked: 0
   - name: World
     uniqueID: 3495103087
-    locked: 0
-  - name: Path
-    uniqueID: 1324043359
-    locked: 0
-  - name: Collidable
-    uniqueID: 906841971
     locked: 0
   - name: Characters
     uniqueID: 1329455229

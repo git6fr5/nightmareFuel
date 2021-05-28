@@ -1,45 +1,102 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Experimental.Rendering.Universal;
 
 public class CharacterState : MonoBehaviour
 {
 
     /*--- Components ---*/
+    public enum State { idle, mobile, aggro, attacking, stunned, hurt, dead }
+    public Dictionary<State, bool> stateDict = new Dictionary<State, bool>();
     public Collider2D hitbox;
     public Collider2D hull;
+    public Rigidbody2D body;
+    public Slider healthSlider;
 
     /* --- Internal Variables --- */
-    [HideInInspector] public float maxHealth = 1f;
-    [HideInInspector] public float currHealth = 1f;
-    [HideInInspector] public bool isHurt = false;
-    [HideInInspector] public bool isDead = false;
-
-    [HideInInspector] public float depth = 0;
+    public float maxHealth = 1f;
+    public float currHealth = 1f;
+    public float attackDamage = 0.1f;
+    private float hurtBuffer = 0.2f;
 
     /*--- Unity Methods ---*/
+    void Start()
+    {
+        SetHealth();
+        SetStatus();
+    }
+
     void Update()
     {
-        CheckDepth();
+        Health();
+        Motion();
+        Status();
     }
 
     void OnMouseDown()
     {
+        // outline
     }
 
     /*--- Methods ---*/
-    public void CheckDepth()
+    void SetHealth()
     {
-        depth = transform.position.y + hull.offset.y;
+        if (healthSlider != null) { healthSlider.maxValue = maxHealth; }
     }
 
-    public void Damage(float damage)
+    void SetStatus()
     {
-        currHealth = currHealth - damage;
-        if (currHealth < 0)
+        foreach (State _state in Enum.GetValues(typeof(State)))
         {
-            isDead = true;
+            print(_state);
+            stateDict.Add(_state, false);    
         }
+    }
+
+    void Health()
+    {
+        if (healthSlider != null) { healthSlider.value = currHealth; }
+    }
+
+    void Motion()
+    {
+        Vector2 velocity = body.velocity;
+        if (Mathf.Abs(velocity.x) + Mathf.Abs(velocity.y) > 0.1f)
+        {
+            stateDict[State.mobile] = true;
+            return;
+        }
+        stateDict[State.mobile] = false;
+    }
+
+    void Status()
+    {
+        /*foreach (State _state in Enum.GetValues(typeof(State)))
+        {
+            print(stateDict[_state]);
+        }*/
+        print(stateDict[State.hurt]);
+    }
+
+    public void TakeDamage(float damage)
+    {
+        if (stateDict[State.hurt] == true) { return; }
+
+        currHealth = currHealth - damage;
+        stateDict[State.hurt] = true;
+        StartCoroutine(IEHurtBuffer(hurtBuffer));
+        if (currHealth <= 0) { stateDict[State.dead] = true; }
+    }
+
+    private IEnumerator IEHurtBuffer(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        stateDict[State.hurt] = false;
+
+        yield return null;
     }
 }
