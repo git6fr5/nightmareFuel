@@ -27,12 +27,12 @@ public class Plus : Collectible
     /* --- Methods --- */
     public override void Activate()
     {
-        LightSource lightSource = GameObject.FindGameObjectsWithTag("Light Source")[0].GetComponent<LightSource>();
+        /*LightSource lightSource = GameObject.FindGameObjectsWithTag("Light Source")[0].GetComponent<LightSource>();
         lightSource.radius = lightSource.radius + (plusValue / Time.fixedDeltaTime) * lightSource.radiusIncrement;
         if (lightSource.radius > lightSource.maxRadius)
         {
             lightSource.radius = lightSource.maxRadius;
-        }
+        }*/
         Destroy(gameObject);
     }
 

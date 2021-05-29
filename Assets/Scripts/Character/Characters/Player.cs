@@ -40,6 +40,8 @@ public class Player : MonoBehaviour
     void MoveFlag()
     {
         // Get the input from the player
+        if (characterState.stateDict[CharacterState.State.stunned]) { return; }
+
         characterMovement.horizontalMove = Input.GetAxisRaw("Horizontal");
         characterMovement.verticalMove = Input.GetAxisRaw("Vertical");
     }

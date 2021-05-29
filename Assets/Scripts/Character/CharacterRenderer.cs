@@ -38,6 +38,9 @@ public class CharacterRenderer : MonoBehaviour
     // Model
     public Skeleton skeleton;
     public Particle[] particles;
+    public Collider2D hull;
+    public List<Shadow> shadows = new List<Shadow>();
+
 
     /* --- Internal Variables --- */
 
@@ -59,7 +62,7 @@ public class CharacterRenderer : MonoBehaviour
 
     public void SetDepth()
     {
-        depth = transform.position.y + characterState.hull.offset.y;
+        depth = transform.position.y + hull.offset.y;
     }
 
     public void SetAnimation()
@@ -106,6 +109,41 @@ public class CharacterRenderer : MonoBehaviour
     public void SetAudio()
     {
         return;
+    }
+
+    public void CreateShadow(LightSource source, GameObject shadowPrefab)
+    {
+        for (int i = 0; i < shadows.Count; i++)
+        {
+            if (shadows[i].lightSource == source)
+            {
+                return;
+            }
+        }
+        Shadow shadow = Instantiate(shadowPrefab, transform, false).GetComponent<Shadow>();
+        shadow.transform.localPosition = Vector3.zero;
+        shadow.gameObject.SetActive(true);
+
+        shadow.CreateMaterial();
+        shadow.SetRenderer(this);
+        shadow.SetOffset(hull.offset);
+        shadow.SetSource(source);
+
+        shadows.Add(shadow);
+    }
+
+    public void RemoveShadow(LightSource source)
+    {
+        Shadow _deleteShadow = null;
+        foreach( Shadow shadow in shadows)
+        {
+            if (shadow.lightSource == source)
+            {
+                _deleteShadow = shadow;
+            }
+        }
+        shadows.Remove(_deleteShadow);
+        Destroy(_deleteShadow.gameObject);
     }
 
 }

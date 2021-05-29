@@ -12,7 +12,6 @@ public class CharacterState : MonoBehaviour
     public enum State { idle, mobile, aggro, attacking, stunned, hurt, dead }
     public Dictionary<State, bool> stateDict = new Dictionary<State, bool>();
     public Collider2D hitbox;
-    public Collider2D hull;
     public Rigidbody2D body;
     public Slider healthSlider;
 
@@ -20,7 +19,6 @@ public class CharacterState : MonoBehaviour
     public float maxHealth = 1f;
     public float currHealth = 1f;
     public float attackDamage = 0.1f;
-    private float hurtBuffer = 0.2f;
 
     /*--- Unity Methods ---*/
     void Start()
@@ -64,7 +62,7 @@ public class CharacterState : MonoBehaviour
     void Motion()
     {
         Vector2 velocity = body.velocity;
-        if (Mathf.Abs(velocity.x) + Mathf.Abs(velocity.y) > 0.1f)
+        if (Mathf.Abs(velocity.x) + Mathf.Abs(velocity.y) > 0.01f)
         {
             stateDict[State.mobile] = true;
             return;
@@ -81,14 +79,24 @@ public class CharacterState : MonoBehaviour
         print(stateDict[State.hurt]);
     }
 
-    public void TakeDamage(float damage)
+    public void Damage(float hurtDuration, float damage)
     {
         if (stateDict[State.hurt] == true) { return; }
 
         currHealth = currHealth - damage;
         stateDict[State.hurt] = true;
-        StartCoroutine(IEHurtBuffer(hurtBuffer));
+        StartCoroutine(IEHurtBuffer(hurtDuration));
         if (currHealth <= 0) { stateDict[State.dead] = true; }
+    }
+
+    public void Stun(float stunDuration, float forceMagnitude, Vector2 direction)
+    {
+        if (stateDict[State.stunned] == true) { return; } // stuns don't stack at all
+
+        Vector2 force = forceMagnitude * direction.normalized;
+        body.velocity = force;
+        stateDict[State.stunned] = true;
+        StartCoroutine(IEStunBuffer(stunDuration));
     }
 
     private IEnumerator IEHurtBuffer(float delay)
@@ -96,6 +104,15 @@ public class CharacterState : MonoBehaviour
         yield return new WaitForSeconds(delay);
 
         stateDict[State.hurt] = false;
+
+        yield return null;
+    }
+
+    private IEnumerator IEStunBuffer(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        stateDict[State.stunned] = false;
 
         yield return null;
     }

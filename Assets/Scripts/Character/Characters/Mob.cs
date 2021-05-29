@@ -28,8 +28,8 @@ public class Mob : MonoBehaviour
     public float idleMaxInterval = 3f;
     public float idleSpeed = 1f;
 
-    public float knockbackDuration = 0.3f;
-    public float knockbackHeight = 0.5f;
+    public float stunDuration = 0.2f;
+    public float stunForce = 25f;
 
     /* --- Unity Methods --- */
     void Start()
@@ -96,7 +96,8 @@ public class Mob : MonoBehaviour
 
     public virtual void AttackFlag(CharacterState targetState)
     {
-        targetState.TakeDamage(characterState.attackDamage);
+        targetState.Damage(stunDuration, characterState.attackDamage);
+        targetState.Stun(stunDuration, stunForce, targetState.transform.position - transform.position);
     }
 
 }

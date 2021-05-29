@@ -7,8 +7,6 @@ Shader "NightmareFuel/ShadowShader"
         [PerRendererData] _MainTex("Sprite Texture", 2D) = "white" {}
         _Color("Tint", Color) = (1,1,1,1)
         [MaterialToggle] PixelSnap("Pixel snap", Float) = 0
-        _HullYOffset("Hull Y Offset", Float) = 0
-        _HullXOffset("Hull X Offset", Float) = 0
 
         _ShadowIntensity("ShadowIntensity", Float) = 0.2
 
@@ -69,7 +67,7 @@ Shader "NightmareFuel/ShadowShader"
             sampler2D _MainTex;
             float4 _MainTex_ST;
 
-            uniform float3 _LightWorldPosition;
+            float3 _LightWorldPosition;
 
             float _HullYOffset;
             float _HullXOffset;
