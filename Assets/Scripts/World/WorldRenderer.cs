@@ -5,12 +5,10 @@ using UnityEngine;
 
 public class WorldRenderer : MonoBehaviour
 {
-    /* --- Debug --- */
-    private string DebugTag = "[Entaku Island] {WorldRenderer}: ";
-    private bool DEBUG_init = false;
 
     /*--- Components ---*/
     public GameObject plusPrefab;
+    public LayerMask opaqueLayer;
 
     /* --- Internal Variables --- */
     [HideInInspector] public float plusTime = 0f;
@@ -18,17 +16,16 @@ public class WorldRenderer : MonoBehaviour
     private float worldBound = 10f;
     private Plus plus;
 
+    private List<CharacterRenderer> sortedCharacterRenderers = new List<CharacterRenderer>();
+    private List<CharacterRenderer> unsortedCharacterRenderers = new List<CharacterRenderer>();
+    private List<float> unsortedCharacterDepths = new List<float>();
+
     /* --- Stats --- */
 
     /*--- Unity Methods ---*/
-    void Start()
-    {
-        if (DEBUG_init) { print(DebugTag + "Activated"); }
-    }
-
     void Update()
     {
-        MinimumSort();
+        MinimumSort(opaqueLayer);
     }
 
     void FixedUpdate()
@@ -81,42 +78,60 @@ public class WorldRenderer : MonoBehaviour
         }
     }
 
-    public static void MinimumSort()
+    public static void MinimumSort(LayerMask layerMask)
     {
         // Declare the object array and the array of sorted characters
-        GameObject[] characters = GameObject.FindGameObjectsWithTag("Mob");
-        List<CharacterRenderer> characterRenderers = new List<CharacterRenderer>();
-        List<float> characterDepths = new List<float>();
-
-        // There is no need to sort if there is less than two characters
-        if (characters.Length < 2) { return; }
-
-        // Itterate through the rest of the list
-        for (int i = 0; i < characters.Length; i++)
+        float visionRadius = 20f;
+        Collider2D[] unsortedColliders = Physics2D.OverlapCircleAll(Camera.main.transform.position, visionRadius, layerMask);
+        List<CharacterRenderer> unsortedCharacterRenderers = new List<CharacterRenderer>();
+        for (int i = 0; i < unsortedColliders.Length; i++)
         {
-            CharacterRenderer characterRenderer = characters[i].GetComponent<CharacterRenderer>();
-            characterDepths.Add(characterRenderer.depth);
-        }
-        
-        while (characterDepths.Count > 0)
-        {
-            for (int i = 0; i < characters.Length; i++)
+            Collider2D collider = unsortedColliders[i];
+            if (collider.GetComponent<CharacterRenderer>() && collider.GetType() == typeof(CapsuleCollider2D))
             {
-                CharacterRenderer characterRenderer = characters[i].GetComponent<CharacterRenderer>();
-                if (characterRenderer.depth == characterDepths.Max())
+                unsortedCharacterRenderers.Add(collider.GetComponent<CharacterRenderer>());
+            }
+        }
+
+        List<float> unsortedCharacterDepths = new List<float>();
+        for (int i = 0; i < unsortedCharacterRenderers.Count; i++)
+        {
+            CharacterRenderer characterRenderer = unsortedCharacterRenderers[i];
+            unsortedCharacterDepths.Add(characterRenderer.depth);
+        }
+
+        List<CharacterRenderer> sortedCharacterRenderers = new List<CharacterRenderer>();
+        while (unsortedCharacterDepths.Count > 0)
+        {
+            int numCharacters = unsortedCharacterRenderers.Count;
+            for (int i = 0; i < numCharacters; i++)
+            {
+                CharacterRenderer characterRenderer = unsortedCharacterRenderers[i];
+                if (characterRenderer.depth == unsortedCharacterDepths.Max())
                 {
-                    characterRenderers.Add(characterRenderer);
-                    characterDepths.Remove(characterDepths.Max());
-                    if (characterDepths.Count == 0) { break; }
+                    sortedCharacterRenderers.Add(characterRenderer);
+                    unsortedCharacterRenderers.Remove(characterRenderer);
+                    unsortedCharacterDepths.Remove(unsortedCharacterDepths.Max());
+                    break;
                 }
             }
         }
 
-        for (int i = 0; i < characterRenderers.Count; i++)
+        for (int i = 0; i < sortedCharacterRenderers.Count; i++)
         {
             //print(characterRenderers[i].name + ", " + i.ToString());
-            characterRenderers[i].spriteRenderer.sortingOrder = i;
+            sortedCharacterRenderers[i].spriteRenderer.sortingOrder = i;
         }
+    }
+
+    void AddToList(GameObject[] gameObjects, List<CharacterRenderer> _unsortedCharacterRenderers)
+    {
+        for (int i = 0; i < gameObjects.Length; i++)
+        {
+            CharacterRenderer characterRenderer = gameObjects[i].GetComponent<CharacterRenderer>();
+            _unsortedCharacterRenderers.Add(characterRenderer);
+        }
+
     }
 
     void SpawnPlus()

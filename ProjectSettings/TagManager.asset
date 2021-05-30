@@ -12,6 +12,7 @@ TagManager:
   - Ground
   - Music
   - Shadow
+  - Spawner
   layers:
   - Default
   - TransparentFX
