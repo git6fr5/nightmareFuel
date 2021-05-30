@@ -47,6 +47,8 @@ Shader "NightmareFuel/CharacterShader"
             sampler2D _MainTex;
             float4 _MainTex_ST;
 
+            float _LightIntensity;
+
             v2f vert(appdata v)
             {
                 v2f o;
@@ -58,6 +60,7 @@ Shader "NightmareFuel/CharacterShader"
             fixed4 frag(v2f i) : SV_Target
             {
                 fixed4 col = tex2D(_MainTex, i.uv);
+                col = float4(col.rgb * _LightIntensity * col.a, col.a);
                 return col;
             }
             ENDCG

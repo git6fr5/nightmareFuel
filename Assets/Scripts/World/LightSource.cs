@@ -36,6 +36,7 @@ public class LightSource : MonoBehaviour
         {
             print("enter");
             CharacterRenderer renderer = collider.GetComponent<CharacterRenderer>();
+            renderer.AddLight(this);
             renderer.CreateShadow(this, shadowPrefab);
         }
     }
@@ -46,6 +47,7 @@ public class LightSource : MonoBehaviour
         {
             print("exit");
             CharacterRenderer renderer = collider.GetComponent<CharacterRenderer>();
+            renderer.RemoveLight(this);
             renderer.RemoveShadow(this);
         }
     }

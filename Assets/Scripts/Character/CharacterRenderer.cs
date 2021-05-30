@@ -40,6 +40,7 @@ public class CharacterRenderer : MonoBehaviour
     public Particle[] particles;
     public Collider2D hull;
     public List<Shadow> shadows = new List<Shadow>();
+    public List<LightSource> lights = new List<LightSource>();
 
 
     /* --- Internal Variables --- */
@@ -57,6 +58,7 @@ public class CharacterRenderer : MonoBehaviour
         SetDepth();
         SetAnimation();
         SetMaterial();
+        SetLightIntensity();
         SetAudio();
     }
 
@@ -109,6 +111,27 @@ public class CharacterRenderer : MonoBehaviour
     public void SetAudio()
     {
         return;
+    }
+
+    public void SetLightIntensity()
+    {
+        float intensity = 0f;
+        for (int i = 0; i < lights.Count; i++)
+        {
+            float _intensity = 1 / Mathf.Log( Vector2.Distance(transform.position, lights[i].transform.position) + 1f);
+            intensity = intensity + _intensity;
+        }
+        spriteRenderer.material.SetFloat("_LightIntensity", intensity);
+    }
+
+    public void AddLight(LightSource source)
+    {
+        lights.Add(source);
+    }
+
+    public void RemoveLight(LightSource source)
+    {
+        if (lights.Contains(source)) { lights.Remove(source); }
     }
 
     public void CreateShadow(LightSource source, GameObject shadowPrefab)
