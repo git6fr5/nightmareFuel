@@ -41,6 +41,11 @@ public class LightSource : MonoBehaviour
         }
     }
 
+    void OnTriggerStay2D(Collider2D collider)
+    {
+        print(collider.name);
+    }
+
     void OnTriggerExit2D(Collider2D collider)
     {
         if (collider.GetComponent<CharacterRenderer>() && collider.GetType() == typeof(CapsuleCollider2D))
