@@ -32,5 +32,6 @@ Material:
     - _NoiseIntensity: 0.2
     - _NoiseScale: 16
     - _Saturation: 0.99
-    m_Colors: []
+    m_Colors:
+    - _LightWorldPosition: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []

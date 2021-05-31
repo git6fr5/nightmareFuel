@@ -42,6 +42,10 @@ public class CharacterRenderer : MonoBehaviour
     public List<Shadow> shadows = new List<Shadow>();
     public List<LightSource> lights = new List<LightSource>();
 
+    // Overlay
+    public RectTransform overhead;
+    public RectTransform hud;
+
 
     /* --- Internal Variables --- */
 
@@ -60,6 +64,7 @@ public class CharacterRenderer : MonoBehaviour
         SetMaterial();
         SetLightIntensity();
         SetAudio();
+        SetOverlay();
     }
 
     public void SetDepth()
@@ -106,6 +111,18 @@ public class CharacterRenderer : MonoBehaviour
             spriteRenderer.material = idleMaterial;
         }
         return;
+    }
+
+    public void SetOverlay()
+    {
+        if (overhead != null) 
+        { 
+            overhead.rotation = Quaternion.identity; 
+        }
+        if (hud != null)
+        {
+            hud.rotation = Quaternion.identity;
+        }
     }
 
     public void SetAudio()
