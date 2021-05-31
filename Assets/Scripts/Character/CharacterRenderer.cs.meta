@@ -3,7 +3,29 @@ guid: fcb0c7d19e8d5e1409d70012a5298a99
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - characterState: {instanceID: 0}
+  - characterMovement: {instanceID: 0}
+  - animator: {instanceID: 0}
+  - idleAnim: {instanceID: 0}
+  - runningAnim: {instanceID: 0}
+  - hurtAnim: {instanceID: 0}
+  - deathAnim: {instanceID: 0}
+  - audioSource: {instanceID: 0}
+  - hurtAudio: {instanceID: 0}
+  - deathAudio: {instanceID: 0}
+  - aggroAudio: {instanceID: 0}
+  - idleAudio: {instanceID: 0}
+  - collectAudio: {instanceID: 0}
+  - spriteRenderer: {instanceID: 0}
+  - idleMaterial: {instanceID: 0}
+  - aggroMaterial: {instanceID: 0}
+  - hurtMaterial: {instanceID: 0}
+  - deathMaterial: {instanceID: 0}
+  - skeleton: {instanceID: 0}
+  - hull: {instanceID: 0}
+  - overhead: {instanceID: 0}
+  - hud: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

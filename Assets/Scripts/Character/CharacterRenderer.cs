@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterRenderer : MonoBehaviour
 {
@@ -32,6 +33,7 @@ public class CharacterRenderer : MonoBehaviour
     // Material
     public SpriteRenderer spriteRenderer;
     public Material idleMaterial;
+    public Material aggroMaterial;
     public Material hurtMaterial;
     public Material deathMaterial;
 
@@ -45,7 +47,6 @@ public class CharacterRenderer : MonoBehaviour
     // Overlay
     public RectTransform overhead;
     public RectTransform hud;
-
 
     /* --- Internal Variables --- */
 
@@ -106,6 +107,12 @@ public class CharacterRenderer : MonoBehaviour
             spriteRenderer.material = hurtMaterial;
             return;
         }
+        // aggro
+        if (characterState.stateDict[CharacterState.State.aggro] && aggroMaterial)
+        {
+            //spriteRenderer.material = aggroMaterial;
+            //return;
+        }
         if (spriteRenderer.material != idleMaterial)
         {
             spriteRenderer.material = idleMaterial;
@@ -123,6 +130,7 @@ public class CharacterRenderer : MonoBehaviour
         {
             hud.rotation = Quaternion.identity;
         }
+        return;
     }
 
     public void SetAudio()

@@ -24,6 +24,8 @@ public class Mob : MonoBehaviour
     public float aggroRadius = 8f;
     public float deAggroRadius = 20f;
 
+    public float awakeInterval = 1f;
+
     public float idleMinInterval = 0.5f;
     public float idleMaxInterval = 3f;
     public float idleSpeed = 1f;
@@ -38,12 +40,12 @@ public class Mob : MonoBehaviour
         playerTransform = GameObject.FindWithTag(playerTag).transform;
 
         // Initialize the co-routines
-        StartCoroutine(IEMoveFlag(idleMinInterval));
+        StartCoroutine(IEAggroFlag(awakeInterval));
+        StartCoroutine(IEMoveFlag(awakeInterval));
     }
 
     void Update()
     {
-        AggroFlag();
         DeathFlag();
     }
 
@@ -64,19 +66,30 @@ public class Mob : MonoBehaviour
         }
     }
 
-    public virtual void AggroFlag()
+    private IEnumerator IEAggroFlag(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        float thinkInterval = AggroFlag();
+        StartCoroutine(IEAggroFlag(thinkInterval));
+
+        yield return null;
+    }
+
+    public virtual float AggroFlag()
     {
         float distance = Vector2.Distance(transform.position, playerTransform.position);
         if (characterState.stateDict[CharacterState.State.aggro] && distance > deAggroRadius)
         {
             characterMovement.speed = idleSpeed;
-            characterState.stateDict[CharacterState.State.aggro] = false;
+            characterState.Aggro(false);
         }
-        else if (distance < aggroRadius)
+        else if (!characterState.stateDict[CharacterState.State.aggro] && distance < aggroRadius)
         {
             characterMovement.speed = aggroSpeed;
-            characterState.stateDict[CharacterState.State.aggro] = true;
+            characterState.Aggro(true);
         }
+        return aggroMaxInterval;
     }
 
     private IEnumerator IEMoveFlag(float delay)

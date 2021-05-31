@@ -14,6 +14,7 @@ public class CharacterState : MonoBehaviour
     public Collider2D hitbox;
     public Rigidbody2D body;
     public Slider healthSlider;
+    public Emote emote;
 
     /* --- Internal Variables --- */
     public float maxHealth = 1f;
@@ -25,6 +26,7 @@ public class CharacterState : MonoBehaviour
     {
         SetHealth();
         SetStatus();
+        if (emote) { emote.SetEmoteDict(); }
     }
 
     void Update()
@@ -86,6 +88,7 @@ public class CharacterState : MonoBehaviour
         currHealth = currHealth - damage;
         stateDict[State.hurt] = true;
         StartCoroutine(IEHurtBuffer(hurtDuration));
+        emote.SetEmote(Emote.Emoticon.heartbreak, hurtDuration);
         if (currHealth <= 0) { stateDict[State.dead] = true; }
     }
 
@@ -97,6 +100,15 @@ public class CharacterState : MonoBehaviour
         body.velocity = force;
         stateDict[State.stunned] = true;
         StartCoroutine(IEStunBuffer(stunDuration));
+    }
+
+    public void Aggro(bool _aggro)
+    {
+        stateDict[State.aggro] = _aggro;
+        if (_aggro)
+        {
+            emote.SetEmote(Emote.Emoticon.exclamation, 1f);
+        }
     }
 
     private IEnumerator IEHurtBuffer(float delay)
