@@ -13,6 +13,7 @@ TagManager:
   - Music
   - Shadow
   - Spawner
+  - Poison Circle
   layers:
   - Default
   - TransparentFX

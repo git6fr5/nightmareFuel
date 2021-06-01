@@ -5,46 +5,87 @@ using UnityEngine.UI;
 
 public class HUDTimer : MonoBehaviour
 {
-    /* --- Debug --- */
-    private string DebugTag = "[Entaku Island] {HUDTimer}: ";
-    private bool DEBUG_init = false;
-
     /*--- Components ---*/
-    public Text timerText;
+    public Text scoreText;
+    public Text counterText;
+    public RectTransform counterRect;
 
     /* --- Internal Variables --- */
-    private float time = 0f;
+    private float elapsedTime = 0f;
+    private Vector3 floatDirection = new Vector3(0, 1f, 0);
+    private float floatSpeed = 100f;
+    private Vector3 counterInitPosition;
+    private Vector3 counterInitScale;
+    private int score;
+    private float scoreInterval = 5f;
+    private float scalar = -0.5f;
 
     /*--- Unity Methods ---*/
     void Start()
     {
-        if (DEBUG_init) { print(DebugTag + "Activated"); }
+        counterInitPosition = counterRect.localPosition;
+        counterInitScale = counterRect.localScale;
     }
 
     void Update()
     {
-        if (time < 10) 
+        if (counterText.enabled == true)
         {
-            timerText.text = "00" + Mathf.Floor(time).ToString();
-        }
-        else if (time < 100)
-        {
-            timerText.text = "0" + Mathf.Floor(time).ToString();
-        }
-        else if (time < 1000)
-        {
-            timerText.text = Mathf.Floor(time).ToString();
-        }
-        else if (time >= 1000)
-        {
-            timerText.text = "999";
+            counterRect.localPosition = counterRect.localPosition + floatDirection * floatSpeed * Time.deltaTime;
+            counterRect.localScale = counterRect.localScale * (1 + Time.deltaTime * scalar);
         }
     }
 
     void FixedUpdate()
     {
-        time = time + Time.fixedDeltaTime;
+        elapsedTime = elapsedTime + Time.fixedDeltaTime;
+        if (elapsedTime >= scoreInterval)
+        {
+            AddPoints(1);
+            elapsedTime = elapsedTime - scoreInterval;
+        }
     }
 
+    public void AddPoints(int points)
+    {
+        score = score + points;
+        Count(points);
+        if (score < 10)
+        {
+            scoreText.text = "00" + score.ToString();
+        }
+        else if (score < 100)
+        {
+            scoreText.text = "0" + score.ToString();
+        }
+        else if (score < 1000)
+        {
+            scoreText.text = score.ToString();
+        }
+        else if (score >= 1000)
+        {
+            scoreText.text = "999";
+        }
+    }
+
+    void Count(int count)
+    {
+        counterText.text = count.ToString();
+        counterText.enabled = true;
+        counterRect.localPosition = counterInitPosition;
+        counterRect.localScale = counterInitScale;
+
+        StartCoroutine(IECounterOff(0.5f));
+
+    }
+
+    private IEnumerator IECounterOff(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        counterText.enabled = false;
+
+        yield return null;
+    }
 
 }

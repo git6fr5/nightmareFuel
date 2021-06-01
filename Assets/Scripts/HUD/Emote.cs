@@ -51,7 +51,7 @@ public class Emote : MonoBehaviour
 
         rect.localScale = initScale;
         _scalar = scalar;
-        StartCoroutine(IEEmoteBob(0f));
+        StartCoroutine(IEEmoteBob(0.2f));
 
         StartCoroutine(IEEmoticonOff(duration));
 
@@ -63,7 +63,7 @@ public class Emote : MonoBehaviour
 
         // Bob in the opposite direction
         _scalar = -_scalar;
-        StartCoroutine(IEEmoteBob(0.1f));
+        if (displayedEmote.enabled == true) { StartCoroutine(IEEmoteBob(0.2f)); }
 
         yield return null;
     }

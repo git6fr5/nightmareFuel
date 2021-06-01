@@ -88,7 +88,7 @@ public class CharacterState : MonoBehaviour
         currHealth = currHealth - damage;
         stateDict[State.hurt] = true;
         StartCoroutine(IEHurtBuffer(hurtDuration));
-        emote.SetEmote(Emote.Emoticon.heartbreak, hurtDuration);
+        emote.SetEmote(Emote.Emoticon.heartbreak, 1f);
         if (currHealth <= 0) { stateDict[State.dead] = true; }
     }
 
