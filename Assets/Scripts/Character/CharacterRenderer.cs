@@ -140,13 +140,19 @@ public class CharacterRenderer : MonoBehaviour
 
     public void SetLightIntensity()
     {
-        float intensity = 0f;
+        /*float intensity = 0f;
+        Color color = new Color(0, 0, 0, 1);
         for (int i = 0; i < lights.Count; i++)
         {
-            float _intensity = 1 / Mathf.Log( Vector2.Distance(transform.position, lights[i].transform.position) + 1f);
+            float dist = Vector2.Distance(transform.position, lights[i].transform.position);
+            float radius = lights[i].areaOfEffect.radius;
+            float maxIntensity = lights[i].centerIntensity;
+            float _intensity = Mathf.Exp(-dist / (radius / 4));
             intensity = intensity + _intensity;
+            color = lights[i].color * Mathf.Pow(_intensity, 0.1f) + color;
         }
         spriteRenderer.material.SetFloat("_LightIntensity", intensity);
+        spriteRenderer.material.SetColor("_LightColor", color);*/
     }
 
     public void AddLight(LightSource source)

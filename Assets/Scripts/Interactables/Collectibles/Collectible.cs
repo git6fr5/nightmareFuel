@@ -10,9 +10,8 @@ public class Collectible : MonoBehaviour
 
 
     /* --- Components --- */
-    public Collider2D hitBox;
-    public Sprite portrait;
-
+    public enum Type { healthBar, poisonTime }
+    public Type type;
 
     /* --- Internal Variables ---*/
     [HideInInspector] public bool isCollectible = true;
@@ -25,7 +24,7 @@ public class Collectible : MonoBehaviour
 
 
     /* --- Methods --- */
-    public virtual void Activate()
+    public virtual void Activate(CharacterState characterState)
     {
 
     }

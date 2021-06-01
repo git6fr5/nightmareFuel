@@ -67,7 +67,7 @@ public class Player : MonoBehaviour
 
     void CollectCollectible(Collectible collectible)
     {
-        collectible.Activate();
+        collectible.Activate(characterState);
     }
 
 }

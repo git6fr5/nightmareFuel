@@ -5,9 +5,6 @@
         _MainTex ("Texture", 2D) = "white" {}
 
         _Brightness("Brightness", Float) = 1
-        _LightWorldPosition("_LightWorldPosition", Vector) = (1, 1, 1)
-
-
         _NoiseTex("Noise", 2D) = "white" {}
         _NoiseIntensity("Noise Intensity", Float) = 0.5
         _NoiseScale("NoiseScale", Float) = 16
@@ -38,6 +35,15 @@
                 float3 worldPos : TEXCOORD1;
             };
 
+            float3 getIntensity(float3 lightPos, float3 worldPos, float radius)
+            {
+                float3 vec = lightPos - worldPos;
+                float dist = (vec.x * vec.x + vec.y * vec.y);
+                float intensity = exp(- dist / radius);
+                //intensity = intensity + 1 / log(abs(lightPos.x - worldPos.x) + abs(lightPos.y - worldPos.y) + 1);
+                return intensity;
+            };
+
             v2f vert (appdata v)
             {
                 v2f o;
@@ -56,7 +62,17 @@
 
             float _Brightness;
 
-            float3 _LightWorldPosition;
+            float3 _Light0WorldPosition;
+            float3 _Light1WorldPosition;
+            float3 _Light2WorldPosition;
+
+            float _Light0Radius;
+            float _Light1Radius;
+            float _Light2Radius;
+
+            float4 _Light0Color;
+            float4 _Light1Color;
+            float4 _Light2Color;
 
             fixed4 frag (v2f i) : SV_Target
             {
@@ -69,11 +85,19 @@
                 noise.rgb = (noise.rgb - 0.5) * _NoiseIntensity;
                 // just invert the colors
 
-                float intensity = 1.3 / pow( abs(_LightWorldPosition.x - i.worldPos.x) + abs(_LightWorldPosition.y - i.worldPos.y), 0.3 );
+                /*float intensity0 = getIntensity(_Light0WorldPosition, i.worldPos, _Light0Radius);
+                float intensity1 = getIntensity(_Light1WorldPosition, i.worldPos, _Light1Radius);
+                float intensity2 = getIntensity(_Light2WorldPosition, i.worldPos, _Light2Radius);
 
-                col.rgb = col.rgb * _Brightness * intensity;
+                float3 l0 = _Light0Color;
+                float4 col0 = float4(l0.r * col.r, l0.g * col.g, l0.b * col.b, 1/ intensity0);
+                float3 l1 = _Light1Color;
+                float4 col1 = float4(l1.r * col.r, l1.g * col.g, l1.b * col.b, 1 / intensity1);
+                float3 l2 = _Light2Color;
+                float4 col2 = float4(l2.r * col.r, l2.g * col.g, l2.b * col.b, 1 / intensity2);
+                col.rgb =_( intensity0 * col0 + intensity1 * col1 + intensity2 * col2);*/
 
-                float4 output = float4( noise.rgb + col.rgb, col.a);
+                float4 output = _Brightness * float4( noise.rgb + col.rgb, col.a);
 
                 return output;
             }

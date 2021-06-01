@@ -48,6 +48,7 @@ Shader "NightmareFuel/CharacterShader"
             float4 _MainTex_ST;
 
             float _LightIntensity;
+            float4 _LightColor;
 
             v2f vert(appdata v)
             {
@@ -60,7 +61,9 @@ Shader "NightmareFuel/CharacterShader"
             fixed4 frag(v2f i) : SV_Target
             {
                 fixed4 col = tex2D(_MainTex, i.uv);
-                col = float4(col.rgb * _LightIntensity * col.a, col.a);
+                //float4 l = _LightColor;
+                //float4 col2 = float4(l.r * col.r, l.g * col.g, l.b * col.b, col.a);
+                //col = float4(col.rgb * _LightIntensity * col.a, col.a) + float4(col2.rgb * _LightIntensity * col.a, col.a) / 5;
                 return col;
             }
             ENDCG

@@ -10,7 +10,8 @@ public class HUDPlusArrow : MonoBehaviour
     private bool DEBUG_init = false;
 
     /* --- Components --- */
-    public Image plusArrow;
+    public Image arrow;
+    public Collectible.Type arrowType;
     public RectTransform rect;
     public RectTransform canvasRect;
 
@@ -34,17 +35,26 @@ public class HUDPlusArrow : MonoBehaviour
     /*--- Methods ---*/
     void Point()
     {
-        Plus plus = null;
-        GameObject[] plusArray = GameObject.FindGameObjectsWithTag("Collectible");
-        if (plusArray.Length > 0)
-        {
-            plusArrow.enabled = true;
-            plus = plusArray[0].GetComponent<Plus>();
+        Collectible collectible = null;
+        GameObject[] collectibles = GameObject.FindGameObjectsWithTag("Collectible");
 
-            Vector3 viewPos = Camera.main.WorldToViewportPoint(plus.transform.position);
+        arrow.enabled = false;
+
+        for (int i = 0; i < collectibles.Length; i++)
+        {
+            if (collectibles[i].GetComponent<Collectible>().type == arrowType)
+            {
+                arrow.enabled = true;
+                collectible = collectibles[i].GetComponent<Collectible>();
+            }
+        }
+        if (collectible != null)
+        {
+
+            Vector3 viewPos = Camera.main.WorldToViewportPoint(collectible.transform.position);
             if ((viewPos.x > 0 && viewPos.x < 1) && (viewPos.y > 0 && viewPos.y < 1))
             {
-                plusArrow.enabled = false;
+                arrow.enabled = false;
             }
             else
             {
@@ -65,10 +75,6 @@ public class HUDPlusArrow : MonoBehaviour
                 rect.rotation = Quaternion.Euler(0f, 0f, rot_z -90);
             }
         }
-        else
-        {
-            plusArrow.enabled = false;
-        } 
     }
 
     private IEnumerator IEPlusArrowBob(float delay)

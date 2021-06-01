@@ -60,6 +60,9 @@ TagManager:
   - name: Particles
     uniqueID: 2420023531
     locked: 0
+  - name: PoisonCircle
+    uniqueID: 965324309
+    locked: 0
   - name: Light
     uniqueID: 72131033
     locked: 0

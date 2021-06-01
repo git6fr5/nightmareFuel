@@ -11,11 +11,13 @@ public class LightSource : MonoBehaviour
     private float flutterRadius = 0.05f;
     private float flutterSpeed = 0.1f;
     private Vector3 displacement = new Vector3(0f, 0f, 0f);
+    public Color color;
 
     /* --- Internal Variables --- */
     public GameObject shadowPrefab;
     public LayerMask opaqueLayer;
-    public Collider2D areaOfEffect;
+    public CircleCollider2D areaOfEffect;
+    public float centerIntensity = 1f;
 
     // Start is called before the first frame update
     void Start()
