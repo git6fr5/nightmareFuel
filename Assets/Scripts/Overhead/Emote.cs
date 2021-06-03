@@ -13,7 +13,7 @@ public class Emote : MonoBehaviour
     public RectTransform rect;
     private Vector3 initScale;
     public float scalar = 1f;
-    public float _scalar = 1f;
+    private float _scalar = 1f;
 
     void Update()
     {
@@ -28,7 +28,6 @@ public class Emote : MonoBehaviour
         emoteDict.Add(Emoticon.exclamation, exclamationSprite);
         emoteDict.Add(Emoticon.heartbreak, heartbreakSprite);
         initScale = rect.localScale;
-        print("Started Emotions");
     }
 
     public void SetEmote(Emoticon emoticon, float duration)

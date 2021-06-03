@@ -1,0 +1,17 @@
+signal on the ground where a zombie is going to spawn before the zombie spawns
+slight glow/ secondary color on the poison circle
+outline on the edge of the poison circle
+weapons
+death emoticon
+emoticon that plays when you collected something
+coins that drop when you kill a zombie
+
+cursor:
+hovering over objects causes them to be outlines and display a small textbox with their name
+
+lights:
+character interaction w/ lights: getting brighter/darker/tinting to the color of the light
+shadows
+
+world interaction with lights:
+circle of area of effect

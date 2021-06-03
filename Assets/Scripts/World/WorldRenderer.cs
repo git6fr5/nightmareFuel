@@ -8,25 +8,9 @@ public class WorldRenderer : MonoBehaviour
 {
 
     /*--- Components ---*/
-    public GameObject plusPrefab;
-    public GameObject healthPrefab;
     public LayerMask opaqueLayer;
-    public TilemapRenderer groundRenderer;
-    public LightSource light0;
-    public LightSource light1;
-    public LightSource light2;
 
     /* --- Internal Variables --- */
-    [HideInInspector] public float plusTime = 0f;
-    private float plusSpawnTime = 3f;
-    private float worldBound = 10f;
-    private Plus plus;
-
-    [HideInInspector] public float healthTime = 0f;
-    private float healthSpawnTime = 10f;
-    private float healthValue = 0.2f;
-    private HealthBar health;
-
     private List<CharacterRenderer> sortedCharacterRenderers = new List<CharacterRenderer>();
     private List<CharacterRenderer> unsortedCharacterRenderers = new List<CharacterRenderer>();
     private List<float> unsortedCharacterDepths = new List<float>();
@@ -36,29 +20,11 @@ public class WorldRenderer : MonoBehaviour
     /*--- Unity Methods ---*/
     void Start()
     {
-        /*groundRenderer.material.SetVector("_Light0WorldPosition", light0.transform.position);
-        groundRenderer.material.SetVector("_Light1WorldPosition", light1.transform.position);
-        groundRenderer.material.SetVector("_Light2WorldPosition", light2.transform.position);
-        groundRenderer.material.SetVector("_Light0Color", light0.color);
-        groundRenderer.material.SetVector("_Light1Color", light1.color);
-        groundRenderer.material.SetVector("_Light2Color", light2.color);
-        groundRenderer.material.SetFloat("_Light0Radius", light0.areaOfEffect.radius);
-        groundRenderer.material.SetFloat("_Light1Radius", light1.areaOfEffect.radius);
-        groundRenderer.material.SetFloat("_Light2Radius", light2.areaOfEffect.radius);*/
     }
 
     void Update()
     {
         MinimumSort(opaqueLayer);
-        /*groundRenderer.material.SetVector("_Light0WorldPosition", light0.transform.position);
-        groundRenderer.material.SetVector("_Light1WorldPosition", light1.transform.position);
-        groundRenderer.material.SetVector("_Light2WorldPosition", light2.transform.position);*/
-    }
-
-    void FixedUpdate()
-    {
-        SpawnPlus();
-        SpawnHealth();
     }
 
     void OnMouseDown()
@@ -160,42 +126,6 @@ public class WorldRenderer : MonoBehaviour
             _unsortedCharacterRenderers.Add(characterRenderer);
         }
 
-    }
-
-    void SpawnPlus()
-    {
-        if (plus == null) { plusTime = plusTime + Time.fixedDeltaTime; }
-        PoisonCircle poisonCircle = GameObject.FindGameObjectsWithTag("Poison Circle")[0].GetComponent<PoisonCircle>();
-        worldBound = poisonCircle.circleCollider.radius * 2 / 3;
-        if (plusTime >= plusSpawnTime)
-        {
-            float magnitude = Random.Range(worldBound, worldBound);
-            Vector2 direction = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
-            Vector3 randomVector = direction * magnitude;
-            Vector3 nonRandomVector = new Vector2(1, 0) * magnitude;
-            plus = Instantiate(plusPrefab, randomVector, Quaternion.identity, transform).GetComponent<Plus>();
-            //plusObject.SetActive(true);
-            plus.plusValue = plusTime;
-            plusTime = 0;
-        }
-    }
-
-    void SpawnHealth()
-    {
-        if (health == null) { healthTime = healthTime + Time.fixedDeltaTime; }
-        PoisonCircle poisonCircle = GameObject.FindGameObjectsWithTag("Poison Circle")[0].GetComponent<PoisonCircle>();
-        worldBound = poisonCircle.circleCollider.radius * 2 / 3;
-        if (healthTime >= healthSpawnTime)
-        {
-            float magnitude = Random.Range(worldBound, worldBound);
-            Vector2 direction = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
-            Vector3 randomVector = direction * magnitude;
-            Vector3 nonRandomVector = new Vector2(1, 0) * magnitude;
-            health = Instantiate(healthPrefab, randomVector, Quaternion.identity, transform).GetComponent<HealthBar>();
-            //plusObject.SetActive(true);
-            health.healthValue = healthValue;
-            healthTime = 0;
-        }
     }
 
 }

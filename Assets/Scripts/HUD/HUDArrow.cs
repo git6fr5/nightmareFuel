@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HUDPlusArrow : MonoBehaviour
+public class HUDArrow : MonoBehaviour
 {
     /* --- Debug --- */
     private string DebugTag = "[Entaku Island] {HUDPlusArrow}: ";

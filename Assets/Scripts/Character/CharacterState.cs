@@ -13,7 +13,7 @@ public class CharacterState : MonoBehaviour
     public Dictionary<State, bool> stateDict = new Dictionary<State, bool>();
     public Collider2D hitbox;
     public Rigidbody2D body;
-    public Slider healthSlider;
+    public Slider health;
     public Emote emote;
 
     /* --- Internal Variables --- */
@@ -44,7 +44,7 @@ public class CharacterState : MonoBehaviour
     /*--- Methods ---*/
     void SetHealth()
     {
-        if (healthSlider != null) { healthSlider.maxValue = maxHealth; }
+        if (health != null) { health.maxValue = maxHealth; }
     }
 
     void SetStatus()
@@ -58,7 +58,7 @@ public class CharacterState : MonoBehaviour
 
     void Health()
     {
-        if (healthSlider != null) { healthSlider.value = currHealth; }
+        if (health != null) { health.value = currHealth; }
     }
 
     void Motion()

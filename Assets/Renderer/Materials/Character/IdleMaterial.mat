@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerMaterial
+  m_Name: IdleMaterial
   m_Shader: {fileID: 4800000, guid: 7cfaf7d06528d4148932b735cf7e51f7, type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
@@ -25,10 +25,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - PixelSnap: 0
+    - _AddIntensity: 0.5
     - _Degrees: 4065
     - _Degress: 3.25
     - _HullXOffset: 0
     - _HullYOffset: 0.8
+    - _MultiplyIntensity: 0.5
     - _ShadowDisplacementFactor: 4
     - _ShadowIntensity: 3.7
     - _ShadowOffset: -0.7
@@ -43,5 +45,7 @@ Material:
     - _varX: 0.2
     - _varY: 0.3
     m_Colors:
+    - _AddColor: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _MultiplyColor: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

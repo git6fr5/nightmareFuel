@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HUDTimer : MonoBehaviour
+public class HUDScore : MonoBehaviour
 {
     /*--- Components ---*/
     public Text scoreText;

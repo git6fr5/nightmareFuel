@@ -6,7 +6,7 @@ public class HUD : MonoBehaviour
 {
 
     /*--- Components ---*/
-    public HUDTimer hudTimer;
+    public HUDScore hudTimer;
     public HUDGameOver hudGameOver;
 
     /*--- Unity Methods ---*/

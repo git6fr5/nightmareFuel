@@ -6,6 +6,10 @@ Shader "NightmareFuel/CharacterShader"
     {
         [PerRendererData] _MainTex("Sprite Texture", 2D) = "white" {}
         [MaterialToggle] PixelSnap("Pixel snap", Float) = 0
+        
+        _AddColor("Add Color", Color) = (1,0,0,1)
+        _MultiplyColor("Multiply Color", Color) = (0,1,0,1)
+
     }
 
     SubShader
@@ -47,8 +51,8 @@ Shader "NightmareFuel/CharacterShader"
             sampler2D _MainTex;
             float4 _MainTex_ST;
 
-            float _LightIntensity;
-            float4 _LightColor;
+            float _MultiplyColor;
+            float4 _AddColor;
 
             v2f vert(appdata v)
             {
@@ -61,10 +65,15 @@ Shader "NightmareFuel/CharacterShader"
             fixed4 frag(v2f i) : SV_Target
             {
                 fixed4 col = tex2D(_MainTex, i.uv);
-                //float4 l = _LightColor;
-                //float4 col2 = float4(l.r * col.r, l.g * col.g, l.b * col.b, col.a);
-                //col = float4(col.rgb * _LightIntensity * col.a, col.a) + float4(col2.rgb * _LightIntensity * col.a, col.a) / 5;
-                return col;
+
+                float4 m = _MultiplyColor;
+                float4 mCol = col.a * m.a * float4(m.r * col.r, m.g * col.g, m.b * col.b, 1);
+
+                float4 a = _AddColor;
+                float4 aCol = col.a * _AddColor;
+
+                float4 o = col + mCol + aCol;
+                return o;
             }
             ENDCG
         }
