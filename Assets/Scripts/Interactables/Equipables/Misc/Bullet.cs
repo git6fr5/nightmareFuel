@@ -18,7 +18,7 @@ public class Bullet : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider)
     {
         print("colliders tag is " + collider.tag);
-        if (collider.tag == gun.holder.enemyTag)
+        if (collider.tag == gun.holder.enemyTag && collider == collider.GetComponent<CharacterState>().hitbox)
         {
             CharacterState targetState = collider.GetComponent<CharacterState>();
             targetState.Damage(gun.stunDuration, gun.attackDamage);

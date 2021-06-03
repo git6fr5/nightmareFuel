@@ -87,14 +87,17 @@ public class CharacterState : MonoBehaviour
         if (stateDict[State.hurt] == true) { return; }
 
         currHealth = currHealth - damage;
-        stateDict[State.hurt] = true;
-        StartCoroutine(IEHurtBuffer(hurtDuration));
-        emote.SetEmote(Emote.Emoticon.heartbreak, 1f);
-        if (currHealth <= 0) 
+        if (currHealth <= 0)
         {
-            Stun(2f, 0f, transform.forward);
             StartCoroutine(IEDeathBuffer(2f));
+            emote.OverrideEmote(Emote.Emoticon.skull, 1.5f);
+            return;
         }
+
+        stateDict[State.hurt] = true;
+        Coroutine hurt = StartCoroutine(IEHurtBuffer(hurtDuration));
+        emote.SetEmote(Emote.Emoticon.heartbreak, 1f);
+
     }
 
     public void Stun(float stunDuration, float forceMagnitude, Vector2 direction)
@@ -119,12 +122,11 @@ public class CharacterState : MonoBehaviour
     private IEnumerator IEDeathBuffer(float delay)
     {
         stateDict[State.dead] = true;
-        emote.OverrideEmote(Emote.Emoticon.skull, 2f);
         hitbox.enabled = false;
 
         yield return new WaitForSeconds(delay);
 
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
         Destroy(gameObject);
 
         yield return null;

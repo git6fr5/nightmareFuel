@@ -109,6 +109,7 @@ public class Player : MonoBehaviour
         {
             for (int i = 0; i < equipment.Count; i++)
             {
+                if (equipment[i].gameObject.activeSelf && equipment[i].isAttacking) { return; }
                 equipment[i].gameObject.SetActive(false);
             }
             equipable.Activate(characterState, characterMovement, characterRenderer.skeleton);

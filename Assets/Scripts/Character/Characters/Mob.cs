@@ -58,7 +58,7 @@ public class Mob : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.tag == characterState.enemyTag)
+        if (collider.tag == characterState.enemyTag && collider == collider.GetComponent<CharacterState>().hitbox)
         {
             AttackFlag(collider.GetComponent<CharacterState>());
         }
@@ -69,8 +69,11 @@ public class Mob : MonoBehaviour
     {
         if (characterState.stateDict[CharacterState.State.dead])
         {
-            drop.gameObject.SetActive(true);
-            drop.transform.SetParent(null);
+            if (drop.transform.parent != null)
+            {
+                drop.gameObject.SetActive(true);
+                drop.transform.SetParent(null);
+            }
         }
     }
 
@@ -86,6 +89,7 @@ public class Mob : MonoBehaviour
 
     public virtual float AggroFlag()
     {
+        if (playerTransform == null) { return aggroMaxInterval; }
         float distance = Vector2.Distance(transform.position, playerTransform.position);
         if (characterState.stateDict[CharacterState.State.aggro] && distance > deAggroRadius)
         {

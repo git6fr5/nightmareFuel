@@ -59,7 +59,10 @@ public class PoisonCircle : MonoBehaviour
 
         for (int i = 0; i < characters.Count; i++)
         {
-            characters[i].Damage(tickDuration, poisonDamage);
+            if (characters[i] != null)
+            {
+                characters[i].Damage(tickDuration, poisonDamage);
+            }
         }
         StartCoroutine(IEPoisonTicker(tickInterval));
 

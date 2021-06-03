@@ -57,6 +57,12 @@ public class Spawner : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
 
+        List<Mob> _mobs = new List<Mob>();
+        for (int i = 0; i < mobs.Count; i++)
+        {
+            if (mobs[i] != null) { _mobs.Add(mobs[i]); }
+        }
+        mobs = _mobs;
         if (mobs.Count < maxMobs)
         {
             Vector3 spawnLocation = RandomSpawnLocation();

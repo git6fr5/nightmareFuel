@@ -17,7 +17,8 @@ public class Emote : MonoBehaviour
     public float scalar = 1f;
     private float _scalar = 1f;
 
-    private bool overrideEmote = false;
+    Coroutine emoteBob;
+    Coroutine emoteOff;
 
     void Update()
     {
@@ -53,9 +54,9 @@ public class Emote : MonoBehaviour
 
         rect.localScale = initScale;
         _scalar = scalar;
-        StartCoroutine(IEEmoteBob(0.2f));
+        emoteBob = StartCoroutine(IEEmoteBob(0.2f));
 
-        StartCoroutine(IEEmoticonOff(duration));
+        emoteOff = StartCoroutine(IEEmoticonOff(duration));
 
     }
 
@@ -66,16 +67,19 @@ public class Emote : MonoBehaviour
             displayedEmote.enabled = false;
             return;
         }
+        if (displayedEmote.sprite == emoteDict[emoticon])
+        {
+            return;
+        }
 
         displayedEmote.sprite = emoteDict[emoticon];
         displayedEmote.enabled = true;
 
         rect.localScale = initScale;
         _scalar = scalar;
-        StartCoroutine(IEEmoteBob(0.2f));
 
-        overrideEmote = true;
-        StartCoroutine(IEEmoticonOffOverride(duration));
+        StopCoroutine(emoteBob);
+        StopCoroutine(emoteOff);
     }
 
     private IEnumerator IEEmoteBob(float delay)
@@ -83,8 +87,11 @@ public class Emote : MonoBehaviour
         yield return new WaitForSeconds(delay);
 
         // Bob in the opposite direction
-        _scalar = -_scalar;
-        if (displayedEmote.enabled == true) { StartCoroutine(IEEmoteBob(0.2f)); }
+        if (displayedEmote.enabled == true) 
+        {
+            _scalar = -_scalar;
+            emoteBob = StartCoroutine(IEEmoteBob(0.2f)); 
+        }
 
         yield return null;
     }
@@ -93,21 +100,9 @@ public class Emote : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
 
-        if (!overrideEmote)
-        {
-            displayedEmote.enabled = false;
-        }
-
-        yield return null;
-    }
-
-    private IEnumerator IEEmoticonOffOverride(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        
-        overrideEmote = false;
         displayedEmote.enabled = false;
 
         yield return null;
     }
+
 }

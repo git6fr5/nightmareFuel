@@ -105,7 +105,7 @@ public class Equipable : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider)
     {
         print("colliders tag is " + collider.tag);
-        if (holder != null && collider.tag == holder.enemyTag && isSwinging)
+        if (holder != null && collider.tag == holder.enemyTag && isSwinging && collider == collider.GetComponent<CharacterState>().hitbox)
         {
             CharacterState targetState = collider.GetComponent<CharacterState>();
             targetState.Damage(stunDuration, attackDamage);
