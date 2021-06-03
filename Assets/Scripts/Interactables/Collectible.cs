@@ -6,7 +6,7 @@ public class Collectible : MonoBehaviour
 {
 
     /* --- Components --- */
-    public enum Type { healthVial, poisonVial }
+    public enum Type { healthVial, poisonVial, plusVial }
     public Rigidbody2D body;
 
 
@@ -21,7 +21,7 @@ public class Collectible : MonoBehaviour
     public float elapsedTime = 0f;
 
     // Motion
-    private Vector3 floatVelocity = new Vector3(0f, 0.3f, 0f); // bob up
+    private Vector3 floatVelocity = new Vector3(0f, 0.5f, 0f); // bob up
     private float floatDuration = 0.5f;
 
 
@@ -41,7 +41,6 @@ public class Collectible : MonoBehaviour
     void Float()
     {
         body.velocity = floatVelocity;
-        body.AddTorque(10f);
         StartCoroutine(IEFloat(0.5f));
     }
 

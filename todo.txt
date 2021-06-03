@@ -6,6 +6,10 @@ death emoticon
 emoticon that plays when you collected something
 coins that drop when you kill a zombie
 
+shader for the collectibles
+
+post effects blood
+
 cursor:
 hovering over objects causes them to be outlines and display a small textbox with their name
 
@@ -15,3 +19,16 @@ shadows
 
 world interaction with lights:
 circle of area of effect
+
+
+weapons
+blood splatter post effects
+shader for collectibles
+shadows for collectibles
+
+baitGun
+cycle through equipment
+
+glow on collectibles
+boundaries around the world
+

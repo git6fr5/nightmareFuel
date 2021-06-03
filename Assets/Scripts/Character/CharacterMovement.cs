@@ -15,6 +15,7 @@ public class CharacterMovement : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
     private float movementSmoothing = 0.05f;
     [HideInInspector] public bool facingRight = true;
+    [HideInInspector] public bool stickyDirection = false;
 
     /* --- Unity Methods --- */
     void FixedUpdate()
@@ -25,15 +26,19 @@ public class CharacterMovement : MonoBehaviour
     /* --- Methods --- */
     void Move()
     {
-        if (horizontalMove < 0 && facingRight) { Flip(); }
-        else if (horizontalMove > 0 && !facingRight) { Flip(); }
+        if (!stickyDirection) 
+        {
+            if (horizontalMove < 0 && facingRight) { Flip(); }
+            else if (horizontalMove > 0 && !facingRight) { Flip(); }
+        }
+        
 
         // Apply the movement
         Vector3 targetVelocity = new Vector2(horizontalMove, verticalMove).normalized * speed;
         body.velocity = Vector3.SmoothDamp(body.velocity, targetVelocity, ref velocity, movementSmoothing);
     }
 
-    void Flip()
+    public void Flip()
     {
         // Flip the player transform
         transform.Rotate(0f, 180f, 0f);

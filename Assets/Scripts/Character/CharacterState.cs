@@ -20,6 +20,7 @@ public class CharacterState : MonoBehaviour
     public float maxHealth = 1f;
     public float currHealth = 1f;
     public float attackDamage = 0.1f;
+    public string enemyTag;
 
     /*--- Unity Methods ---*/
     void Start()
@@ -89,7 +90,11 @@ public class CharacterState : MonoBehaviour
         stateDict[State.hurt] = true;
         StartCoroutine(IEHurtBuffer(hurtDuration));
         emote.SetEmote(Emote.Emoticon.heartbreak, 1f);
-        if (currHealth <= 0) { stateDict[State.dead] = true; }
+        if (currHealth <= 0) 
+        {
+            Stun(2f, 0f, transform.forward);
+            StartCoroutine(IEDeathBuffer(2f));
+        }
     }
 
     public void Stun(float stunDuration, float forceMagnitude, Vector2 direction)
@@ -109,6 +114,20 @@ public class CharacterState : MonoBehaviour
         {
             emote.SetEmote(Emote.Emoticon.exclamation, 1f);
         }
+    }
+
+    private IEnumerator IEDeathBuffer(float delay)
+    {
+        stateDict[State.dead] = true;
+        emote.OverrideEmote(Emote.Emoticon.skull, 2f);
+        hitbox.enabled = false;
+
+        yield return new WaitForSeconds(delay);
+
+        gameObject.SetActive(false);
+        Destroy(gameObject);
+
+        yield return null;
     }
 
     private IEnumerator IEHurtBuffer(float delay)

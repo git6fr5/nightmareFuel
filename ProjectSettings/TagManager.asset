@@ -5,7 +5,6 @@ TagManager:
   serializedVersion: 2
   tags:
   - HUD
-  - Weapon
   - Collectible
   - Mob
   - Light Source
@@ -14,6 +13,7 @@ TagManager:
   - Shadow
   - Spawner
   - Poison Circle
+  - Equipable
   layers:
   - Default
   - TransparentFX
@@ -54,11 +54,11 @@ TagManager:
   - name: World
     uniqueID: 3495103087
     locked: 0
-  - name: Characters
-    uniqueID: 1329455229
-    locked: 0
   - name: Interactables
     uniqueID: 232960437
+    locked: 0
+  - name: Characters
+    uniqueID: 1329455229
     locked: 0
   - name: Particles
     uniqueID: 2420023531

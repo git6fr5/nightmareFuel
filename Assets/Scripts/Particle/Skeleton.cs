@@ -11,6 +11,7 @@ public class Skeleton : MonoBehaviour
     /*--- Components ---*/
     public Bone root;
     public Bone head;
+    public Bone hand;
 
     /*--- Unity Methods ---*/
     void Start()

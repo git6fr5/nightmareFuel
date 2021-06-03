@@ -5,15 +5,19 @@ using UnityEngine.UI;
 
 public class Emote : MonoBehaviour
 {
-    public enum Emoticon { none, exclamation, heartbreak }
+    public enum Emoticon { none, exclamation, heartbreak, skull }
     public Dictionary<Emoticon, Sprite> emoteDict = new Dictionary<Emoticon, Sprite>();
     public Image displayedEmote;
     public Sprite exclamationSprite;
     public Sprite heartbreakSprite;
+    public Sprite skullSprite;
+
     public RectTransform rect;
     private Vector3 initScale;
     public float scalar = 1f;
     private float _scalar = 1f;
+
+    private bool overrideEmote = false;
 
     void Update()
     {
@@ -27,6 +31,7 @@ public class Emote : MonoBehaviour
     {
         emoteDict.Add(Emoticon.exclamation, exclamationSprite);
         emoteDict.Add(Emoticon.heartbreak, heartbreakSprite);
+        emoteDict.Add(Emoticon.skull, skullSprite);
         initScale = rect.localScale;
     }
 
@@ -43,8 +48,6 @@ public class Emote : MonoBehaviour
             return;
         }
 
-        print("Setting emote");
-
         displayedEmote.sprite = emoteDict[emoticon];
         displayedEmote.enabled = true;
 
@@ -54,6 +57,25 @@ public class Emote : MonoBehaviour
 
         StartCoroutine(IEEmoticonOff(duration));
 
+    }
+
+    public void OverrideEmote(Emoticon emoticon, float duration)
+    {
+        if (emoticon == Emoticon.none)
+        {
+            displayedEmote.enabled = false;
+            return;
+        }
+
+        displayedEmote.sprite = emoteDict[emoticon];
+        displayedEmote.enabled = true;
+
+        rect.localScale = initScale;
+        _scalar = scalar;
+        StartCoroutine(IEEmoteBob(0.2f));
+
+        overrideEmote = true;
+        StartCoroutine(IEEmoticonOffOverride(duration));
     }
 
     private IEnumerator IEEmoteBob(float delay)
@@ -71,6 +93,19 @@ public class Emote : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
 
+        if (!overrideEmote)
+        {
+            displayedEmote.enabled = false;
+        }
+
+        yield return null;
+    }
+
+    private IEnumerator IEEmoticonOffOverride(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        
+        overrideEmote = false;
         displayedEmote.enabled = false;
 
         yield return null;

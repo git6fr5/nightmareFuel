@@ -9,18 +9,20 @@ public class Mob : MonoBehaviour
     public CharacterState characterState;
     public CharacterRenderer characterRenderer;
     public CharacterMovement characterMovement;
-
+    public Collectible drop;
 
     /* --- Internal Variables --- */
 
     // Aggro Variables
     protected Transform playerTransform;
-    protected string playerTag = "Player";
-    
+
     // Settings
+    public float healthIncreasePerMinute = 0.3f;
+
     public float aggroMinInterval = 0.2f;
     public float aggroMaxInterval = 0.5f;
     public float aggroSpeed = 3f;
+    public float aggroSpeedIncreasePerMinute = 1f;
     public float aggroRadius = 8f;
     public float deAggroRadius = 20f;
 
@@ -37,7 +39,12 @@ public class Mob : MonoBehaviour
     void Start()
     {
         // Cache the player transform
-        playerTransform = GameObject.FindWithTag(playerTag).transform;
+        playerTransform = GameObject.FindWithTag(characterState.enemyTag).transform;
+
+        // Increase the speed
+        aggroSpeed += GameRules.gameTime * aggroSpeedIncreasePerMinute / 60f;
+        characterState.maxHealth += GameRules.gameTime * healthIncreasePerMinute / 60f;
+        characterState.currHealth = characterState.maxHealth;
 
         // Initialize the co-routines
         StartCoroutine(IEAggroFlag(awakeInterval));
@@ -51,7 +58,7 @@ public class Mob : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.tag == playerTag)
+        if (collider.tag == characterState.enemyTag)
         {
             AttackFlag(collider.GetComponent<CharacterState>());
         }
@@ -62,7 +69,8 @@ public class Mob : MonoBehaviour
     {
         if (characterState.stateDict[CharacterState.State.dead])
         {
-            gameObject.SetActive(false);
+            drop.gameObject.SetActive(true);
+            drop.transform.SetParent(null);
         }
     }
 
@@ -95,6 +103,12 @@ public class Mob : MonoBehaviour
     private IEnumerator IEMoveFlag(float delay)
     {
         yield return new WaitForSeconds(delay);
+
+        if (characterState.stateDict[CharacterState.State.stunned]) 
+        {
+            StartCoroutine(IEMoveFlag(aggroMinInterval));
+            yield return null;
+        }
 
         float thinkInterval = MoveFlag();
         StartCoroutine(IEMoveFlag(thinkInterval));

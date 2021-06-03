@@ -5,18 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class GameRules : MonoBehaviour
 {
-    /* --- Debug --- */
-    private string DebugTag = "[Entaku Island] {GameRules}: ";
-    private bool DEBUG_init = false;
-
     /*--- Components ---*/
 
     /* --- Internal Variables --- */
-    [HideInInspector] public static float gameDuration = 60f; // in seconds
-
+    [HideInInspector] public static float gameDuration = 180f; // in seconds
+    [HideInInspector] public static float gameTime = 0f;
     /* --- Unity Methods --- */
     void Start()
     {
-        if (DEBUG_init) { print(DebugTag + "Activated"); }
+        GameRules.gameTime = 0f;
+    }
+
+    void FixedUpdate()
+    {
+        GameRules.gameTime = GameRules.gameTime + Time.fixedDeltaTime;
     }
 }
