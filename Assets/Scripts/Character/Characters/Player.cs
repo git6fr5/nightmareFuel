@@ -105,7 +105,7 @@ public class Player : MonoBehaviour
 
     void Equip(Equipable equipable)
     {
-        if (equipment.Count < 4)
+        if (equipment.Count < 4 && !equipable.isEquipped)
         {
             for (int i = 0; i < equipment.Count; i++)
             {
