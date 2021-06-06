@@ -8,7 +8,7 @@ public class GameRules : MonoBehaviour
     /*--- Components ---*/
 
     /* --- Internal Variables --- */
-    [HideInInspector] public static float gameDuration = 180f; // in seconds
+    [HideInInspector] public static float gameDuration = 90f; // in seconds
     [HideInInspector] public static float gameTime = 0f;
     /* --- Unity Methods --- */
     void Start()

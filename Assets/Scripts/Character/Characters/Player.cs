@@ -11,10 +11,8 @@ public class Player : MonoBehaviour
     public CharacterMovement characterMovement;
     public HUD hud;
 
-    // collectibles
-    [HideInInspector] public string collectibleTag = "Collectible";
-    [HideInInspector] public string equipableTag = "Equipable";
-    public List<Equipable> equipment = new List<Equipable>();
+    /* --- Internal Variables --- */
+    private string collectibleTag = "Collectible";
 
     /* --- Unity Methods --- */
     void Start()
@@ -25,7 +23,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         MoveFlag();
-        SwitchEquipmentFlag();
+        WeaponFlag();
     }
 
     void LateUpdate()
@@ -35,7 +33,7 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider2D)
     {
-        InteractFlag(collider2D);
+        CollectFlag(collider2D);
     }
 
     /* --- Methods --- */
@@ -57,44 +55,12 @@ public class Player : MonoBehaviour
         }
     }
 
-    void InteractFlag(Collider2D collider2D)
+    void CollectFlag(Collider2D collider2D)
     {
         GameObject _object = collider2D.gameObject;
         if (_object.tag == collectibleTag && _object.GetComponent<Collectible>())
         {
             Collect(_object.GetComponent<Collectible>());
-        }
-        if (_object.tag == equipableTag && _object.GetComponent<Equipable>())
-        {
-            Equip(_object.GetComponent<Equipable>());
-        }
-    }
-
-    void SwitchEquipmentFlag()
-    {
-        if (Input.GetMouseButtonDown(1))
-        {
-            SwitchEquipment();
-        }
-    }
-
-    void SwitchEquipment()
-    {
-        if (equipment.Count == 0) { return; }
-        int index = 0;
-        for (int i = 0; i < equipment.Count; i++)
-        {
-            if (equipment[i].gameObject.activeSelf) 
-            { 
-                index = (i + 1) % equipment.Count;
-                if (equipment[i].isAttacking) { return; }
-                break; 
-            }
-        }
-        for (int i = 0; i < equipment.Count; i++)
-        {
-            equipment[i].gameObject.SetActive(false);
-            if (i == index) { equipment[i].gameObject.SetActive(true); }
         }
     }
 
@@ -103,19 +69,48 @@ public class Player : MonoBehaviour
         collectible.Activate(characterState);
     }
 
-    void Equip(Equipable equipable)
+    void WeaponFlag()
     {
-        if (equipment.Count < 4 && !equipable.isEquipped)
+        if (Input.GetMouseButtonDown(0))
         {
-            for (int i = 0; i < equipment.Count; i++)
-            {
-                if (equipment[i].gameObject.activeSelf && equipment[i].isAttacking) { return; }
-                equipment[i].gameObject.SetActive(false);
-            }
-            equipable.Activate(characterState, characterMovement, characterRenderer.skeleton);
-            equipment.Add(equipable);
-            hud.hudEquipment.SetEquipment(equipment);
+            ActivateWeapon();
         }
+        else if (Input.GetMouseButtonDown(1))
+        {
+            SwitchWeapon();
+        }
+    }
+
+    void ActivateWeapon()
+    {
+        if (!characterState.equippedWeapon.isAttacking)
+        {
+            characterState.equippedWeapon.Activate();
+        }
+    }
+
+    void SwitchWeapon()
+    {
+        if (characterState.weapons.Length == 0) { return; }
+        if (characterState.equippedWeapon == null) 
+        { 
+            characterState.weapons[0].Equip(characterState, characterMovement, characterRenderer.skeleton);
+            return;
+        }
+        if (characterState.equippedWeapon.isAttacking) { return; }
+
+        int index = 0;
+        for (int i = 0; i < characterState.weapons.Length; i++)
+        {
+            if (characterState.weapons[i] == characterState.equippedWeapon)
+            {
+                index = (i + 1) % characterState.weapons.Length;
+                break;
+            }
+        }
+
+        characterState.equippedWeapon.DeEquip();
+        characterState.weapons[index].Equip(characterState, characterMovement, characterRenderer.skeleton);
     }
 
 }

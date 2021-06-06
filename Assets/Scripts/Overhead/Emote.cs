@@ -5,11 +5,12 @@ using UnityEngine.UI;
 
 public class Emote : MonoBehaviour
 {
-    public enum Emoticon { none, exclamation, heartbreak, skull }
+    public enum Emoticon { none, exclamation, heartbreak, lightning, skull }
     public Dictionary<Emoticon, Sprite> emoteDict = new Dictionary<Emoticon, Sprite>();
     public Image displayedEmote;
     public Sprite exclamationSprite;
     public Sprite heartbreakSprite;
+    public Sprite lightningSprite;
     public Sprite skullSprite;
 
     public RectTransform rect;
@@ -33,6 +34,8 @@ public class Emote : MonoBehaviour
         emoteDict.Add(Emoticon.exclamation, exclamationSprite);
         emoteDict.Add(Emoticon.heartbreak, heartbreakSprite);
         emoteDict.Add(Emoticon.skull, skullSprite);
+        emoteDict.Add(Emoticon.lightning, lightningSprite);
+
         initScale = rect.localScale;
     }
 
@@ -78,8 +81,8 @@ public class Emote : MonoBehaviour
         rect.localScale = initScale;
         _scalar = scalar;
 
-        StopCoroutine(emoteBob);
-        StopCoroutine(emoteOff);
+        if (emoteBob != null) { StopCoroutine(emoteBob); }
+        if (emoteOff != null) { StopCoroutine(emoteOff); }
     }
 
     private IEnumerator IEEmoteBob(float delay)

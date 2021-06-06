@@ -54,13 +54,16 @@ TagManager:
   - name: World
     uniqueID: 3495103087
     locked: 0
+  - name: Pre Particles
+    uniqueID: 104004375
+    locked: 0
   - name: Interactables
     uniqueID: 232960437
     locked: 0
   - name: Characters
     uniqueID: 1329455229
     locked: 0
-  - name: Particles
+  - name: Post Particles
     uniqueID: 2420023531
     locked: 0
   - name: PoisonCircle

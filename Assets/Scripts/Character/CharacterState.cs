@@ -9,18 +9,22 @@ public class CharacterState : MonoBehaviour
 {
 
     /*--- Components ---*/
-    public enum State { idle, mobile, aggro, attacking, stunned, hurt, dead }
+    public enum State { idle, mobile, aggro, attacking, paralyzed, stunned, hurt, dead }
     public Dictionary<State, bool> stateDict = new Dictionary<State, bool>();
     public Collider2D hitbox;
     public Rigidbody2D body;
     public Slider health;
     public Emote emote;
+    public Weapon[] weapons;
 
     /* --- Internal Variables --- */
     public float maxHealth = 1f;
     public float currHealth = 1f;
     public float attackDamage = 0.1f;
+    public float deathDuration = 2f;
+    [HideInInspector] public Weapon equippedWeapon;
     public string enemyTag;
+
 
     /*--- Unity Methods ---*/
     void Start()
@@ -89,8 +93,8 @@ public class CharacterState : MonoBehaviour
         currHealth = currHealth - damage;
         if (currHealth <= 0)
         {
-            StartCoroutine(IEDeathBuffer(2f));
-            emote.OverrideEmote(Emote.Emoticon.skull, 1.5f);
+            StartCoroutine(IEDeathBuffer(deathDuration));
+            emote.OverrideEmote(Emote.Emoticon.skull, deathDuration * 0.95f);
             return;
         }
 
@@ -108,6 +112,17 @@ public class CharacterState : MonoBehaviour
         body.velocity = force;
         stateDict[State.stunned] = true;
         StartCoroutine(IEStunBuffer(stunDuration));
+    }
+
+    public void Paralyze(float paralyzeDuration)
+    {
+        if (stateDict[State.paralyzed] == true) { return; } // don't stack at all
+
+        emote.SetEmote(Emote.Emoticon.lightning, paralyzeDuration);
+        body.constraints = RigidbodyConstraints2D.FreezeAll;
+        stateDict[State.paralyzed] = true;
+        StartCoroutine(IEParalyzeBuffer(paralyzeDuration));
+
     }
 
     public void Aggro(bool _aggro)
@@ -146,6 +161,16 @@ public class CharacterState : MonoBehaviour
         yield return new WaitForSeconds(delay);
 
         stateDict[State.stunned] = false;
+
+        yield return null;
+    }
+
+    private IEnumerator IEParalyzeBuffer(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        body.constraints = RigidbodyConstraints2D.FreezeRotation;
+        stateDict[State.paralyzed] = false;
 
         yield return null;
     }

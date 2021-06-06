@@ -32,3 +32,43 @@ cycle through equipment
 glow on collectibles
 boundaries around the world
 
+voicelines
+bob:
+DIE!!! ... again
+Second times the charm
+BA!!! zukaaaa
+And stay down!
+C'mon kitten
+
+Bob:
+Machine Gun
+Bazooka
+
+Magician:
+gravity ball
+energy beam (sunstrike)
+
+Knight:
+Lance
+
+Jenny:
+
+
+Need to clean up:
+
+equipables (attack input comes from where, ranged has alot of extra functionality etc)
+
+collectibles (signal stuff and signal needs to not bob up and down with the rest)
+
+spawners (signal stuff)
+
+make demon and hellfire script
+make hellfire's hellfire work like a particle
+
+change equipables to be different in the sense that they are tied into the player (no need to collect them)
+
+make cursor dependant on the equipped weapon
+death animation
+stun animation
+damage (blood) particle effects
+

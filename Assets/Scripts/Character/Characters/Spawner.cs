@@ -13,11 +13,8 @@ public class Spawner : MonoBehaviour
     /* --- Internal Variables --- */
 
     // Signal
-    public Transform signal;
-    public Transform signalBall;
-    public Transform signalRing;
-    public Vector3 maxSignalRingScale;
-    public Vector3 minSignalRingScale;
+    public Signal signal;
+    public Transform spawnerBall;
     float t = 0;
 
     // Spawned Object
@@ -35,80 +32,104 @@ public class Spawner : MonoBehaviour
     /* --- Unity Methods --- */
     void Start()
     {
-        // Start the Zombie Spawner
         StartCoroutine(IESpawnerThinker(spawnInterval));
         initSpawnInterval = spawnInterval;
     }
 
     void FixedUpdate()
     {
-        spawnInterval = initSpawnInterval - GameRules.gameTime * spawnIntervalDecreasePerMinute / 60f;
-        if (spawnInterval < 0.1f) { spawnInterval = 0.1f; }
+        spawnInterval = GetSpawnInterval();
 
-        if (signal.gameObject.activeSelf)
+        if (spawnerBall.gameObject.activeSelf)
         {
-            SignalRingFlux();
-            SignalBallParabola();
+            SpawnerBallParabola();
         }
     }
-    /* --- Methods --- */
 
+    /* --- Coroutines --- */
     private IEnumerator IESpawnerThinker(float delay)
     {
         yield return new WaitForSeconds(delay);
 
+        mobs = GetMobList();
+        if (mobs.Count < maxMobs)
+        {
+            Vector3 spawnLocation = GetSpawnLocation();
+            StartCoroutine(IEMobSpawner(spawnInterval / 2, spawnLocation));
+        }
+
+        yield return StartCoroutine(IESpawnerThinker(delay));
+    }
+
+    private IEnumerator IEMobSpawner(float delay, Vector3 location)
+    {
+        // Activate the signal
+        signal.Activate(location + (Vector3)spawnPrefab.GetComponent<CharacterRenderer>().hull.offset, spawnInterval / 5f);
+        SpawnerBallActivate(true);
+  
+        yield return new WaitForSeconds(delay);
+
+        // Spawn the Mob
+        Mob mob = SpawnMob(location);
+        mobs.Add(mob);
+
+        // Deactivate the signal
+        signal.Deactivate();
+        SpawnerBallActivate(false);
+
+        yield return null;
+    }
+
+
+    /* --- Methods --- */
+    Mob SpawnMob(Vector3 location)
+    {
+        // Create the mob
+        Mob mob = Instantiate(spawnPrefab, location, Quaternion.identity, transform).GetComponent<Mob>();
+        mob.gameObject.SetActive(true);
+        
+        // Fire the spawning particles
+        mob.GetComponent<CharacterRenderer>().skeleton.root.Attach(characterRenderer.particles[0].skeleton.root);
+        characterRenderer.particles[0].transform.SetParent(transform); // incase the mob gets insta destroyed, we dont want to destroy the particle as well
+        characterRenderer.particles[0].Fire();
+
+        return mob;
+    }
+
+    void SpawnerBallActivate(bool activate) 
+    {
+        spawnerBall.localPosition = Vector3.zero;
+        spawnerBall.gameObject.SetActive(activate);
+        t = 0;
+    }
+
+    float GetSpawnInterval()
+    {
+        float _spawnInterval = initSpawnInterval - GameRules.gameTime * spawnIntervalDecreasePerMinute / 60f;
+        if (spawnInterval < 0.1f) { spawnInterval = 0.1f; }
+        return _spawnInterval;
+    }
+
+    private List<Mob> GetMobList()
+    {
         List<Mob> _mobs = new List<Mob>();
         for (int i = 0; i < mobs.Count; i++)
         {
             if (mobs[i] != null) { _mobs.Add(mobs[i]); }
         }
-        mobs = _mobs;
-        if (mobs.Count < maxMobs)
-        {
-            Vector3 spawnLocation = RandomSpawnLocation();
-            StartCoroutine(IEMobSpawner(spawnInterval / 2, spawnLocation));
-        }
-        StartCoroutine(IESpawnerThinker(spawnInterval));
-
-        yield return null;
+        return _mobs;
     }
-
-    private void SignalSpawn(Vector3 location, bool _signal)
+    
+    private void SpawnerBallParabola()
     {
-        if (!_signal)
-        {
-            signal.gameObject.SetActive(false);
-            t = 0;
-            return;
-        }
-        signal.position = location + (Vector3)spawnPrefab.GetComponent<CharacterRenderer>().hull.offset;
-        //signalBall.position = characterRenderer.skeleton.head.transform.position;
-
-        signal.gameObject.SetActive(true);
-        signalRing.localScale = maxSignalRingScale;
-    }
-
-    void SignalRingFlux()
-    {
-        Vector3 gradient = maxSignalRingScale - minSignalRingScale;
-        signalRing.localScale = signalRing.localScale - gradient * spawnInterval / 5f * Time.fixedDeltaTime;
-        if (signalRing.localScale.x < minSignalRingScale.x)
-        {
-            signalRing.localScale = maxSignalRingScale;
-        }
-    }
-
-    void SignalBallParabola()
-    {
-
         float T = spawnInterval / 2f;
 
-        Vector2 s = signal.position;
+        Vector2 s = signal.transform.position;
         Vector2[] v = new Vector2[] { s, Vector2.zero, new Vector2(s.x / 1.5f, s.y + 5) };
         t = t + Time.fixedDeltaTime ;
         float x = s.x * Mathf.Sqrt(t / T);
 
-        signalBall.position = new Vector3(x, LagrangeInterpolation(x, v), 0);
+        spawnerBall.position = new Vector3(x, LagrangeInterpolation(x, v), 0);
     }
 
     float LagrangeInterpolation(float x, Vector2[] v)
@@ -131,24 +152,7 @@ public class Spawner : MonoBehaviour
         return y;
     }
 
-    private IEnumerator IEMobSpawner(float delay, Vector3 location)
-    {
-        SignalSpawn(location, true);
-
-        yield return new WaitForSeconds(delay);
-
-        Mob mob = Instantiate(spawnPrefab, location, Quaternion.identity, transform).GetComponent<Mob>();
-        mob.gameObject.SetActive(true);
-        mobs.Add(mob);
-        mob.GetComponent<CharacterRenderer>().skeleton.root.Attach(characterRenderer.particles[0].skeleton.root);
-        characterRenderer.particles[0].Fire();
-        
-        SignalSpawn(location, false);
-
-        yield return null;
-    }
-
-    private Vector3 RandomSpawnLocation()
+    private Vector3 GetSpawnLocation()
     {
         Vector3 center = transform.position;
         float magnitude = Random.Range(bufferRadius, spawnRadius);

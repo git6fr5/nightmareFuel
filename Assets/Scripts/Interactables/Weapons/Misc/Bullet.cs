@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
 
     public Rigidbody2D body;
-    public Equipable gun;
+    public Weapon gun;
     public bool destroyOnHit = true;
     public float maxLifeTime = 2f;
 
@@ -18,11 +18,11 @@ public class Bullet : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider)
     {
         print("colliders tag is " + collider.tag);
-        if (collider.tag == gun.holder.enemyTag && collider == collider.GetComponent<CharacterState>().hitbox)
+        if (collider.tag == gun.holderState.enemyTag && collider == collider.GetComponent<CharacterState>().hitbox)
         {
             CharacterState targetState = collider.GetComponent<CharacterState>();
             targetState.Damage(gun.stunDuration, gun.attackDamage);
-            targetState.Stun(gun.stunDuration, gun.stunForce, targetState.transform.position - transform.position);
+            targetState.Stun(gun.stunDuration, gun.stunForce, targetState.transform.position - gun.transform.position);
             if (destroyOnHit)
             {
                 Destroy(gameObject);

@@ -24,11 +24,24 @@ public class Collectible : MonoBehaviour
     private Vector3 floatVelocity = new Vector3(0f, 0.5f, 0f); // bob up
     private float floatDuration = 0.5f;
 
+    // Signal
+    public Signal signal;
+    public Vector3 signalOffset;
 
     /* --- Unity Methods --- */
     void Start()
     {
         Float();
+    }
+
+    void Update()
+    {
+
+    }
+
+    void OnEnable()
+    {
+        signal.Activate(transform.position + signalOffset, floatDuration * 2);
     }
 
     /* --- Methods --- */
