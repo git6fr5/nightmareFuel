@@ -8,6 +8,7 @@ public class Range : Weapon
     /* --- Additional Variables --- */
     public Bullet bulletPrefab;
     public float bulletSpeed = 40f;
+    public float kickBackForce;
     public Particle muzzleFlare;
 
     private bool hasFired = false;
@@ -18,6 +19,26 @@ public class Range : Weapon
     public override void Attack()
     {
         Fire();
+    }
+
+    public override void Point()
+    {
+
+        if (holderState.targetPosition == null) { return; }
+        holderMovement.stickyDirection = true;
+
+        Vector2 dir = holderState.targetPosition - holderState.transform.position;
+        if (dir.x < 0.01f && holderMovement.facingRight) { holderMovement.Flip(); }
+        else if (dir.x > 0.01f && !holderMovement.facingRight) { holderMovement.Flip(); }
+
+        float angle = 3 * Mathf.Round(Mathf.Atan(dir.y / dir.x) * 180f / Mathf.PI / 3);
+
+        int flip = 0;
+        if (!holderMovement.facingRight) { angle = -angle; flip = 1; }
+
+        holderSkeleton.hand.transform.eulerAngles = Vector3.forward * angle + flip * Vector3.up * 180f;
+        //transform.localRotation = skeleton.root.transform.localRotation;
+        //skeleton.root.transform.rotation = Quaternion.identity;
     }
 
     /* --- Additional Methods --- */
@@ -36,7 +57,7 @@ public class Range : Weapon
                 muzzleFlare.Fire();
 
                 // Knockback the player
-                holderState.Stun(stunDuration, stunForce / 2, -transform.right);
+                holderState.Stun(stunDuration, kickBackForce, -transform.right);
 
 
                 // The bullet

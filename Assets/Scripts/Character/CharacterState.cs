@@ -23,6 +23,7 @@ public class CharacterState : MonoBehaviour
     public float attackDamage = 0.1f;
     public float deathDuration = 2f;
     [HideInInspector] public Weapon equippedWeapon;
+    public Vector3 targetPosition;
     public string enemyTag;
 
 

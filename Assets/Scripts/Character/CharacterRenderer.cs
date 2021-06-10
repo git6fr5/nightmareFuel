@@ -23,12 +23,11 @@ public class CharacterRenderer : MonoBehaviour
     public AnimationClip deathAnim;
 
     // Audio
-    public AudioSource audioSource;
-    public AudioClip hurtAudio;
-    public AudioClip deathAudio;
-    public AudioClip aggroAudio;
-    public AudioClip idleAudio;
-    public AudioClip collectAudio;
+    public Sound hurtSound;
+    public Sound deathSound;
+    public Sound aggroSound;
+    public Sound idleSound;
+    public Sound collectSound;
 
     // Material
     public SpriteRenderer spriteRenderer;
@@ -135,6 +134,18 @@ public class CharacterRenderer : MonoBehaviour
 
     public void SetAudio()
     {
+        // death
+        if (characterState.stateDict[CharacterState.State.dead] && deathSound)
+        {
+            deathSound.PlayAndDestroy(0.5f);
+            return;
+        }
+        // hurt
+        if (characterState.stateDict[CharacterState.State.hurt] && hurtSound)
+        {
+            hurtSound.Play();
+            return;
+        }
         return;
     }
 

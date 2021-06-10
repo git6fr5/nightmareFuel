@@ -10,6 +10,15 @@ public class Zombie : Mob
     {
         // Get a new direction for the character to move in
         float thinkInterval = idleMinInterval;
+
+        PoisonCircle poisonCircle = GameObject.FindGameObjectsWithTag("Poison Circle")[0].GetComponent<PoisonCircle>();
+        if (Vector2.Distance(transform.position, Vector2.zero) > poisonCircle.circleCollider.radius)
+        {
+            characterMovement.horizontalMove = -(int)transform.position.x;
+            characterMovement.verticalMove = -(int)transform.position.y;
+            return thinkInterval;
+        }
+
         if (characterState.stateDict[CharacterState.State.aggro])
         {
             characterMovement.horizontalMove = Random.Range(0, 4);

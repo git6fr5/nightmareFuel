@@ -47,6 +47,7 @@ public class Particle : MonoBehaviour
 
     public void Fire()
     {
+        length = clip.length;
         ActivateForDuration(length);
     }
 }

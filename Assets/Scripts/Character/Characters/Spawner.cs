@@ -9,6 +9,8 @@ public class Spawner : MonoBehaviour
     public CharacterState characterState;
     public CharacterRenderer characterRenderer;
     public CharacterMovement characterMovement;
+    public Sound spawnSound;
+    public Sound interludeSound;
 
     /* --- Internal Variables --- */
 
@@ -28,11 +30,13 @@ public class Spawner : MonoBehaviour
     public float spawnIntervalDecreasePerMinute = 1f;
     public float spawnRadius = 8f;
     private float bufferRadius = 4f;
+    public float interludeInterval = 15f;
 
     /* --- Unity Methods --- */
     void Start()
     {
         StartCoroutine(IESpawnerThinker(spawnInterval));
+        StartCoroutine(IESpawnerInterlude(interludeInterval));
         initSpawnInterval = spawnInterval;
     }
 
@@ -63,6 +67,9 @@ public class Spawner : MonoBehaviour
 
     private IEnumerator IEMobSpawner(float delay, Vector3 location)
     {
+        // Play the sound
+        spawnSound.Play();
+
         // Activate the signal
         signal.Activate(location + (Vector3)spawnPrefab.GetComponent<CharacterRenderer>().hull.offset, spawnInterval / 5f);
         SpawnerBallActivate(true);
@@ -78,6 +85,16 @@ public class Spawner : MonoBehaviour
         SpawnerBallActivate(false);
 
         yield return null;
+    }
+
+    private IEnumerator IESpawnerInterlude(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        interludeSound.Play();
+        StartCoroutine(IESpawnerInterlude(interludeInterval));
+
+        yield return StartCoroutine(IESpawnerThinker(delay));
     }
 
 

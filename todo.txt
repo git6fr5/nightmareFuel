@@ -51,7 +51,10 @@ energy beam (sunstrike)
 Knight:
 Lance
 
-Jenny:
+Jenny the Archer (keep the bees alive):
+stone arrows
+fire arrows
+
 
 
 Need to clean up:
@@ -72,3 +75,10 @@ death animation
 stun animation
 damage (blood) particle effects
 
+ooo damn howd you get the vocals on the noragami track :o
+
+make initial circle smaller
+make time vial more frequent
+make spawner spawn clusters of 2/3/4 after specific times (can make it grow bigger also to indicate)
+bloodsplatter effects
+spawning noises (fire, ball, spawner laugh)

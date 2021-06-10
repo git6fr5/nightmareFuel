@@ -9,6 +9,7 @@ public class Mob : MonoBehaviour
     public CharacterState characterState;
     public CharacterRenderer characterRenderer;
     public CharacterMovement characterMovement;
+    public Sound spawnSound;
     public Collectible drop;
 
     /* --- Internal Variables --- */
@@ -32,23 +33,33 @@ public class Mob : MonoBehaviour
     public float idleMaxInterval = 3f;
     public float idleSpeed = 1f;
 
-    public float stunDuration = 0.2f;
-    public float stunForce = 25f;
+    public float attackMinInterval = 1f;
+    public float attackMaxInterval = 1.5f;
+    public float attackRadius = 8f;
+    public float bulletSpeedIncreasePerMinute = 1f;
 
     /* --- Unity Methods --- */
     void Start()
     {
         // Cache the player transform
         playerTransform = GameObject.FindWithTag(characterState.enemyTag).transform;
+        if (characterState.weapons.Length > 0) { characterState.weapons[0].Equip(characterState, characterMovement, characterRenderer.skeleton); }
+        spawnSound.PlayAndDestroy(1f);
 
-        // Increase the speed
+        // Increase the level
         aggroSpeed += GameRules.gameTime * aggroSpeedIncreasePerMinute / 60f;
         characterState.maxHealth += GameRules.gameTime * healthIncreasePerMinute / 60f;
+        if (characterState.equippedWeapon.gameObject.GetComponent<Range>())
+        {
+            characterState.equippedWeapon.gameObject.GetComponent<Range>().bulletSpeed += GameRules.gameTime * bulletSpeedIncreasePerMinute / 60f;
+        }
         characterState.currHealth = characterState.maxHealth;
 
         // Initialize the co-routines
         StartCoroutine(IEAggroFlag(awakeInterval));
         StartCoroutine(IEMoveFlag(awakeInterval));
+        StartCoroutine(IEAttackFlag(awakeInterval));
+
     }
 
     void Update()
@@ -60,7 +71,7 @@ public class Mob : MonoBehaviour
     {
         if (collider.tag == characterState.enemyTag && collider == collider.GetComponent<CharacterState>().hitbox)
         {
-            AttackFlag(collider.GetComponent<CharacterState>());
+            //AttackFlag(collider.GetComponent<CharacterState>());
         }
     }
 
@@ -90,6 +101,8 @@ public class Mob : MonoBehaviour
     public virtual float AggroFlag()
     {
         if (playerTransform == null) { return aggroMaxInterval; }
+        characterState.targetPosition = playerTransform.position;
+
         float distance = Vector2.Distance(transform.position, playerTransform.position);
         if (characterState.stateDict[CharacterState.State.aggro] && distance > deAggroRadius)
         {
@@ -101,6 +114,7 @@ public class Mob : MonoBehaviour
             characterMovement.speed = aggroSpeed;
             characterState.Aggro(true);
         }
+
         return aggroMaxInterval;
     }
 
@@ -125,10 +139,40 @@ public class Mob : MonoBehaviour
         return idleMinInterval;
     }
 
-    public virtual void AttackFlag(CharacterState targetState)
+    private IEnumerator IEAttackFlag(float delay)
     {
-        targetState.Damage(stunDuration, characterState.attackDamage);
-        targetState.Stun(stunDuration, stunForce, targetState.transform.position - transform.position);
+        yield return new WaitForSeconds(delay);
+
+        if (characterState.stateDict[CharacterState.State.stunned])
+        {
+            StartCoroutine(IEAttackFlag(attackMaxInterval));
+            yield return null;
+        }
+
+        float thinkInterval = AttackFlag();
+        StartCoroutine(IEAttackFlag(thinkInterval));
+
+        yield return null;
+    }
+
+    public virtual float AttackFlag()
+    {
+        if (playerTransform == null) { return attackMaxInterval; }
+        float distance = Vector2.Distance(transform.position, playerTransform.position);
+        if (distance > attackRadius) { return attackMaxInterval; }
+        
+        characterState.targetPosition = playerTransform.position;
+        ActivateWeapon();
+
+        return Random.Range(attackMinInterval, attackMaxInterval);
+    }
+
+    void ActivateWeapon()
+    {
+        if (characterState.equippedWeapon != null && !characterState.equippedWeapon.isAttacking)
+        {
+            characterState.equippedWeapon.Activate();
+        }
     }
 
 }

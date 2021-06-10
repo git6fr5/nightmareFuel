@@ -7,6 +7,7 @@ public class Weapon : MonoBehaviour
 
     /* --- Components --- */
     public Skeleton skeleton;
+    public Sound activateSound;
 
 
     /* --- Internal Variables ---*/
@@ -66,26 +67,8 @@ public class Weapon : MonoBehaviour
     /* --- Methods --- */
     public void Activate()
     {
+        activateSound.PlayAdditively();
         StartCoroutine(StartAttack());
-    }
-
-    public void Point()
-    {
-
-        holderMovement.stickyDirection = true;
-
-        Vector2 dir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - holderState.transform.position;
-        if (dir.x < 0.01f && holderMovement.facingRight) { holderMovement.Flip(); }
-        else if (dir.x > 0.01f && !holderMovement.facingRight) { holderMovement.Flip(); }
-
-        float angle = 3 * Mathf.Round(Mathf.Atan(dir.y / dir.x) * 180f / Mathf.PI / 3);
-
-        int flip = 0;
-        if (!holderMovement.facingRight) { angle = -angle; flip = 1; }
-
-        holderSkeleton.hand.transform.eulerAngles = Vector3.forward * angle + flip * Vector3.up * 180f;
-        //transform.localRotation = skeleton.root.transform.localRotation;
-        //skeleton.root.transform.rotation = Quaternion.identity;
     }
 
     public void Equip(CharacterState _holderState, CharacterMovement _holderMovement, Skeleton _holderSkeleton)
@@ -123,6 +106,10 @@ public class Weapon : MonoBehaviour
         // do attack
     }
 
+    public virtual void Point()
+    {
+        // point   
+    }
 
     /* --- Coroutines --- */
     private IEnumerator StartAttack()

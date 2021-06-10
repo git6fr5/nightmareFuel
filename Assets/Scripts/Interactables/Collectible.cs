@@ -8,6 +8,7 @@ public class Collectible : MonoBehaviour
     /* --- Components --- */
     public enum Type { healthVial, poisonVial, plusVial }
     public Rigidbody2D body;
+    public Sound collectSound;
 
 
     /* --- Internal Variables ---*/
@@ -47,6 +48,12 @@ public class Collectible : MonoBehaviour
     /* --- Methods --- */
     public void Activate(CharacterState characterState)
     {
+        if (collectSound)
+        {
+            collectSound.transform.parent = null;
+            if (type == Type.plusVial) { collectSound.PlayAndDestroy(1f); }
+            else { collectSound.Play(); }
+        }
         Effect(characterState);
         gameObject.SetActive(false);
     }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class Player : MonoBehaviour
 {
@@ -9,9 +10,11 @@ public class Player : MonoBehaviour
     public CharacterState characterState;
     public CharacterRenderer characterRenderer;
     public CharacterMovement characterMovement;
+    public Camera cam;
     public HUD hud;
 
     /* --- Internal Variables --- */
+    public Sound collectSound;
     private string collectibleTag = "Collectible";
 
     /* --- Unity Methods --- */
@@ -23,7 +26,10 @@ public class Player : MonoBehaviour
     void Update()
     {
         MoveFlag();
+        HurtFlag();
+        LowHealthFlag();
         WeaponFlag();
+        TargetFlag();
     }
 
     void LateUpdate()
@@ -46,6 +52,35 @@ public class Player : MonoBehaviour
         characterMovement.verticalMove = Input.GetAxisRaw("Vertical");
     }
 
+    void TargetFlag()
+    {
+        characterState.targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    }
+
+    void HurtFlag()
+    {
+        /*if (characterState.stateDict[CharacterState.State.hurt])
+        {
+            float shakeMagnitude = 0.5f;
+            cam.GetComponent<CinemachineBrain>().enabled = false;
+            cam.transform.position = cam.transform.position + Random.insideUnitSphere * shakeMagnitude;
+        }
+        else
+        {
+            cam.GetComponent<CinemachineBrain>().enabled = true;
+        }*/
+    }
+
+    void LowHealthFlag()
+    {
+        /*if (characterState.currHealth / characterState.maxHealth < 0.3)
+        {
+            PostEffects postEffect = cam.GetComponent<PostEffects>();
+            postEffect.enabled = true;
+            postEffect.index = 0;
+        }*/
+    }
+
     void DeathFlag()
     {
         if (characterState.stateDict[CharacterState.State.dead])
@@ -66,6 +101,7 @@ public class Player : MonoBehaviour
 
     void Collect(Collectible collectible)
     {
+        collectSound.Play();
         collectible.Activate(characterState);
     }
 
@@ -83,7 +119,7 @@ public class Player : MonoBehaviour
 
     void ActivateWeapon()
     {
-        if (!characterState.equippedWeapon.isAttacking)
+        if (characterState.equippedWeapon != null && !characterState.equippedWeapon.isAttacking)
         {
             characterState.equippedWeapon.Activate();
         }
