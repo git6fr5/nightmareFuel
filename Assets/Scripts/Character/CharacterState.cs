@@ -28,11 +28,15 @@ public class CharacterState : MonoBehaviour
 
 
     /*--- Unity Methods ---*/
+    void Awake()
+    {
+        if (emote) { emote.SetEmoteDict(); }
+        SetStatus();
+    }
+
     void Start()
     {
         SetHealth();
-        SetStatus();
-        if (emote) { emote.SetEmoteDict(); }
     }
 
     void Update()
@@ -129,7 +133,7 @@ public class CharacterState : MonoBehaviour
     public void Aggro(bool _aggro)
     {
         stateDict[State.aggro] = _aggro;
-        if (_aggro)
+        if (_aggro && emote)
         {
             emote.SetEmote(Emote.Emoticon.exclamation, 1f);
         }

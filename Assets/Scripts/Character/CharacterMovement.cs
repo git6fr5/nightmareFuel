@@ -9,7 +9,7 @@ public class CharacterMovement : MonoBehaviour
     public Rigidbody2D body;
 
     /* --- Internal Variables ---*/
-    [HideInInspector] public float speed = 5f;
+    public float speed = 5f;
     [HideInInspector] public float horizontalMove = 0f;
     [HideInInspector] public float verticalMove = 0f;
     private Vector3 velocity = Vector3.zero;

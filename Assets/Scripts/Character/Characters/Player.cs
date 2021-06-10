@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         characterRenderer.skeleton.root.Attach(characterRenderer.particles[0].skeleton.root);
+        if (characterState.weapons.Length > 0) { characterState.weapons[0].Equip(characterState, characterMovement, characterRenderer.skeleton); }
     }
 
     void Update()

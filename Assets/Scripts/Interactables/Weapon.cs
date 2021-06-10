@@ -53,6 +53,11 @@ public class Weapon : MonoBehaviour
         }      
     }
 
+    void OnEnable()
+    {
+        isAttacking = false;
+    }
+
     void OnTriggerEnter2D(Collider2D collider)
     {
         print("colliders tag is " + collider.tag);
