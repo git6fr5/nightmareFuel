@@ -8,6 +8,42 @@ public class Slime : Mob
     [HideInInspector] public int depth = 1;
     public int maxDepth = 3;
     bool hasSplit = false;
+    Vector2 targetPoint;
+
+    public float tackleDamage;
+    public float tackleDuration;
+    public float tackleForce;
+
+    /* --- Overridden Methods --- */
+    public override float MoveFlag()
+    {
+        // Get a new direction for the character to move in
+        float thinkInterval = idleMinInterval;
+
+        PoisonCircle poisonCircle = GameObject.FindGameObjectsWithTag("Poison Circle")[0].GetComponent<PoisonCircle>();
+        if (Vector2.Distance(transform.position, Vector2.zero) > poisonCircle.circleCollider.radius)
+        {
+            characterMovement.horizontalMove = -(int)transform.position.x;
+            characterMovement.verticalMove = -(int)transform.position.y;
+            return thinkInterval;
+        }
+
+        if (targetPoint == null || Random.Range(0f, 1f) < 0.1f || Vector2.Distance(targetPoint, Vector2.zero) > poisonCircle.circleCollider.radius || Vector2.Distance(targetPoint, Vector2.zero) > 2f)
+        {
+            targetPoint = Random.insideUnitCircle * poisonCircle.circleCollider.radius * 4 / 5;
+        }
+        characterMovement.horizontalMove = (targetPoint - (Vector2)transform.position).x;
+        characterMovement.verticalMove = (targetPoint - (Vector2)transform.position).y;
+
+        return thinkInterval;
+    }
+
+    public override void CollideFlag(Collider2D collider)
+    {
+        CharacterState targetState = collider.GetComponent<CharacterState>();
+        targetState.Damage(tackleDuration / depth, tackleDamage);
+        targetState.Knockback(tackleDuration / depth, tackleForce / depth, targetState.transform.position - transform.position);
+    }
 
     public override void DeathFlag()
     {

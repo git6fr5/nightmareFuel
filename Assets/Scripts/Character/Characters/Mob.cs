@@ -72,6 +72,7 @@ public class Mob : MonoBehaviour
         if (collider.tag == characterState.enemyTag && collider == collider.GetComponent<CharacterState>().hitbox)
         {
             //AttackFlag(collider.GetComponent<CharacterState>());
+            CollideFlag(collider);
         }
     }
 
@@ -153,6 +154,11 @@ public class Mob : MonoBehaviour
         ActivateWeapon();
 
         return Random.Range(attackMinInterval, attackMaxInterval);
+    }
+
+    public virtual void CollideFlag(Collider2D collider)
+    {
+        //
     }
 
     void ActivateWeapon()

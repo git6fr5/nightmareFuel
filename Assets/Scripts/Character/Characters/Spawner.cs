@@ -94,7 +94,7 @@ public class Spawner : MonoBehaviour
         interludeSound.Play();
         StartCoroutine(IESpawnerInterlude(interludeInterval));
 
-        yield return StartCoroutine(IESpawnerThinker(delay));
+        yield return null;
     }
 
 
