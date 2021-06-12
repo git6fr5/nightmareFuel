@@ -10,6 +10,7 @@ public class Range : Weapon
     public float bulletSpeed = 40f;
     public float kickBackForce;
     public Particle muzzleFlare;
+    public float kickBackDuration;
 
     private bool hasFired = false;
 
@@ -57,8 +58,7 @@ public class Range : Weapon
                 muzzleFlare.Fire();
 
                 // Knockback the player
-                holderState.Stun(stunDuration, kickBackForce, -transform.right);
-
+                holderState.Knockback(kickBackDuration, kickBackForce, -transform.right);
 
                 // The bullet
                 Bullet bullet = Instantiate(bulletPrefab, skeleton.head.transform.position, Quaternion.identity, null).GetComponent<Bullet>();

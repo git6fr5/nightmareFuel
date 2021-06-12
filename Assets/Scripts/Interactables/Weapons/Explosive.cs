@@ -6,12 +6,11 @@ public class Explosive : Weapon
 {
 
     /* --- Additional Variables --- */
-    public Exploder exploderPrefab;
+    public Grenade exploderPrefab;
     public float throwSpeed = 40f;
     public float throwRange = 10f;
     public float explosionRadius = 5f;
     public Transform[] trace;
-    public Signal signal;
     public float arcHeight = 2f;
     public Particle throwParticle;
 
@@ -48,10 +47,11 @@ public class Explosive : Weapon
 
         if (Vector2.Distance(A, B) > throwRange) { A = (A - B).normalized * throwRange + B; }
 
-        signal.Activate((Vector3)A, 1f); 
-
         Vector2[] v = new Vector2[] { A, B, new Vector2((A.x + B.x)/ 2, A.y + arcHeight) };
-        holderSkeleton.hand.transform.eulerAngles = Vector3.zero;
+
+        int flip = 0;
+        if (!holderMovement.facingRight) { flip = 1; }
+        holderSkeleton.hand.transform.eulerAngles = Vector3.zero + flip * Vector3.up * 180f;
 
         for (int i = 0; i < trace.Length; i++)
         {
@@ -94,10 +94,17 @@ public class Explosive : Weapon
         {
             if (!hasThrown)
             {
+                // The path
+                Vector2 A = holderState.targetPosition;
+                Vector2 B = holderState.transform.position;
+                if (Vector2.Distance(A, B) > throwRange) { A = (A - B).normalized * throwRange + B; }
+
+
                 // The exploder
-                Exploder exploder = Instantiate(exploderPrefab, skeleton.head.transform.position, Quaternion.identity, null).GetComponent<Exploder>();
-                exploder.SetPath(holderState.targetPosition, holderState.transform.position, arcHeight, throwSpeed);
+                Grenade exploder = Instantiate(exploderPrefab, skeleton.head.transform.position, Quaternion.identity, null).GetComponent<Grenade>();
                 exploder.gameObject.SetActive(true);
+                exploder.SetPath(A, B, arcHeight, throwSpeed);
+                exploder.GetComponent<SpriteRenderer>().enabled = true;
                 hasThrown = true;
             }
         }

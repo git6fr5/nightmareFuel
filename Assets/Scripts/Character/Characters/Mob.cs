@@ -44,12 +44,12 @@ public class Mob : MonoBehaviour
         // Cache the player transform
         playerTransform = GameObject.FindWithTag(characterState.enemyTag).transform;
         if (characterState.weapons.Length > 0) { characterState.weapons[0].Equip(characterState, characterMovement, characterRenderer.skeleton); }
-        spawnSound.PlayAndDestroy(1f);
+        spawnSound.Play();
 
         // Increase the level
         aggroSpeed += GameRules.gameTime * aggroSpeedIncreasePerMinute / 60f;
         characterState.maxHealth += GameRules.gameTime * healthIncreasePerMinute / 60f;
-        if (characterState.equippedWeapon.gameObject.GetComponent<Range>())
+        if (characterState.equippedWeapon != null && characterState.equippedWeapon.gameObject.GetComponent<Range>())
         {
             characterState.equippedWeapon.gameObject.GetComponent<Range>().bulletSpeed += GameRules.gameTime * bulletSpeedIncreasePerMinute / 60f;
         }
@@ -76,7 +76,7 @@ public class Mob : MonoBehaviour
     }
 
     /* --- Methods --- */
-    void DeathFlag()
+    public virtual void DeathFlag()
     {
         if (characterState.stateDict[CharacterState.State.dead])
         {
@@ -122,12 +122,6 @@ public class Mob : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
 
-        if (characterState.stateDict[CharacterState.State.stunned]) 
-        {
-            StartCoroutine(IEMoveFlag(aggroMinInterval));
-            yield return null;
-        }
-
         float thinkInterval = MoveFlag();
         StartCoroutine(IEMoveFlag(thinkInterval));
 
@@ -142,12 +136,6 @@ public class Mob : MonoBehaviour
     private IEnumerator IEAttackFlag(float delay)
     {
         yield return new WaitForSeconds(delay);
-
-        if (characterState.stateDict[CharacterState.State.stunned])
-        {
-            StartCoroutine(IEAttackFlag(attackMaxInterval));
-            yield return null;
-        }
 
         float thinkInterval = AttackFlag();
         StartCoroutine(IEAttackFlag(thinkInterval));

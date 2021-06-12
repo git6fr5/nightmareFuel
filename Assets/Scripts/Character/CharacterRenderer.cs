@@ -33,6 +33,7 @@ public class CharacterRenderer : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public Material idleMaterial;
     public Material aggroMaterial;
+    public Material paralyzeMaterial;
     public Material hurtMaterial;
     public Material deathMaterial;
 
@@ -74,9 +75,15 @@ public class CharacterRenderer : MonoBehaviour
 
     public void SetAnimation()
     {
+        animator.enabled = true;
         if (characterState.stateDict[CharacterState.State.mobile] && runningAnim)
         {
             animator.Play(runningAnim.name);
+            return;
+        }
+        if (characterState.stateDict[CharacterState.State.paralyzed])
+        {
+            animator.enabled = false;
             return;
         }
         animator.Play(idleAnim.name);
@@ -104,6 +111,12 @@ public class CharacterRenderer : MonoBehaviour
         if (characterState.stateDict[CharacterState.State.hurt] && hurtMaterial)
         {
             spriteRenderer.material = hurtMaterial;
+            return;
+        }
+        // paralyze
+        if (characterState.stateDict[CharacterState.State.paralyzed] && paralyzeMaterial)
+        {
+            spriteRenderer.material = paralyzeMaterial;
             return;
         }
         // aggro

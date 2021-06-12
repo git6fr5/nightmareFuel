@@ -108,4 +108,9 @@ public class Emote : MonoBehaviour
         yield return null;
     }
 
+    public void ForceEmoteOff()
+    {
+        displayedEmote.enabled = false;
+    }
+
 }

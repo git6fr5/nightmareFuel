@@ -42,14 +42,18 @@ C'mon kitten
 
 Bob:
 Machine Gun
-Bazooka
+Sniper
+Grenade
 
 Magician:
-gravity ball
-energy beam (sunstrike)
+magnet ball (pull)
+magnet ball (push)
+energy beam (lightning bolt)
 
 Knight:
-Lance
+Spear (range)
+Sword
+Shield
 
 Jenny the Archer (keep the bees alive):
 stone arrows

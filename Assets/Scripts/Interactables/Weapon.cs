@@ -60,13 +60,13 @@ public class Weapon : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        print("colliders tag is " + collider.tag);
+        /*print("colliders tag is " + collider.tag);
         if (holderState!= null && collider.tag == holderState.enemyTag && isSwinging && collider == collider.GetComponent<CharacterState>().hitbox)
         {
             CharacterState targetState = collider.GetComponent<CharacterState>();
             targetState.Damage(stunDuration, attackDamage);
             targetState.Stun(stunDuration, stunForce, targetState.transform.position - holderState.transform.position);
-        }
+        }*/
     }
 
     /* --- Methods --- */
@@ -100,7 +100,18 @@ public class Weapon : MonoBehaviour
         {
             holderState.equippedWeapon = null;
         }
+
+        /*isSwinging = false;
+        isBackSwinging = false;
+        isResetting = false;*/
+        isAttacking = false;
         isEquipped = false;
+
+        if (originalPosition != null && originalRotation != null)
+        {
+            transform.localPosition = originalPosition;
+            transform.localRotation = originalRotation;
+        }
         gameObject.SetActive(false);
     }
 
@@ -153,7 +164,7 @@ public class Weapon : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
 
-        isBackSwinging = false;
+        isResetting = false;
         isAttacking = false;
 
         transform.localPosition = originalPosition;

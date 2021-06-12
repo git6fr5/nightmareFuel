@@ -32,7 +32,6 @@ public class CharacterMovement : MonoBehaviour
             else if (horizontalMove > 0 && !facingRight) { Flip(); }
         }
         
-
         // Apply the movement
         Vector3 targetVelocity = new Vector2(horizontalMove, verticalMove).normalized * speed;
         body.velocity = Vector3.SmoothDamp(body.velocity, targetVelocity, ref velocity, movementSmoothing);

@@ -9,7 +9,7 @@ public class CharacterState : MonoBehaviour
 {
 
     /*--- Components ---*/
-    public enum State { idle, mobile, aggro, attacking, paralyzed, stunned, hurt, dead }
+    public enum State { idle, mobile, aggro, attacking, knockback, paralyzed, hurt, dead }
     public Dictionary<State, bool> stateDict = new Dictionary<State, bool>();
     public Collider2D hitbox;
     public Rigidbody2D body;
@@ -25,6 +25,7 @@ public class CharacterState : MonoBehaviour
     [HideInInspector] public Weapon equippedWeapon;
     public Vector3 targetPosition;
     public string enemyTag;
+    private Vector2 knockbackForce;
 
 
     /*--- Unity Methods ---*/
@@ -73,14 +74,19 @@ public class CharacterState : MonoBehaviour
 
     void Motion()
     {
+        stateDict[State.mobile] = false;
+        if (stateDict[State.knockback])
+        {
+            body.velocity = knockbackForce;
+            return;
+        }
+
         Vector2 velocity = body.velocity;
         if (Mathf.Abs(velocity.x) + Mathf.Abs(velocity.y) > 0.01f)
         {
             stateDict[State.mobile] = true;
             return;
-        }
-        stateDict[State.mobile] = false;
-    }
+        }    }
 
     void Status()
     {
@@ -109,14 +115,13 @@ public class CharacterState : MonoBehaviour
 
     }
 
-    public void Stun(float stunDuration, float forceMagnitude, Vector2 direction)
+    public void Knockback(float knockbackDuration, float forceMagnitude, Vector2 direction)
     {
-        if (stateDict[State.stunned] == true) { return; } // stuns don't stack at all
+        if (stateDict[State.knockback] == true) { return; } // stuns don't stack at all
 
-        Vector2 force = forceMagnitude * direction.normalized;
-        body.velocity = force;
-        stateDict[State.stunned] = true;
-        StartCoroutine(IEStunBuffer(stunDuration));
+        knockbackForce = forceMagnitude * direction.normalized;
+        stateDict[State.knockback] = true;
+        StartCoroutine(IEKnockbackBuffer(knockbackDuration));
     }
 
     public void Paralyze(float paralyzeDuration)
@@ -161,11 +166,13 @@ public class CharacterState : MonoBehaviour
         yield return null;
     }
 
-    private IEnumerator IEStunBuffer(float delay)
+    private IEnumerator IEKnockbackBuffer(float delay)
     {
         yield return new WaitForSeconds(delay);
 
-        stateDict[State.stunned] = false;
+        body.velocity = Vector3.zero;
+        knockbackForce = Vector2.zero;
+        stateDict[State.knockback] = false;
 
         yield return null;
     }

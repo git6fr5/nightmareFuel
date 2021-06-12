@@ -51,7 +51,7 @@ Shader "NightmareFuel/CharacterShader"
             sampler2D _MainTex;
             float4 _MainTex_ST;
 
-            float _MultiplyColor;
+            float4 _MultiplyColor;
             float4 _AddColor;
 
             v2f vert(appdata v)
@@ -72,7 +72,7 @@ Shader "NightmareFuel/CharacterShader"
                 float4 a = _AddColor;
                 float4 aCol = col.a * _AddColor;
 
-                float4 o = col + mCol + aCol;
+                float4 o = (col + mCol + aCol) * col.a;
                 return o;
             }
             ENDCG

@@ -47,8 +47,6 @@ public class Player : MonoBehaviour
     void MoveFlag()
     {
         // Get the input from the player
-        if (characterState.stateDict[CharacterState.State.stunned]) { return; }
-
         characterMovement.horizontalMove = Input.GetAxisRaw("Horizontal");
         characterMovement.verticalMove = Input.GetAxisRaw("Vertical");
     }
@@ -134,7 +132,6 @@ public class Player : MonoBehaviour
             characterState.weapons[0].Equip(characterState, characterMovement, characterRenderer.skeleton);
             return;
         }
-        if (characterState.equippedWeapon.isAttacking) { return; }
 
         int index = 0;
         for (int i = 0; i < characterState.weapons.Length; i++)
